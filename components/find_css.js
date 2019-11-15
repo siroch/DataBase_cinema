@@ -9,7 +9,7 @@ const Index_CSS = () => {
 
   		td, tr, input{
        font-size:12pt;
-       border-radius:10px;
+       border-radius:5px;
        margin: 8px;
       }
 
