@@ -5,23 +5,39 @@ const Footer_CSS = () => {
         background-color: #333;
         color: white;
       }
-      footer a {
-        color: gray;
-        font-size: 10pt;
-      }
       footer li {
         list-style: none;
+        margin-bottom: 8px;
+        font-size: 11pt;
+      }
+      footer button{
+        border: none;
+        background-color: #333;
+        color: white;
+        opacity: .7;
+        font-size: 9pt;
+        margin: 2px;
       }
       .top{
-        padding: 10px;
+        padding: 5px;
+        padding-left: 6%;
       }
       .bottom {
         padding: 10px;
         background-color: black;
         color: white;
       }
-      a{
-        margin-right: 5px;
+      .one{
+        margin-left:100px;
+      }
+      .dou{
+        margin-left: 68px;
+      }
+      .tri{
+        margin-left: 30px;
+      }
+      .sec{
+        margin-left: 129px;
       }
     `}</style>
   )
