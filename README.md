@@ -22,8 +22,9 @@
 
 ## Code of Conduct
 
-* Use functional(stateless) component only (don't use React class component!)
-  * instead, use React Hooks  *ex)*  `useState, useEffect, useRef, ...`
-* No semicolon in js codes
-* use global jsx (make _CSS.js files to use css *ex)* `index_css.js, header_css.js ... `)
-* (added soon)
+* Front-End
+  * Use functional(stateless) component only (don't use React class component!)
+    * instead, use React Hooks  *ex)*  `useState, useEffect, useRef, ...`
+  * No semicolon in js codes
+  * use global jsx (make _CSS.js files to use css *ex)* `index_css.js, header_css.js ...`)
+  * (added soon)
