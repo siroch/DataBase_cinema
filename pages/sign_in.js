@@ -36,15 +36,15 @@ const SignIn = () => (
 
             <tr>
             <td> 생년월일 </td>
-            <td> <input type = "text" name="birth_year" size = "6"/>년
-            <input type = "text" name="birth_month" size = "3"/>월
-            <input type = "text" name="birth_day" size = "3"/>일 </td>
+            <td> <input type = "text" name="birth_year" size = "4"/>년
+            <input type = "text" name="birth_month" size = "1"/>월
+            <input type = "text" name="birth_day" size = "2"/>일 </td>
            </tr>
 
            <tr>
             <td> 휴대폰 </td>
             <td>
-             <input type = "text" name = "Pnum" size = "20" placeholder = "  -없이 입력해주세요"/>
+             <input type = "text" name = "Pnum" placeholder = "  -없이 입력해주세요"/>
             </td>
            </tr>
          </table>

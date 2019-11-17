@@ -1,7 +1,6 @@
 {
   "name": "DB_cinema",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -13,7 +12,17 @@
   "license": "ISC",
   "dependencies": {
     "next": "^9.1.3",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0"
-  }
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siroch/DataBase_cinema.git"
+  },
+  "bugs": {
+    "url": "https://github.com/siroch/DataBase_cinema/issues"
+  },
+  "homepage": "https://github.com/siroch/DataBase_cinema#readme",
+  "description": ""
 }

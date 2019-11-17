@@ -9,8 +9,8 @@ const Index_CSS = () => {
       }
 
       td, tr, input, select{
-        font-size: 11pt;
-        border-radius:10px;
+        font-size: 12pt;
+        border-radius:5px;
         margin: 8px;
       }
 

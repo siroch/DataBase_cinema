@@ -18,6 +18,7 @@ const Login_Nomember_CSS = () => {
         borde: 1px solid;
         display: inline-block;
         background-color: grey;
+        margin-right: 2px;
       }
       li button{
         border: none;
@@ -51,7 +52,7 @@ const Login_Nomember_CSS = () => {
       }
       .id_input{
         margin-top: 8px;
-        margin-left: 8px;
+        margin-left: 7px;
       }
       input[type=submit]{
         background-color: #FBCEB1;
@@ -61,9 +62,14 @@ const Login_Nomember_CSS = () => {
       }
       input[type=text], input[type=password]{
         font-size: 13pt;
+        border-radius:5px;
+        margin: 5px;
       }
       a:-webkit-any-link {
         text-decoration: none;
+      }
+      center{
+        border-spacing:15px;
       }
     `}</style>
   )
