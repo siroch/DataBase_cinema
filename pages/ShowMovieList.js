@@ -10,10 +10,10 @@ const ShowMovieList = () => {
 		      <button>최신순</button>
 		    </div>
 		    <div class="leftbutton">
-		      <button> [ </button>
+		      <button> &lt; </button>
 		    </div>
 		    <div class="rightbutton">
-		      <button> ] </button>
+		      <button> &gt; </button>
 		    </div>
 		    <div class="list">
 		      <div class="slide">

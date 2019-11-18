@@ -16,7 +16,14 @@ const Header = () => {
 				| <a>My Cinema</a>
 	    </div>
 	    <nav>
-	      <span>Logo-Image</span> <a>영화</a> <a>예매</a> <a>극장</a> <a>스토어</a> <a>리뷰</a>
+	      <ul>
+					<li>
+						<span>Logo-Image</span>
+					</li>
+					<li>
+						<a>영화</a> <a>예매</a> <a>극장</a> <a>스토어</a> <a>리뷰</a>
+					</li>
+				</ul>
 	    </nav>
 		</header>
 	)
