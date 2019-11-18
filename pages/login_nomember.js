@@ -67,35 +67,35 @@ const Login_Nomember = () => {
               <table>
                 <tr>
                  <td> 성명 </td>
-                 <td> <input type = "text"name="name" /> </td>
+                 <td> <input type = "text"name="name" required /> </td>
                 </tr>
 
                 <tr>
                  <td> 생년월일 </td>
                  <td>
-                   <input type = "text" name="birth_year" size = "4"/>년
-                   <input type = "text" name="birth_month" size = "1"/>월
-                   <input type = "text" name="birth_day" size = "2"/>일
+                   <input type = "text" name="birth_year" size = "4" required />년
+                   <input type = "text" name="birth_month" size = "1" required />월
+                   <input type = "text" name="birth_day" size = "2" required />일
                  </td>
                 </tr>
 
                 <tr>
                  <td> 휴대폰 </td>
                  <td>
-                  <input type = "text" name = "Pnum" placeholder = "  -없이 입력해주세요"/>
+                  <input type = "text" name = "Pnum" placeholder = "  -없이 입력해주세요" required />
                  </td>
                 </tr>
 
                 <tr>
                  <td> 비밀번호 </td>
                  <td>
-                  <input type="password" name ="pw" placeholder="비밀번호" required/>
+                  <input type="password" name ="pw" placeholder="비밀번호" required />
                  </td>
                 </tr>
               </table>
           </center>
           <hr/>
-          <input type="submit" name="비회원 예매확인" />
+          <input type="submit" name="비회원 예매확인"/>
         </div>
       </form>
     </div>

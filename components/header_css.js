@@ -19,21 +19,27 @@ const Header_CSS = () => {
       nav{
         border: 3px solid black;
         background-color: #333;
-        text-align: center;
         font-size: 20pt;
-        padding: 15px;
-      }
-      span {
-        margin-left: 5%;
-        margin-right: 8%;
       }
       nav a{
-        margin-right: 5%;
+        margin-right: 6%;
       }
       span {
         color: white;
         margin-left: 5px;
         margin-right: 0;
+      }
+      nav ul{
+        display: flex;
+        justify-content: space-between;
+        padding-right: 130px;
+        padding-left: 180px;
+        list-style: none;
+        margin: 15px;
+      }
+      nav li{
+        width: 600px;
+        text-align: left;
       }
     `}</style>
   )

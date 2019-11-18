@@ -20,7 +20,7 @@ const Login_Nomember_CSS = () => {
         background-color: grey;
         margin-right: 2px;
       }
-      li button{
+      .menu li button{
         border: none;
         background-color: grey;
         font-size: 12pt;
@@ -28,7 +28,7 @@ const Login_Nomember_CSS = () => {
         padding-bottom: 2px;
         outline: none;
       }
-      .on button{
+      .menu .on button{
         background-color: red;
         outline: none;
       }
