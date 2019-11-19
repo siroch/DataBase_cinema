@@ -2,7 +2,7 @@ const Index_CSS = () => {
   return (
     <style global jsx>{`
       .id_find, .pw_find {
-  			border: 1px solid grey;
+  			border: 1px solid black;
   			width: 35%;
   			border-radius: 10px;
   		}
@@ -18,6 +18,11 @@ const Index_CSS = () => {
         margin-top: 10%;
         margin-bottom: 5%;
   		}
+      input[type=submit]{
+        padding: 3px;
+        background-color:black;
+        color: white;
+      }
     `}</style>
   )
 }

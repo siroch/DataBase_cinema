@@ -49,7 +49,7 @@ const SignIn = () => (
            </tr>
          </table>
          <hr/>
-         <input type = "submit" value = "가입하기" required />
+         <input type = "submit" value = "가입하기" />
        </center>
       </form>
       <Footer />
