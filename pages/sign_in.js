@@ -1,5 +1,5 @@
-import Header from './Header';
-import Footer from './footer';
+import Header from './Header'
+import Footer from './footer'
 import SignIn_CSS from '../components/signin_css'
 import Link from 'next/link'
 

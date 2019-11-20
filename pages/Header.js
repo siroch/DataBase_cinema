@@ -21,7 +21,10 @@ const Header = () => {
 						<span>Logo-Image</span>
 					</li>
 					<li>
-						<a>영화</a> <a>예매</a> <a>극장</a> <a>스토어</a>
+						<a>영화</a> <a>예매</a> <a>극장</a>
+						<Link href="/store">
+							<span title="Store">스토어</span>
+						</Link>
 					</li>
 				</ul>
 	    </nav>

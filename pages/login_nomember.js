@@ -1,7 +1,7 @@
 import Header from './Header'
 import Footer from './footer'
 import Login_Nomember_CSS from '../components/login_nomember_css'
-import {useState} from 'react';
+import {useState} from 'react'
 import Link from 'next/link'
 
 

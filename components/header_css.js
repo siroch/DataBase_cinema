@@ -23,7 +23,7 @@ const Header_CSS = () => {
       nav a{
         margin-right: 6%;
       }
-      span {
+      nav span {
         color: white;
         margin-left: 5px;
         margin-right: 0;
