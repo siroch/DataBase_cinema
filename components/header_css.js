@@ -3,7 +3,6 @@ const Header_CSS = () => {
     <style global jsx>{`
       body{
         margin: 0;
-        background-color: #ECE6CC;
       }
       header {
         background-color: black;
@@ -24,7 +23,7 @@ const Header_CSS = () => {
       nav a{
         margin-right: 6%;
       }
-      span {
+      nav span {
         color: white;
         margin-left: 5px;
         margin-right: 0;
@@ -32,13 +31,13 @@ const Header_CSS = () => {
       nav ul{
         display: flex;
         justify-content: space-between;
-        padding-right: 130px;
+        padding-right: 100px;
         padding-left: 180px;
         list-style: none;
         margin: 15px;
       }
       nav li{
-        width: 600px;
+        width: 450px;
         text-align: left;
       }
     `}</style>

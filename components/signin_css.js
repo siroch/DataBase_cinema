@@ -22,8 +22,9 @@ const Index_CSS = () => {
       }
 
       input[type=submit], input[type=button] {
-        background-color: #FBCEB1;
         padding: 3px;
+        background-color:black;
+        color: white;
       }
     `}</style>
   )

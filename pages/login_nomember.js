@@ -1,7 +1,7 @@
 import Header from './Header'
 import Footer from './footer'
 import Login_Nomember_CSS from '../components/login_nomember_css'
-import {useState} from 'react';
+import {useState} from 'react'
 import Link from 'next/link'
 
 
@@ -32,7 +32,7 @@ const Login_Nomember = () => {
   						PW <input type="password" name ="pw" placeholder="비밀번호" required />
   					 </div>
   					 <br/>
-  					 <input type="submit" name="로그인" />
+  					 <input type="submit" value="로그인" />
   				</div>
   				<hr/>
   				<p>
@@ -95,7 +95,7 @@ const Login_Nomember = () => {
               </table>
           </center>
           <hr/>
-          <input type="submit" name="비회원 예매확인"/>
+          <input type="submit" value="비회원 예매확인"/>
         </div>
       </form>
     </div>

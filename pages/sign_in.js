@@ -1,5 +1,5 @@
-import Header from './Header';
-import Footer from './footer';
+import Header from './Header'
+import Footer from './footer'
 import SignIn_CSS from '../components/signin_css'
 import Link from 'next/link'
 
@@ -49,7 +49,7 @@ const SignIn = () => (
            </tr>
          </table>
          <hr/>
-         <input type = "submit" value = "가입하기" required />
+         <input type = "submit" value = "가입하기" />
        </center>
       </form>
       <Footer />

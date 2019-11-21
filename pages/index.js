@@ -1,4 +1,4 @@
-import Header from './Header';
+import Header from './Header'
 import ShowMovieList from './ShowMovieList'
 import Midcontent from './midcontent'
 import Index_CSS from '../components/index_css'

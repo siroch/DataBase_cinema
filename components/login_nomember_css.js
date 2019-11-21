@@ -33,7 +33,7 @@ const Login_Nomember_CSS = () => {
         outline: none;
       }
       .input{
-        border: 1px solid grey;
+        border: 1px solid black;
         padding: 20px;
         text-align: center;
         border-radius: 10px;
@@ -55,7 +55,8 @@ const Login_Nomember_CSS = () => {
         margin-left: 7px;
       }
       input[type=submit]{
-        background-color: #FBCEB1;
+        background-color:black;
+        color: white;
         text-align: center;
         font-size: 13pt;
         border-radius: 10px;

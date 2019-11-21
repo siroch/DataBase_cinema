@@ -3,7 +3,6 @@ const Midcontent_CSS = () => {
     <style global jsx>{`
       body{
         margin: 0;
-        background-color: #ECE6CC;
       }
       .review_section {
         display: inline-block;
@@ -21,7 +20,7 @@ const Midcontent_CSS = () => {
         height: 15%;
       }
       fieldset {
-        background-color: #eee6c4;
+        background-color: balck;
         border: 2px solid;
         border-radius: 10px;
         margin-bottom: 20px;
@@ -30,7 +29,6 @@ const Midcontent_CSS = () => {
         text-align: center;
       }
       .scroll {
-        background-color: beige;
         padding: 2px;
         border:1px solid;
         width: 100%;

@@ -30,7 +30,6 @@ const Showmovielist_CSS = () => {
         border: none;
         margin-top: 3%;
         margin-bottom: 3%;
-        background-color: #ECE6CC;
       }
       .leftbutton button{
         float: left;
@@ -38,7 +37,6 @@ const Showmovielist_CSS = () => {
         border: none;
         margin-top: 3%;
         margin-bottom: 3%;
-        background-color: #ECE6CC;
       }
     `}</style>
   )

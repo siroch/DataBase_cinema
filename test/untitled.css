@@ -1,0 +1,95 @@
+
+.theater {
+	display: flex;
+	flex-direction: column;
+}
+
+.theater_list {
+	margin-right: 20%;
+	margin-left: 20%;
+	border : 1px solid black;
+}
+
+.list {
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid black;
+	margin-right: 20%;
+	margin-left: 20%;
+}
+
+.sort {
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-bottom: 1px solid black;
+	margin-right: 20%;
+	margin-left: 20%;
+}
+
+.theater_name {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+.show_image {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.possition {
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 10px;
+	justify-content: center;
+	border-bottom: 1px solid black;
+}
+
+.information1 {
+	border : 1px solid black;
+	border-right: 0.5px solid black;
+	padding-right: 30%;
+}
+
+.information2 {
+	border : 1px solid black;
+	border-left: 0.5px solid black;
+	padding-right: 15%;
+}
+
+.movie_list {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.select_day {
+	display: flex;
+	justify-content: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid black;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.select_movie {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	margin-left: 30%;
+	margin-right: 30%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid black;
+}
+
+.asdf {
+	border : 1px solid black;
+	margin-right: 10px;
+}
+
+.movie_info {
+}
