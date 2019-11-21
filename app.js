@@ -16,12 +16,12 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-connection.query('SELECT * from movie_info', function(err, rows, fields) {
-  if (!err)
-    console.log('The solution is: ', rows);
-  else
-    console.log('Error while performing Query.', err);
-});
+// connection.query('SELECT * from movie_info', function(err, rows, fields) {
+//   if (!err)
+//     console.log('The solution is: ', rows);
+//   else
+//     console.log('Error while performing Query.', err);
+// });
 
 connection.end();
 
