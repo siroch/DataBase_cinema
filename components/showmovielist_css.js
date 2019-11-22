@@ -14,7 +14,7 @@ const Showmovielist_CSS = () => {
         margin-bottom: 5px;
       }
       .list{
-        width: 1050px;
+        width: 1080px;
         margin-left: auto;
         margin-right: auto;
         white-space:nowrap;

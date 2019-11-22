@@ -17,7 +17,7 @@ const Header_CSS = () => {
       }
       nav{
         border: 3px solid black;
-        background-color: #333;
+        background-color: black;
         font-size: 20pt;
       }
       nav a{

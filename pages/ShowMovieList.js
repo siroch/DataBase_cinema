@@ -4,23 +4,25 @@ import {useState, useEffect} from 'react'
 const ShowMovieList = () => {
 
 		const [index, setIndex] = useState(0)
+
+		function leftHandler(){ if(index>0) setIndex(index-1) }
+		function rightHandler(){ if(index<2) setIndex(index+1) }
+
 	  useEffect(() => {
 			var list_box = document.getElementsByClassName("list") // 스크롤 부분 가져오는거
 			var slides = document.getElementsByClassName("slide") // 영화 사진 몇개인지 체크하기 위함
 			var acts = document.getElementsByClassName("active") // 엑티브 된 동그라미 가져옴
 		  var cirs = document.getElementsByClassName("circle") // 엑티브 안된 동그라미 가져옴
-		  if (index > slides.length-3) {setIndex(0)} // 나중에 바꿀 부분 버튼 끝 부분
-			if (index < 0) {setIndex(0)} // 나중에 바꿀 부분 버튼 끝 부분
-			list_box[0].scroll(260*index,0) // 버튼 누를 때 스크롤 위치 바뀌는 부분
+			list_box[0].scroll(820*index,0) // 버튼 누를 때 스크롤 위치 바뀌는 부분
 			if(index==0){
 				acts[0].classList="circle"
 				cirs[0].classList="active"
 			}
-			else if(index==3){
+			else if(index==1){
 				acts[0].classList="circle"
 				cirs[1].classList="active"
 			}
-			else if(index==6){
+			else if(index==2){
 				acts[0].classList="circle"
 				cirs[2].classList="active"
 			}
@@ -35,10 +37,10 @@ const ShowMovieList = () => {
 		      <button>최신순</button>
 		    </div>
 		    <div className="leftbutton">
-		      <button onClick={() => setIndex(index-1)}>&lt;</button>
+		      <button onClick={() => leftHandler()}>&lt;</button>
 		    </div>
 		    <div className="rightbutton">
-		      <button onClick={() => setIndex(index+1)}>&gt;</button>
+		      <button onClick={() => rightHandler()}>&gt;</button>
 		    </div>
 		    <div className="list">
 		      <div className="slide">
