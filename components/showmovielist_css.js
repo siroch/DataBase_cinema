@@ -22,6 +22,9 @@ const Showmovielist_CSS = () => {
         margin-top: 20px;
         margin-bottom: 20px;
       }
+      .list::-webkit-scrollbar {
+        display: none;
+      }
       .slide{
         margin: 10px;
         margin-top: 0;
@@ -52,13 +55,13 @@ const Showmovielist_CSS = () => {
         display: inline-block;
       }
       .active{
-        height: 9px;
-        width: 9px;
+        height: 5px;
+        width: 5px;
         margin: 0 2px;
         border-radius: 50%;
         display: inline-block;
         background-color: white;
-        border: 1px solid black;
+        border: 3px solid black;
       }
     `}</style>
   )

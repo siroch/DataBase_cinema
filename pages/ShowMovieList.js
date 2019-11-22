@@ -9,6 +9,7 @@ const ShowMovieList = () => {
 		function rightHandler(){ if(index<2) setIndex(index+1) }
 
 	  useEffect(() => {
+			var bnts = document.getElementsByTagName("button") // 버튼 가져오기
 			var list_box = document.getElementsByClassName("list") // 스크롤 부분 가져오는거
 			var slides = document.getElementsByClassName("slide") // 영화 사진 몇개인지 체크하기 위함
 			var acts = document.getElementsByClassName("active") // 엑티브 된 동그라미 가져옴
@@ -17,14 +18,18 @@ const ShowMovieList = () => {
 			if(index==0){
 				acts[0].classList="circle"
 				cirs[0].classList="active"
+				bnts[3].disabled=true
 			}
 			else if(index==1){
 				acts[0].classList="circle"
 				cirs[1].classList="active"
+				bnts[3].disabled=false
+				bnts[4].disabled=false
 			}
 			else if(index==2){
 				acts[0].classList="circle"
 				cirs[2].classList="active"
+				bnts[4].disabled=true
 			}
 		})
 
@@ -32,7 +37,7 @@ const ShowMovieList = () => {
 			<div className="movielist">
 				<Showmovielist_CSS />
 		    <div className="sort">
-		      <button>예매순 {index}</button>
+		      <button>예매순</button>
 		      <button>평점순</button>
 		      <button>최신순</button>
 		    </div>
