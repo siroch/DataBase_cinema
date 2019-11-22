@@ -26,7 +26,7 @@ const Header_CSS = () => {
       nav span {
         color: white;
         margin-left: 5px;
-        margin-right: 0;
+        margin-right: 6%;
       }
       nav span:hover, .small span:hover {
         border-bottom: 2px solid white;
