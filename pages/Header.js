@@ -18,7 +18,9 @@ const Header = () => {
 	    <nav>
 	      <ul>
 					<li>
-						<span>Logo-Image</span>
+						<Link href="/">
+							<span title="main">Logo-Image</span>
+						</Link>
 					</li>
 					<li>
 						<a>영화</a> <a>예매</a> <a>극장</a>

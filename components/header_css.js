@@ -28,6 +28,9 @@ const Header_CSS = () => {
         margin-left: 5px;
         margin-right: 0;
       }
+      nav span:hover, .small span:hover {
+        border-bottom: 2px solid white;
+      }
       nav ul{
         display: flex;
         justify-content: space-between;

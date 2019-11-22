@@ -8,14 +8,6 @@ const Store = () => {
   const [goods, setGoods] = useState(true)
 
   const Food = (
-    <div>
-      <div class="category">
-        <h2>스토어</h2>
-        <a>팝콘/음료</a>
-        |
-        <a onClick={() => setGoods(!goods)}>이벤트 상품</a>
-      </div>
-
       <div class="all">
         <div class="gallery">
           <img src="/store/combo1.jpg" alt="combo1" />
@@ -73,18 +65,9 @@ const Store = () => {
           <span class="price">11000원</span>
         </div>
       </div>
-    </div>
   )
 
   const Event_goods = (
-    <div>
-      <div class="category">
-        <h2>스토어</h2>
-        <a onClick={() => setGoods(!goods)}>팝콘/음료</a>
-        |
-        <a>이벤트 상품</a>
-      </div>
-
       <div class="all">
           <div class="gallery">
             <img src="/store/mapleA.png" alt="mapleA"/>
@@ -114,7 +97,6 @@ const Store = () => {
             <span class="price">13000원</span>
           </div>
       </div>
-    </div>
   )
 
   return(
@@ -123,6 +105,12 @@ const Store = () => {
       <Header />
       <div class="fixed">
       	<img src="/store/basket.png" />
+      </div>
+      <div class="category">
+        <h2>스토어</h2>
+        <a onClick={() => setGoods(true)}>팝콘/음료</a>
+        |
+        <a onClick={() => setGoods(false)}>이벤트 상품</a>
       </div>
       { goods ? Food : Event_goods }
       <Footer />
