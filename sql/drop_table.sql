@@ -1,0 +1,12 @@
+drop table clerk;
+drop table working_time;
+drop table manager;
+drop table stuffs;
+drop table merch;
+drop table store;
+drop table review;
+drop table customer;
+drop table time_table;
+drop table theater;
+drop table reserve_info;
+drop table movie_info;

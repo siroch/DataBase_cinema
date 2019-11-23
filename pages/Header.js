@@ -18,10 +18,15 @@ const Header = () => {
 	    <nav>
 	      <ul>
 					<li>
-						<span>Logo-Image</span>
+						<Link href="/">
+							<span title="main">Logo-Image</span>
+						</Link>
 					</li>
 					<li>
-						<a>영화</a> <a>예매</a> <a>극장</a>
+						<a>영화</a> <a>예매</a>
+						<Link href="/theater_list">
+							<span title="Theater_list">극장</span>
+						</Link>
 						<Link href="/store">
 							<span title="Store">스토어</span>
 						</Link>

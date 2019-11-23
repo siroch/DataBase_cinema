@@ -17,7 +17,7 @@ const Header_CSS = () => {
       }
       nav{
         border: 3px solid black;
-        background-color: #333;
+        background-color: black;
         font-size: 20pt;
       }
       nav a{
@@ -26,7 +26,10 @@ const Header_CSS = () => {
       nav span {
         color: white;
         margin-left: 5px;
-        margin-right: 0;
+        margin-right: 6%;
+      }
+      nav span:hover, .small span:hover {
+        border-bottom: 2px solid white;
       }
       nav ul{
         display: flex;
