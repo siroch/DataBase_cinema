@@ -4,6 +4,10 @@ import Movie_list_CSS from '../components/theater_list_css'
 
 const Movie_list = () => {
   return(
+    <div>
+      <Header />
+      <Footer />
+    </div>
   )
 }
 

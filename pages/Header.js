@@ -23,7 +23,9 @@ const Header = () => {
 						</Link>
 					</li>
 					<li>
-						<a>영화</a> <a>예매</a>
+						<Link href="/movie_list">
+							<span title="Movie_list">영화</span>
+						</Link> <a>예매</a>
 						<Link href="/theater_list">
 							<span title="Theater_list">극장</span>
 						</Link>
