@@ -5,7 +5,7 @@ const Theater_list_CSS = () => {
     		display: flex;
     		text-align: center;
     	}
-    	theater button {
+      theater button {
     		background-color: gray;
         border: none;
         color: black;
