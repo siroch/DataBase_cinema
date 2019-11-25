@@ -1,10 +1,3 @@
-/*
-    POST /api/auth/register
-    {
-        username,
-        password
-    }
-*/
 const jwt = require('jsonwebtoken')
 var mysql=require('mysql');
 var connection = mysql.createConnection({
@@ -14,6 +7,15 @@ var connection = mysql.createConnection({
   database : 'ericagallery',
   port : 3306
 });
+
+/*
+    POST /api/auth/register
+    {
+        username,
+        password
+    }
+*/
+
 exports.register = (req, res) => {
   const {id,pw,name} = req.body;
   const ins_sql = `insert into customer (customer_id,customer_pw,customer_name) values ('${id}','${pw}','${name}')`;
@@ -99,6 +101,11 @@ exports.login = (req, res) => {
     .then(token=>respond(token))
     .catch(error=>onError(error));
 }
+
+/*
+    GET /api/auth/check
+*/
+
 exports.check = (req, res) => {
   res.json({
       success: true,
