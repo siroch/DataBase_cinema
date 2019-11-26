@@ -11,6 +11,7 @@ const Header_CSS = () => {
         position: fixed;
         top: 0;
         width: 100%;
+        z-index: 2;
       }
       .small {
         margin-right: 10px;

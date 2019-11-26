@@ -36,6 +36,9 @@ const Store_CSS = () => {
       .category a{
         padding: 5px;
       }
+      .category a:hover{
+        font-size: 15pt;
+      }
       div.fixed {
         position: fixed;
         top: 200px;

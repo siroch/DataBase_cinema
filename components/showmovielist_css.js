@@ -21,6 +21,7 @@ const Showmovielist_CSS = () => {
         overflow-x:scroll;
         margin-top: 20px;
         margin-bottom: 20px;
+        scroll-behavior: smooth;
       }
       .list::-webkit-scrollbar {
         display: none;
