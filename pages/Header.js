@@ -13,7 +13,10 @@ const Header = () => {
 				<Link href="/sign_in">
 					<span title="Sign-In"> 회원가입 </span>
 				</Link>
-				| <a>My Cinema</a>
+				|
+				<Link href="/mypage">
+					<span title="Mypage"> Mycinema </span>
+				</Link>
 	    </div>
 	    <nav>
 	      <ul>
