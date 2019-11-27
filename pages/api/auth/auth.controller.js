@@ -1,3 +1,4 @@
+var alert = require('alert-node');
 const jwt = require('jsonwebtoken')
 var mysql=require('mysql');
 var connection = mysql.createConnection({
@@ -52,10 +53,10 @@ exports.register = (req, res) => {
       });
     }
     else {
-      res.send({
-        "code": 200,
-        "success": "user registered sucessfully"});
+      alert("회원가입이 완료되었습니다!");
+      res.redirect('/login_nomember');
     }
+    
   });
 }
 
