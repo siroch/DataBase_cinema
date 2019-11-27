@@ -13,7 +13,7 @@ const handle = app.getRequestHandler();
 //   database : 'ericagallery',
 //   port : 3306
 // });
-//
+
 // connection.connect();
 
 app.prepare().then(() => {

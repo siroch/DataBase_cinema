@@ -7,7 +7,7 @@ const SignIn = () => (
     <div>
       <Header />
       <SignIn_CSS />
-      <form action="" method="post">
+      <form action="/api/auth/register" method="post">
         <h1> 회원가입</h1>
         <center>
           <table>

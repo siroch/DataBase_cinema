@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken')
 var mysql=require('mysql');
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '1234',
+  host     : 'ericagallery.cpi3i6d3shqc.us-east-2.rds.amazonaws.com',
+  user     : 'admin',
+  password : 'databasepbl2!',
   database : 'ericagallery',
   port : 3306
 });
@@ -16,9 +16,33 @@ var connection = mysql.createConnection({
     }
 */
 
+// exports.register = (req, res) => {
+//   const {id,pw,name} = req.body;
+//   const ins_sql = `insert into customer (customer_id,customer_pw,customer_name) values ('${id}','${pw}','${name}')`;
+//   connection.query(ins_sql , (err, results) =>{
+//     if (err) {
+//       console.log("error ocurred", err);
+//       res.send({
+//         "code" : 400,
+//         "failed": "error ocurred"
+//       });
+//     }
+//     else {
+//       res.send({
+//         "code": 200,
+//         "success": "user registered sucessfully"});
+//     }
+//   });
+// }
+
 exports.register = (req, res) => {
-  const {id,pw,name} = req.body;
-  const ins_sql = `insert into customer (customer_id,customer_pw,customer_name) values ('${id}','${pw}','${name}')`;
+  let body = req.body;
+  const birth_year = body.birth_year;
+  const birth_month = body.birth_month;
+  const birth_day = body.birth_day;
+  const birth = birth_year + birth_month + birth_day;
+  console.log(birth);
+  const ins_sql = `insert into customer (customer_id,customer_pw,customer_name, customer_birth, customer_phone) values ('${body.id}','${body.pw1}','${body.name}', '${birth}', '${body.Pnum}')`;
   connection.query(ins_sql , (err, results) =>{
     if (err) {
       console.log("error ocurred", err);
