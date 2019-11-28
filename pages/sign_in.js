@@ -18,9 +18,8 @@ const SignIn = () => {
   const [birth_d, getBirthd] = useState('');
   const [phone, getPhone] = useState('');
   const [nameinfo, nameInfo] = useState('');
-  const [birth_y_info, getBirthyInfo] = useState('');
-  const [birth_m_info, getBirthmInfo] = useState('');
-  const [birth_d_info, getBirthdInfo] = useState('');
+  const [birth, getBirth] = useState('');
+  const [birthinfo, getBirthInfo] = useState(null);
   const [phone_info, getPhoneInfo] = useState('');
 
   function getid(e) {getId(e.target.value);}
@@ -73,30 +72,27 @@ const SignIn = () => {
     }
   }
 
-  function birth_y_Blur(e) {
-    if(!birth_y) {
-      getBirthyInfo("필수 정보입니다");
+  function birthCheck(e) {
+    if(birth_y && birth_m && birth_d) {
+      getBirthInfo(true);
+      getBirth("");
     } else {
-      getBirthyInfo("");
+      getBirth("필수 정보입니다.");
+      getBirthInfo(false);
     }
   }
 
-  function birth_m_Blur(e) {
-    if(!birth_m) {
-      getBirthmInfo("필수 정보입니다");
+  function phoneBlur(e) {
+    if(!phone) {
+      getPhoneInfo("필수 정보입니다.");
     } else {
-      getBirthmInfo("");
+      getPhoneInfo("");
     }
   }
 
-  function birth_y_Blur(e) {
-    if(!birth_d) {
-      getBirthdInfo("필수 정보입니다");
-    } else {
-      getBirthdInfo("");
-    }
-  }
+  function isIdSame(e) {
 
+  }
   return(
     <div>
       <Header />
@@ -109,7 +105,7 @@ const SignIn = () => {
             <td text-align="center">아이디</td>
             <td>
             <input type = "text" onChange={getid} onBlur={IdBlur} name="id" required />
-            <input type = "button" name="checkid" value = "중복확인" required />
+            <input type = "button" onClick={isIdSame} name="checkid" value = "중복확인" required />
             <div className="alert">{idinfo}</div>
             </td>
            </tr>
@@ -126,27 +122,32 @@ const SignIn = () => {
             <td> 비밀번호 확인 </td>
             <td> <input type = "password" onChange={getpwd2} name="pw2" onBlur={PasswordCheckBlur} required />
             { pwdpossible ? (<div className="possible">{pwdcheckinfo}</div>) : (<div className="alert">{pwdcheckinfo}</div>) }
-            {/* &nbsp; *비밀번호를 다시 입력해주세요.  */}
             </td>
            </tr>
 
            <tr>
             <td> 성명 </td>
-            <td> <input type = "text" name="name" required /> </td>
+            <td> 
+              <input type = "text" onChange={getname} onBlur={NameBlur} name="name" required /> 
+              <div className="alert">{nameinfo}</div>
+            </td>
            </tr>
 
             <tr>
             <td> 생년월일 </td>
-            <td> <input type = "text" name="birth_year" onChange={getBirthy}size = "4" required />년
-            <input type = "text" name="birth_month" onChange={getBirthm} size = "1" required />월
-            <input type = "text" name="birth_day" onChange={getBirthd} size = "2" required />일 </td>
-            {!birth_y || !birth_m || !birth_d ? <div className="alert">필수 정보입니다.</div> : <div className="possible"></div>}
+            <td> 
+              <input type = "text" name="birth_year" onChange={getbirthy} onBlur={birthCheck} size = "4" required />년
+              <input type = "text" name="birth_month" onChange={getbirthm} onBlur={birthCheck} size = "1" required />월
+              <input type = "text" name="birth_day" onChange={getbirthd} onBlur={birthCheck} size = "2" required />일 
+              { birthinfo ? (<div className="possible">{birth}</div>) : (<div className="alert">{birth}</div>) }
+            </td>
            </tr>
 
            <tr>
             <td> 휴대폰 </td>
             <td>
-             <input type = "text" name = "Pnum" placeholder = "  -없이 입력해주세요" required />
+             <input type = "text" name = "Pnum" onChange={getphone} onBlur={phoneBlur} placeholder = "  -없이 입력해주세요" required />
+             <div className="alert">{phone_info}</div>
             </td>
            </tr>
          </table>
