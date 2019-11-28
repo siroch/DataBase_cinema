@@ -110,11 +110,39 @@ const SignIn = () => {
     });
   }
 
+  function validSubmit() {
+    let bye = [
+      {
+        "id" : id,
+        "pwd" : pwd,
+        "name" : name,
+        "birth_year" : birth_y,
+        "birth_month" : birth_m,
+        "birth_day" : birth_d,
+        "Pnum" : phone
+      }
+    ]; 
+    alert("here");
+    if(id===null || pwd===null || pwd2===null || name===null || (birthinfo===null || birthinfo===false) || phone===null) {
+      alert("필수 정보를 입력해 주십시오.");
+    } else {
+      Axios
+      .post("api/auth/register", bye)
+      .then(function(results) {
+        if(results.code===200) {
+          alert("회원가입이 완료되었습니다!");
+        } else {
+          alert("오류가 발생하였습니다. 잠시후 다시 시도해주십시오.");
+        }
+      });
+    }
+  }
+
   return(
     <div>
       <Header />
       <SignIn_CSS />
-      <form action="/api/auth/register" method="post">
+      <form onSubmit={validSubmit}>
         <h1> 회원가입</h1>
         <center>
           <table>

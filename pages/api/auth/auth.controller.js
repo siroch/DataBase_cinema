@@ -38,7 +38,7 @@ var connection = mysql.createConnection({
 // }
 
 exports.register = (req, res) => {
-  let body = req.body;
+  let body = req;
   const birth_year = body.birth_year;
   const birth_month = body.birth_month;
   const birth_day = body.birth_day;
@@ -50,13 +50,14 @@ exports.register = (req, res) => {
     if (err) {
       console.log("error ocurred", err);
       res.send({
-        "code" : 400,
-        "failed": "error ocurred"
+        "code" : 400
       });
     }
     else {
-      alert("회원가입이 완료되었습니다!");
-      res.redirect('/login_nomember');
+      console.log(req);
+      res.send({
+        "code" : 200
+      })
     }
     
   });
