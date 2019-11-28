@@ -40,9 +40,9 @@ const Store_CSS = () => {
         font-size: 15pt;
       }
       div.fixed {
-        position: fixed;
-        top: 200px;
-        right: 30px;
+        position: absolute;
+        top: 175px;
+        right: 120px;
         width: 150px;
         height: 150px;
       }

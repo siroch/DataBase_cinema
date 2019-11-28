@@ -1,4 +1,3 @@
-import Footer from './footer'
 import Midcontent_CSS from '../components/midcontent_css'
 
 const Midcontent = () => {
@@ -132,7 +131,6 @@ const Midcontent = () => {
           </fieldset>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }
