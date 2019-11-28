@@ -43,6 +43,7 @@ exports.register = (req, res) => {
   const birth_day = body.birth_day;
   const birth = birth_year + birth_month + birth_day;
   console.log(birth);
+  console.log(body.Pnum);
   const ins_sql = `insert into customer (customer_id,customer_pw,customer_name, customer_birth, customer_phone) values ('${body.id}','${body.pw1}','${body.name}', '${birth}', '${body.Pnum}')`;
   connection.query(ins_sql , (err, results) =>{
     if (err) {
