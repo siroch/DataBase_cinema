@@ -21,6 +21,7 @@ const SignIn = () => {
   const [birth, getBirth] = useState('');
   const [birthinfo, getBirthInfo] = useState(null);
   const [phone_info, getPhoneInfo] = useState('');
+  const [issamecliked, getIssameclicked] = useState(null);
 
   function getid(e) {getId(e.target.value);}
   function getpwd1(e) {pwd1Check(e.target.value);}
@@ -90,9 +91,12 @@ const SignIn = () => {
     }
   }
 
-  function isIdSame(e) {
+  // function isIdSame(e) {
+  //   getIssameclicked(true);
+  //   const curr_id = e.target.value;
+  //   const compare_id = axios.
+  // }
 
-  }
   return(
     <div>
       <Header />
@@ -105,7 +109,7 @@ const SignIn = () => {
             <td text-align="center">아이디</td>
             <td>
             <input type = "text" onChange={getid} onBlur={IdBlur} name="id" required />
-            <input type = "button" onClick={isIdSame} name="checkid" value = "중복확인" required />
+            <input type = "button" name="checkid" value = "중복확인" required />
             <div className="alert">{idinfo}</div>
             </td>
            </tr>

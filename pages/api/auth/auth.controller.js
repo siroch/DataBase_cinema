@@ -1,4 +1,5 @@
 var alert = require('alert-node');
+const axios = require('axios');
 const jwt = require('jsonwebtoken')
 var mysql=require('mysql');
 var connection = mysql.createConnection({
@@ -137,4 +138,9 @@ exports.check = (req, res) => {
       success: true,
       info: req.decoded
   });
+}
+
+exports.samecheck = (req, res) => {
+  // let body = req.body;
+  // const sel_sql = 'select id from customer where customer_id = '{$body.customer_id}'
 }
