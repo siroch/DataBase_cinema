@@ -3,6 +3,7 @@ import Footer from './footer'
 import SignIn_CSS from '../components/signin_css'
 import {useState, useEffect} from 'react'
 import Link from 'next/link'
+import Axios from 'axios'
 
 const SignIn = () => {
   const [id, getId] = useState('');
@@ -21,7 +22,8 @@ const SignIn = () => {
   const [birth, getBirth] = useState('');
   const [birthinfo, getBirthInfo] = useState(null);
   const [phone_info, getPhoneInfo] = useState('');
-  const [issamecliked, getIssameclicked] = useState(null);
+  const [issamecliked, getIssameclicked] = useState(false);
+  const [issame, getIssame] = useState(null);
 
   function getid(e) {getId(e.target.value);}
   function getpwd1(e) {pwd1Check(e.target.value);}
@@ -91,11 +93,22 @@ const SignIn = () => {
     }
   }
 
-  // function isIdSame(e) {
-  //   getIssameclicked(true);
-  //   const curr_id = e.target.value;
-  //   const compare_id = axios.
-  // }
+  function getcurid() {
+    getIssameclicked(true);
+    Axios
+    .get("/api/auth/" + id)
+    .then(function(response) {
+      console.log(response);
+      getIssame(response.data.exist);
+      if(response.data.exist) {
+        getIssame(true);
+        alert("같은 아이디가 이미 존재합니다.");
+      } else {
+        getIssame(false);
+        alert("사용 가능한 아이디 입니다.");
+      }
+    });
+  }
 
   return(
     <div>
@@ -109,7 +122,7 @@ const SignIn = () => {
             <td text-align="center">아이디</td>
             <td>
             <input type = "text" onChange={getid} onBlur={IdBlur} name="id" required />
-            <input type = "button" name="checkid" value = "중복확인" required />
+            <input type = "button" name="checkid" onClick={getcurid} value = "중복확인" required />
             <div className="alert">{idinfo}</div>
             </td>
            </tr>

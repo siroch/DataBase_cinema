@@ -141,6 +141,20 @@ exports.check = (req, res) => {
 }
 
 exports.samecheck = (req, res) => {
-  // let body = req.body;
-  // const sel_sql = 'select id from customer where customer_id = '{$body.customer_id}'
+  const sel_sql = `select customer_id from customer where customer_id = '${req.params.id}'`;
+  connection.query(sel_sql , (err, results) => {
+    if (err) {
+      console.log(err);
+    }
+    else if(results.length===0) {
+      res.send({
+        "exist" : false
+      });
+    } 
+    else {
+      res.send({
+        "exist" : true
+      });
+    }
+  });
 }
