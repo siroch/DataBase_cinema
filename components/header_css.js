@@ -31,6 +31,7 @@ const Header_CSS = () => {
       }
       nav span:hover, .small span:hover {
         border-bottom: 2px solid white;
+        cursor: pointer;
       }
       nav ul{
         display: flex;

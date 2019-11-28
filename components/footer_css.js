@@ -18,6 +18,10 @@ const Footer_CSS = () => {
         font-size: 9pt;
         margin: 2px;
       }
+      footer button:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
       .top{
         padding: 5px;
         padding-left: 6%;
