@@ -13,19 +13,21 @@ const Movie_list = (props) => {
 		<div class="sort_movie_info">
 			{props.data.map(movies => (
 				<div className={"info_movie"}>
-					<h2>1</h2>
+					<h2>{movies.movie_info.rank}</h2>
 					<img src={movies.movie_info.picture}/>
 					<div class={"information"}>
-						<p>({movies.movie_info.ageRestriction}) {movies.movie_info.movieNm}</p>
-						<p>예매율 : ??% | 평점 : ?? | 개봉일 : {movies.movie_info.openDt}</p>
-					</div>
-					<div class={"reserve_button"}>
-						<div>
-							<p>줄거리</p>
-							<p>줄거리</p>
-							<p>줄거리</p>
+						<div class={"movie_name"}>
+							<p>({movies.movie_info.ageRestriction}) {movies.movie_info.movieNm}</p>
+							<p>예매율 : ??% | 평점 : ?? | 개봉일 : {movies.movie_info.openDt}</p>
 						</div>
-						<button>예매하기</button>
+						<div className={"reserve_button"}>
+							<div>
+								<p>줄거리</p>
+								<p>줄거리</p>
+								<p>줄거리</p>
+							</div>
+							<button>예매하기</button>
+						</div>
 					</div>
 				</div>
 			))}
