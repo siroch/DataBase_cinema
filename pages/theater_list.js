@@ -48,7 +48,7 @@ const Theater_list = () => {
       </div>
 
       <div class="reserve">
-        <h2 class="h2line">영화 예매</h2>
+          <h2 class="h2line">시간표</h2>
         <div class="movie_reserve_info">
           <p>12 블랙머니</p>
           <div class="movie_reserve">
