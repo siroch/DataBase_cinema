@@ -38,14 +38,12 @@ var connection = mysql.createConnection({
 // }
 
 exports.register = (req, res) => {
-  let body = req;
+  let body = req.body;
   const birth_year = body.birth_year;
   const birth_month = body.birth_month;
   const birth_day = body.birth_day;
   const birth = birth_year + birth_month + birth_day;
-  console.log(birth);
-  console.log(body.Pnum);
-  const ins_sql = `insert into customer (customer_id,customer_pw,customer_name, customer_birth, customer_phone) values ('${body.id}','${body.pw1}','${body.name}', '${birth}', '${body.Pnum}')`;
+  const ins_sql = `insert into customer (customer_id,customer_pw,customer_name, customer_birth, customer_phone, monthly_spend, c_rank) values ('${body.id}','${body.pwd}','${body.name}', '${birth}', '${body.Pnum}', 0, 0)`;
   connection.query(ins_sql , (err, results) =>{
     if (err) {
       console.log("error ocurred", err);
@@ -54,7 +52,6 @@ exports.register = (req, res) => {
       });
     }
     else {
-      console.log(req);
       res.send({
         "code" : 200
       })
