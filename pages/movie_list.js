@@ -22,10 +22,14 @@ const Movie_list = (props) => {
 				{props.data.map(movies => (
 					<div className={"info_movie"}>
 						<h2>{movies.movie_info.rank}</h2>
-						<Link href="/movie_details"><img src={movies.movie_info.picture}/></Link>
+						<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
+							<img src={movies.movie_info.picture}/>
+						</Link>
 						<div class={"information"}>
 							<div class={"movie_name"}>
-								<Link href="movie_details"><p>({movies.movie_info.ageRestriction}) {movies.movie_info.movieNm}</p></Link>
+								<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
+									<p>({movies.movie_info.ageRestriction}) {movies.movie_info.movieNm}</p>
+								</Link>
 								<p>예매율 : ??% | 평점 : ?? | 개봉일 : {movies.movie_info.openDt}</p>
 							</div>
 							<div className={"reserve_button"}>

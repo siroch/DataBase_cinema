@@ -1,9 +1,9 @@
 import Header from './Header'
 import Footer from './footer'
 import Movie_details_CSS from '../components/movie_details_css'
+import axios from 'axios'
 
-
-const Movie_details = () => (
+const Movie_details = (props) => (
     <div>
       <Movie_details_CSS />
       <Header />
@@ -12,22 +12,23 @@ const Movie_details = () => (
         <hr />
         <div class="information">
           <div class="movie_info">
-            <h2>블랙머니</h2>
-            <p>Black Money</p>
+            <h2>{props.movies.movieNm}</h2>
+            <p>{props.movies.movieNmEn}</p>
             <br/>
             <strong>예매율</strong> 5.8% | <strong>평점</strong> 7.25
             <hr/>
             <br/>
-            <strong>감독</strong>: 정지영 /<strong>프로듀서</strong>: 이종호, 이태관 /<strong>배우</strong>: 조진웅, 이하늬
+            <strong>감독</strong>: {props.movies.directors[0].peopleNm} /<strong>배우</strong>: {props.movies.actor}
             <br/>
             <br/>
-            <strong>장르</strong>: 범죄, 드라마/ <strong>연령</strong>: 12세 이상/ <strong>국가</strong>: 한국/ <strong>러닝타임</strong>: 113분
-            <strong>개봉</strong>: 2019.11.13
+            <strong>장르</strong>: {props.movies.genreAlt}/ <strong>연령</strong>: {props.movies.ageRestriction}/
+            <strong> 국가</strong>: {props.movies.nationAlt}/ <strong>러닝타임</strong>: {props.movies.runningTime}/
+            <strong> 개봉</strong>: {props.movies.openDt}
             <br/>
             <br/>
             <strong>타입</strong>: 2D
           </div>
-          <img src="movie/blackmoney.jpg" alt="poster"/>
+          <img src={props.movies.picture} alt="poster"/>
         </div>
         <hr />
         <div class="Preview">
@@ -103,5 +104,13 @@ const Movie_details = () => (
       <Footer />
     </div>
 )
+
+Movie_details.getInitialProps = async (res) => {
+  const {movieCd} = res.query;
+  const response = await axios.get(`http://localhost:3000/data/${movieCd}`);
+  return {
+    movies: response.data
+  };
+};
 
 export default Movie_details
