@@ -102,6 +102,12 @@ const ShowMovieList = () => {
 		        <p>감독, 러닝타임, 장르</p>
 		        <p>평점:</p>
 		      </div>
+					<div className="slide">
+						<p>img10</p>
+						<p>제목</p>
+						<p>감독, 러닝타임, 장르</p>
+						<p>평점:</p>
+					</div>
 		    </div>
 				<div className="circles">
 					<span className="active"></span>
