@@ -96,6 +96,13 @@ const Store = () => {
             <button>장바구니</button>
             <span class="price">13000원</span>
           </div>
+
+          <div class="gallery">
+            <img src="/store/frozen_ticket.png" alt="frozen ticket"/>
+            <div class="desc">Forzen2 오리지널 티켓</div>
+            <button>장바구니</button>
+            <span class="price">18000원</span>
+          </div>
       </div>
   )
 

@@ -4,39 +4,24 @@ const Midcontent_CSS = () => {
       body{
         margin: 0;
       }
-      .review_section {
-        display: inline-block;
-        width: 45%;
-        margin-left: 2%;
+      .midcontents{
+        margin-left: 10%;
+        margin-right: 10%;
       }
-      .quick_reservation {
-        float: right;
-        width: 45%;
-        margin-right: 2%;
-      }
-      .quick_reservation p {
-        border: 2px solid blue;
-        padding: 2px;
-        height: 15%;
-      }
-      fieldset {
-        background-color: balck;
-        border: 2px solid;
-        border-radius: 10px;
-        margin-bottom: 20px;
-      }
-      legend {
+      .midcontents fieldset{
+        border: none;
+        border-top: 3px solid black;
         text-align: center;
       }
-      .scroll {
-        padding: 2px;
-        border:1px solid;
-        width: 100%;
-        height: 200px;
-        overflow: scroll;
+      legend{
+        text-align: center;
       }
-      a{
-        margin-right: 5px;
+      .midcontents img{
+        width: 30%;
+        height: 300px;
+        margin: 0;
+        display: inline-block;
+        margin: 10px;
       }
     `}</style>
   )
