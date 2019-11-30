@@ -49,65 +49,50 @@ const ShowMovieList = () => {
 		    </div>
 		    <div className="list">
 		      <div className="slide">
-		        <p>img1</p>
-		        <p>제목</p>
-		        <p>감독, 러닝타임, 장르</p>
-		        <p>평점:</p>
+		        <img src="movie/blackmoney.jpg" alt="blackmoney" />
+						<p>(12세) 블랙머니</p>
+		        <p>평점: 4.8 예매율: 10.5%</p>
 		      </div>
 		      <div className="slide">
-		        <p>img2</p>
-		        <p>제목</p>
-		        <p>감독, 러닝타임, 장르</p>
-		        <p>평점:</p>
+		        <img src="movie/frozen2.jpg" alt="blackmoney" />
+						<p>(전체) 겨울왕국 2</p>
+		        <p>평점: 7.9 예매율: 80.3%</p>
 		      </div>
 		      <div className="slide">
-		        <p>img3</p>
-		        <p>제목</p>
-		        <p>감독, 러닝타임, 장르</p>
-		        <p>평점:</p>
+		        <img src="movie/blackmoney.jpg" alt="blackmoney" />
+						<p>(12세) 블랙머니</p>
+		        <p>평점: 4.8 예매율: 10.5%</p>
 		      </div>
 		      <div className="slide">
-		        <p>img4</p>
-		        <p>제목</p>
-		        <p>감독, 러닝타임, 장르</p>
-		        <p>평점:</p>
+		        <img src="movie/frozen2.jpg" alt="blackmoney" />
+						<p>(전체) 겨울왕국 2</p>
+		        <p>평점:4.8 예매율: 10.5%</p>
 		      </div>
 		      <div className="slide">
-		        <p>img5</p>
-		        <p>제목</p>
-		        <p>감독, 러닝타임, 장르</p>
-		        <p>평점:</p>
+		        <img src="movie/blackmoney.jpg" alt="blackmoney" />
+						<p>(12세) 블랙머니</p>
+		        <p>평점: 7.9 예매율: 80.3%</p>
 		      </div>
 		      <div className="slide">
-		        <p>img6</p>
-		        <p>제목</p>
-		        <p>감독, 러닝타임, 장르</p>
-		        <p>평점:</p>
+		        <img src="movie/frozen2.jpg" alt="blackmoney" />
+						<p>(전체) 겨울왕국 2</p>
+		        <p>평점: 7.9 예매율: 80.3%</p>
 		      </div>
 		      <div className="slide">
-		        <p>img7</p>
-		        <p>제목</p>
-		        <p>감독, 러닝타임, 장르</p>
-		        <p>평점:</p>
+		        <img src="movie/blackmoney.jpg" alt="blackmoney" />
+						<p>(12세) 블랙머니</p>
+		        <p>평점: 4.8 예매율: 10.5%</p>
 		      </div>
 					<div className="slide">
-		        <p>img8</p>
-		        <p>제목</p>
-		        <p>감독, 러닝타임, 장르</p>
-		        <p>평점:</p>
+		        <img src="movie/frozen2.jpg" alt="blackmoney" />
+						<p>(전체) 겨울왕국 2</p>
+		        <p>평점: 7.9 예매율: 80.3%</p>
 		      </div>
 		      <div className="slide">
-		        <p>img9</p>
-		        <p>제목</p>
-		        <p>감독, 러닝타임, 장르</p>
-		        <p>평점:</p>
+		        <img src="movie/blackmoney.jpg" alt="blackmoney" />
+						<p>(12세) 블랙머니</p>
+		        <p>평점: 4.8 예매율: 10.5%</p>
 		      </div>
-					<div className="slide">
-						<p>img10</p>
-						<p>제목</p>
-						<p>감독, 러닝타임, 장르</p>
-						<p>평점:</p>
-					</div>
 		    </div>
 				<div className="circles">
 					<span className="active"></span>

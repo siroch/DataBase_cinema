@@ -1,9 +1,6 @@
 const Showmovielist_CSS = () => {
   return (
     <style global jsx>{`
-      .sort button:hover {
-        cursor: pointer;
-      }
       .movielist{
         margin-top: 100px;
         border-bottom: 2px solid gray;
@@ -32,11 +29,20 @@ const Showmovielist_CSS = () => {
       .slide{
         margin: 10px;
         margin-top: 0;
-        padding: 5px;
         border: 1px solid black;
         display: inline-block;
         width: 240px;
         height: 360px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .slide img{
+        width: 240px;
+        height:300px;
+        padding:0;
+      }
+      .slide p{
+        margin: 5px;
       }
       .rightbutton button{
         float: right;
@@ -44,17 +50,11 @@ const Showmovielist_CSS = () => {
         border: none;
         margin-top: 150px;
       }
-      .rightbutton button:hover{
-        cursor: pointer;
-      }
       .leftbutton button{
         float: left;
         font-size: 50pt;
         border: none;
         margin-top: 150px;
-      }
-      .leftbutton button:hover{
-        cursor: pointer;
       }
       .circle{
         height: 10px;
