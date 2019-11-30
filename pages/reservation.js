@@ -5,6 +5,8 @@ import {useState, useEffect} from 'react'
 import Link from 'next/link'
 import data from '../data/movie_info'
 
+import th_data from '../data/theater'
+
 const Reservation = () => {
   const [city, setCity] = useState(0)
   const [next, setNext] = useState(false)
@@ -30,138 +32,58 @@ const Reservation = () => {
 
   const Su = (
     <div class="smallcity">
-      <button onClick={()=>setTheater(1372)}>강남</button>
-      <button onClick={()=>setTheater(1359)}>강남대로(씨티)</button>
-      <button onClick={()=>setTheater(1341)}>강동</button>
-      <button onClick={()=>setTheater(1431)}>군자</button>
-      <button onClick={()=>setTheater(1003)}>동대문</button>
-      <button onClick={()=>setTheater(1572)}>마곡</button>
-      <button onClick={()=>setTheater(1581)}>목동</button>
-      <button onClick={()=>setTheater(1311)}>상봉</button>
-      <button onClick={()=>setTheater(1211)}>상암월드컵경기장</button>
-      <button onClick={()=>setTheater(1331)}>성수</button>
-      <button onClick={()=>setTheater(1371)}>센트럴</button>
-      <button onClick={()=>setTheater(1381)}>송파파크하비오</button>
-      <button onClick={()=>setTheater(1202)}>신촌</button>
-      <button onClick={()=>setTheater(1221)}>은평</button>
-      <button onClick={()=>setTheater(1561)}>이수</button>
-      <button onClick={()=>setTheater(1321)}>창동</button>
-      <button onClick={()=>setTheater(1351)}>코엑스</button>
-      <button onClick={()=>setTheater(1212)}>홍대</button>
-      <button onClick={()=>setTheater(1571)}>화곡</button>
-      <button onClick={()=>setTheater(1562)}>ARTNINE</button>
+      {th_data.Seoul.map(info => (
+        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+      ))}
     </div>
   )
   const Gg = (
     <div class="smallcity">
-      <button onClick={()=>setTheater(4121)}>고양스타필드</button>
-      <button onClick={()=>setTheater(4152)}>김포한강신도시</button>
-      <button onClick={()=>setTheater(4721)}>남양주</button>
-      <button onClick={()=>setTheater(4451)}>동탄</button>
-      <button onClick={()=>setTheater(4652)}>미사강변</button>
-      <button onClick={()=>setTheater(4113)}>백석</button>
-      <button onClick={()=>setTheater(4722)}>별내</button>
-      <button onClick={()=>setTheater(4221)}>부천스타필드시티</button>
-      <button onClick={()=>setTheater(4631)}>분당</button>
-      <button onClick={()=>setTheater(4411)}>수원</button>
-      <button onClick={()=>setTheater(4421)}>수원남문</button>
-      <button onClick={()=>setTheater(4291)}>시흥배곧</button>
-      <button onClick={()=>setTheater(4253)}>안산중앙</button>
-      <button onClick={()=>setTheater(4821)}>양주</button>
-      <button onClick={()=>setTheater(4431)}>영통</button>
-      <button onClick={()=>setTheater(4471)}>오산</button>
-      <button onClick={()=>setTheater(4462)}>용인테크노밸리</button>
-      <button onClick={()=>setTheater(4804)}>의정부 민락</button>
-      <button onClick={()=>setTheater(4111)}>일산</button>
-      <button onClick={()=>setTheater(4104)}>일산일산벨라시타</button>
-      <button onClick={()=>setTheater(4112)}>킨텍스</button>
-      <button onClick={()=>setTheater(4132)}>파주금촌</button>
-      <button onClick={()=>setTheater(4115)}>파주운정</button>
-      <button onClick={()=>setTheater(4131)}>파주출판도시</button>
-      <button onClick={()=>setTheater(4501)}>평택</button>
-      <button onClick={()=>setTheater(4651)}>하남스타필드</button>
+      {th_data.Gyeonggi.map(info => (
+        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+      ))}
     </div>
   )
   const Ic = (
     <div class="smallcity">
-      <button onClick={()=>setTheater(4041)}>검단</button>
-      <button onClick={()=>setTheater(4062)}>송도</button>
-      <button onClick={()=>setTheater(4001)}>영종</button>
-      <button onClick={()=>setTheater(4051)}>인천논현</button>
-      <button onClick={()=>setTheater(4042)}>청라</button>
-      <button onClick={()=>setTheater(4043)}>청라지젤</button>
+      {th_data.Incheon.map(info => (
+        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+      ))}
     </div>
   )
   const Dsc = (
     <div class="smallcity">
-      <button onClick={()=>setTheater(3141)}>공주</button>
-      <button onClick={()=>setTheater(3021)}>대전</button>
-      <button onClick={()=>setTheater(3011)}>대전중앙로</button>
-      <button onClick={()=>setTheater(3391)}>세종</button>
-      <button onClick={()=>setTheater(3631)}>오창</button>
-      <button onClick={()=>setTheater(3901)}>제천</button>
-      <button onClick={()=>setTheater(3651)}>진천</button>
-      <button onClick={()=>setTheater(3301)}>천안</button>
-      <button onClick={()=>setTheater(3611)}>청주충북대</button>
-      <button onClick={()=>setTheater(3801)}>충주</button>
-      <button onClick={()=>setTheater(3501)}>홍성내포</button>
+      {th_data.Daejeon_Sejong_Chungcheong.map(info => (
+        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+      ))}
     </div>
   )
   const Bg = (
     <div class="smallcity">
-      <button onClick={()=>setTheater(6701)}>거창</button>
-      <button onClick={()=>setTheater(7602)}>경북도청</button>
-      <button onClick={()=>setTheater(7122)}>경산하양</button>
-      <button onClick={()=>setTheater(7801)}>경주</button>
-      <button onClick={()=>setTheater(7303)}>구미강동</button>
-      <button onClick={()=>setTheater(7401)}>김천</button>
-      <button onClick={()=>setTheater(7901)}>남포항</button>
-      <button onClick={()=>setTheater(7022)}>대구(칠성로)</button>
-      <button onClick={()=>setTheater(7011)}>대구 신세계</button>
-      <button onClick={()=>setTheater(7012)}>대구 이시아</button>
-      <button onClick={()=>setTheater(6161)}>덕천</button>
-      <button onClick={()=>setTheater(6312)}>마산</button>
-      <button onClick={()=>setTheater(7451)}>문경</button>
-      <button onClick={()=>setTheater(6001)}>부산극장</button>
-      <button onClick={()=>setTheater(6906)}>부산대</button>
-      <button onClick={()=>setTheater(7021)}>북대구(칠곡)</button>
-      <button onClick={()=>setTheater(6641)}>사천</button>
-      <button onClick={()=>setTheater(6642)}>삼천포</button>
-      <button onClick={()=>setTheater(6261)}>양산</button>
-      <button onClick={()=>setTheater(6262)}>양산라피에스타</button>
-      <button onClick={()=>setTheater(6811)}>울산</button>
-      <button onClick={()=>setTheater(6191)}>정관</button>
-      <button onClick={()=>setTheater(6421)}>창원</button>
-      <button onClick={()=>setTheater(6121)}>해운대(장산)</button>
+      {th_data.Busan_Gyeongsangdo.map(info => (
+        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+      ))}
     </div>
   )
   const Gj = (
     <div class="smallcity">
-      <button onClick={()=>setTheater(5021)}>광주상무</button>
-      <button onClick={()=>setTheater(5061)}>광주하남</button>
-      <button onClick={()=>setTheater(5901)}>남원</button>
-      <button onClick={()=>setTheater(5301)}>목포</button>
-      <button onClick={()=>setTheater(5302)}>목포하당(포르모)</button>
-      <button onClick={()=>setTheater(5612)}>송천</button>
-      <button onClick={()=>setTheater(5401)}>순천</button>
-      <button onClick={()=>setTheater(5551)}>여수</button>
-      <button onClick={()=>setTheater(5552)}>여수용천</button>
-      <button onClick={()=>setTheater(5001)}>전대(광주)</button>
-      <button onClick={()=>setTheater(5063)}>전주(객사)</button>
-      <button onClick={()=>setTheater(5064)}>첨단(광주)</button>
+      {th_data.Gwangju_Jeolla.map(info => (
+        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+      ))}
     </div>
   )
   const Gw = (
     <div class="smallcity">
-      <button onClick={()=>setTheater(2001)}>남춘천</button>
-      <button onClick={()=>setTheater(2171)}>속초</button>
-      <button onClick={()=>setTheater(2201)}>원주</button>
-      <button onClick={()=>setTheater(2202)}>원주센트럴</button>
+      {th_data.Gangwon.map(info => (
+        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+      ))}
     </div>
   )
   const Jj = (
     <div class="smallcity">
-      <button onClick={()=>setTheater(6901)}>제주</button>
+      {th_data.Jeju.map(info => (
+        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+      ))}
     </div>
   )
   const city_lists=[Su, Gg, Ic, Dsc, Bg, Gj, Gw, Jj]
