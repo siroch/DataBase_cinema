@@ -11,22 +11,26 @@ const Mypage = () => {
 				<nava>
 					<div class="main_box"></div>
 					<div class="t_box">
-						<span>회원 정보</span>
+						<Link href="/mypage_userinfo">
+							<span title="information">회원 정보</span>
+						</Link>
 					</div>
 					<div class="t_box">
-						<span>예매 정보</span>
+						<Link href="/mypage_movie">
+							<span title="reservation">예매 정보</span>
+						</Link>
 					</div>
 					<div class="t_box">
-						<span>구매 정보</span>
+						<Link href="/mypage_item">
+							<span title="buy_item">구매 정보</span>
+						</Link>
 					</div>
 					<div class="t_box">
-						<span>등급 정보</span>
+						<Link href="/mypage_level">
+							<span title="rank">등급 정보</span>
+						</Link>
 					</div>
 				</nava>
-
-				<div class="ad">
-					ㅁㄴ;이ㅏ러ㅣㅏ;너리ㅓ
-				</div>
 			</div>
     </div>
 	)
