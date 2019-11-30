@@ -27,12 +27,13 @@ const Movie_list = () => {
 						</Link>
 						<div class={"information"}>
 							<div class={"movie_name"}>
+								<span>{movies.movie_info.ageRestriction}</span> 
 								<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
-									<a>({movies.movie_info.ageRestriction}) {movies.movie_info.movieNm}</a>
+									<a>{movies.movie_info.movieNm}</a>
 								</Link>
 								<p>예매율 : ??% | 평점 : ?? | 개봉일 : {movies.movie_info.openDt}</p>
 								<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
-									<span>상세정보보기</span>
+									<button>상세정보보기</button>
 								</Link>
 							</div>
 							<div className={"reserve_button"}>

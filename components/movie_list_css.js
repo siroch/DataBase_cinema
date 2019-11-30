@@ -3,6 +3,7 @@ const Movie_list_CSS = () => {
     <style global jsx>{`
       .movie_list {
         margin-top: 100px;
+        margin-bottom: 10px;
         text-align:center;
         border-bottom: 2px solid black;
         margin-left: 20%;
@@ -20,7 +21,10 @@ const Movie_list_CSS = () => {
       .info_movie {
         display: flex;
         flex-direction: row;
-        padding: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 10px;
         border-bottom: 1px solid black;
       }
       .info_movie h2 {
@@ -39,13 +43,24 @@ const Movie_list_CSS = () => {
       .movie_name {
         width: 400px;
       }
-      .movie_name span {
+      .movie_name button {
         font-size: 10pt;
+        border: 0px;
         color: #4A4040;
         text-decoration: underline;
       }
-      .movie_name span:hover {
+      .movie_name button:hover {
         cursor: pointer;
+      }
+      .movie_name span{
+        border: thin solid;
+        border-radius: 100%;
+        background-color: green;
+        color: white;
+        padding: 5px;
+        font-size: 8pt;
+        margin-right: 5px;
+        width: 20%;
       }
       .movie_name a {
         font-size: 12pt;
