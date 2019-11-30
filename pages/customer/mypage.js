@@ -36,7 +36,7 @@ const Mypage = () => {
 						</Link>
 					</div>
 					<div class="t_box">
-						<Link href="../manager/managerpage">
+						<Link href="../manager/store_info">
 							<span>점장 메뉴</span>
 						</Link>
 					</div>
