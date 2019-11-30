@@ -10,33 +10,18 @@ const Managerpage = () => {
 			<nava>
 				<div class="main_box"></div>
 				<div class="t_box">
-					<Link href="/mypage_userinfo">
-						<span title="information">회원 정보</span>
+					<Link href="./store_info">
+						<span>매장 정보</span>
 					</Link>
 				</div>
 				<div class="t_box">
-					<Link href="/mypage_movie">
-						<span title="reservation">예매 정보</span>
+					<Link href="./staff_info">
+						<span>직원 정보</span>
 					</Link>
 				</div>
 				<div class="t_box">
-					<Link href="/mypage_item">
-						<span title="buy_item">구매 정보</span>
-					</Link>
-				</div>
-				<div class="t_box">
-					<Link href="/mypage_level">
-						<span title="rank">등급 정보</span>
-					</Link>
-				</div>
-				<div class="t_box">
-					<Link href="/staffpage">
-						<span title="staff">직원 메뉴</span>
-					</Link>
-				</div>
-				<div class="t_box">
-					<Link href="/managerpage">
-						<span title="manager">점장 메뉴</span>
+					<Link href="./sales_info">
+						<span>매출 정보</span>
 					</Link>
 				</div>
 			</nava>

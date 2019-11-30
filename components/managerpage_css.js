@@ -35,7 +35,55 @@ const Managerpage_CSS = () => {
       .t_box {
         margin-top: 51px;
       }
-      
+      .head2 { 
+        position: absolute;
+        margin-top: 10%;
+        margin-left: 55%;
+      }
+      .user_info {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 50%;
+        height: 45%;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        margin-top: 15%;
+        margin-left: 33%;
+        overflow: scroll;
+      }
+      .user_info button {
+        float: right;
+        background-color: black;
+        color: white;
+      }
+      .user_info button:hover {
+        cursor: pointer;
+      }
+      table.type05 {
+        border-collapse: separate;
+        border-spacing: 1px;
+        text-align: left;
+        line-height: 1.5;
+        border-top: 1px solid #ccc;
+        margin: 20px 10px;
+      }
+      table.type05 th {
+        width: 150px;
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: top;
+        border-bottom: 1px solid #ccc;
+        background: black;
+        color: white;
+      }
+      table.type05 td {
+        width: 350px;
+        padding: 10px;
+        vertical-align: top;
+        background: #efefef;
+        border-bottom: 1px solid #ccc;
+      }      
     `}</style>
   )
 }
