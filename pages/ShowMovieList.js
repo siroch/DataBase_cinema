@@ -1,5 +1,7 @@
 import Showmovielist_CSS from '../components/showmovielist_css'
 import {useState, useEffect} from 'react'
+import Link from "next/link"
+import data from '../data/movie_info'
 
 const ShowMovieList = () => {
 
@@ -48,51 +50,17 @@ const ShowMovieList = () => {
 		      <button onClick={() => rightHandler()}>&gt;</button>
 		    </div>
 		    <div className="list">
-		      <div className="slide">
-		        <img src="movie/blackmoney.jpg" alt="blackmoney" />
-						<p>(12세) 블랙머니</p>
-		        <p>평점: 4.8 예매율: 10.5%</p>
-		      </div>
-		      <div className="slide">
-		        <img src="movie/frozen2.jpg" alt="blackmoney" />
-						<p>(전체) 겨울왕국 2</p>
-		        <p>평점: 7.9 예매율: 80.3%</p>
-		      </div>
-		      <div className="slide">
-		        <img src="movie/blackmoney.jpg" alt="blackmoney" />
-						<p>(12세) 블랙머니</p>
-		        <p>평점: 4.8 예매율: 10.5%</p>
-		      </div>
-		      <div className="slide">
-		        <img src="movie/frozen2.jpg" alt="blackmoney" />
-						<p>(전체) 겨울왕국 2</p>
-		        <p>평점:4.8 예매율: 10.5%</p>
-		      </div>
-		      <div className="slide">
-		        <img src="movie/blackmoney.jpg" alt="blackmoney" />
-						<p>(12세) 블랙머니</p>
-		        <p>평점: 7.9 예매율: 80.3%</p>
-		      </div>
-		      <div className="slide">
-		        <img src="movie/frozen2.jpg" alt="blackmoney" />
-						<p>(전체) 겨울왕국 2</p>
-		        <p>평점: 7.9 예매율: 80.3%</p>
-		      </div>
-		      <div className="slide">
-		        <img src="movie/blackmoney.jpg" alt="blackmoney" />
-						<p>(12세) 블랙머니</p>
-		        <p>평점: 4.8 예매율: 10.5%</p>
-		      </div>
-					<div className="slide">
-		        <img src="movie/frozen2.jpg" alt="blackmoney" />
-						<p>(전체) 겨울왕국 2</p>
-		        <p>평점: 7.9 예매율: 80.3%</p>
-		      </div>
-		      <div className="slide">
-		        <img src="movie/blackmoney.jpg" alt="blackmoney" />
-						<p>(12세) 블랙머니</p>
-		        <p>평점: 4.8 예매율: 10.5%</p>
-		      </div>
+					{data.map(movies => (
+						<div className={'slide'}>
+							<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
+								<img src={movies.movie_info.picture} alt={movies.movie_info.movieNm}/>
+							</Link>
+							<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
+								<p>({movies.movie_info.ageRestriction}) {movies.movie_info.movieNm}</p>
+							</Link>
+							<p>평점: ?? 예매율: ??%</p>
+						</div>
+					))}
 		    </div>
 				<div className="circles">
 					<span className="active"></span>

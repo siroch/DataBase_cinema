@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 import data from '../data/movie_info'
 
-const Movie_list = (props) => {
+const Movie_list = () => {
 
   return(
     <div>
@@ -19,7 +19,7 @@ const Movie_list = (props) => {
        	<a>평점순</a>
      	</div>
 			<div class="sort_movie_info">
-				{props.data.map(movies => (
+				{data.map(movies => (
 					<div className={"info_movie"}>
 						<h2>{movies.movie_info.rank}</h2>
 						<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
@@ -47,12 +47,6 @@ const Movie_list = (props) => {
       <Footer />
     </div>
   )
-}
-
-Movie_list.getInitialProps = async () => {
-	return {
-		data: data
-	}
 }
 
 export default Movie_list
