@@ -23,7 +23,7 @@ const Footer = () => {
             <button>영통</button><button>오산</button>
           </li>
           <li>
-            <button class="sec">용인테크노밸리</button><button>의정부 민락</button><button>일산일산벨라시타</button><button>킨텍스</button><button>파주금촌</button><button>파주운정</button>
+            <button class="sec">용인테크노밸리</button><button>의정부 민락</button><button>일산</button><button>일산일산벨라시타</button><button>킨텍스</button><button>파주금촌</button><button>파주운정</button>
             <button>파주출판도시</button><button>평택</button><button>하남스타필드</button>
           </li>
           <li>

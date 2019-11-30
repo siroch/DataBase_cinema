@@ -18,6 +18,8 @@ const Reservation_CSS = () => {
         color: #f1f1f2;
         margin: 0;
         margin-bottom: 5px;
+        padding: 10px;
+        font-size: 12pt;
       }
       .reload img{
         width: 20px;
@@ -87,6 +89,9 @@ const Reservation_CSS = () => {
         border: none;
         margin: 1px;
         font-weight: bold;
+        font-size: 12pt;
+        padding: 10px;
+        background-color: #f1f1f2;
       }
       .bigcity{
         display: flex;
@@ -115,13 +120,16 @@ const Reservation_CSS = () => {
       .date button{
         font-size: 11pt;
         border: none;
+        padding: 10px;
+        margin: 5px;
+        background-color: #f1f1f2;
       }
-      h1{
+      .bigbox h1{
         text-align: center;
         font-size: 25pt;
         margin: 1px;
       }
-      h4{
+      .bigbox h4{
         text-align: center;
         margin: 0;
         margin-top: 10px;
@@ -137,7 +145,7 @@ const Reservation_CSS = () => {
         height: 150px;
         margin: 10px;
       }
-      button{
+      .movie_name button, .bigcity button{
         font-size: 12pt;
         padding: 10px;
         margin: 5px;
@@ -186,7 +194,6 @@ const Reservation_CSS = () => {
         flex-flow: column;
         justify-content: center;
         align-items: center;
-        margin-left: auto;
         border-radius: 10px;
         height: 120px;
         width: 120px;
@@ -195,6 +202,7 @@ const Reservation_CSS = () => {
         color: #f1f1f2;
         background-color: #a51b0b;
         border: 1px red solid;
+        margin-left: auto;
         margin-right: 20px;
       }
       .go_reserve{
@@ -204,7 +212,7 @@ const Reservation_CSS = () => {
       .go_seat span, .go_pay span, .go_reserve span{
         font-size: 15pt;
       }
-      button:disabled{
+      .box_all button:disabled{
         border: 1px solid gray;
         background-color: #333;
         color: #f1f1f2;
