@@ -1,5 +1,5 @@
-import Header from './Header'
-import Staffpage_CSS from '../components/staffpage_css'
+import Header from '../Header'
+import Staffpage_CSS from '../../components/staffpage_css'
 import Link from 'next/link'
 
 const Staffpage = () => {
@@ -10,17 +10,17 @@ const Staffpage = () => {
 			<nava>
 				<div class="main_box"></div>
 				<div class="t_box">
-					<Link href="/staffpage_info">
+					<Link href="./staffpage_info">
 						<span>직무 정보</span>
 					</Link>
 				</div>
 				<div class="t_box">
-					<Link href="/staffpage_work">
+					<Link href="./staffpage_work">
 						<span>근태 기록</span>
 					</Link>
 				</div>
 				<div class="t_box">
-					<Link href="/staffpage_today">
+					<Link href="./staffpage_today">
 						<span>출 / 퇴근</span>
 					</Link>
 				</div>

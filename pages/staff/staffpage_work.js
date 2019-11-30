@@ -1,5 +1,5 @@
 import Staffpage from './staffpage'
-import Staffpage_CSS from '../components/staffpage_css'
+import Staffpage_CSS from '../../components/staffpage_css'
 import Link from 'next/link'
 
 const Staffpage_work = () => {
