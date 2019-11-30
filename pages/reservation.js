@@ -3,11 +3,12 @@ import Footer from './footer'
 import Reservation_CSS from '../components/reservation_css'
 import {useState, useEffect} from 'react'
 import Link from 'next/link'
+import data from '../data/movie_info'
 
 const Reservation = () => {
   const [city, setCity] = useState(0)
   const [next, setNext] = useState(false)
-  const [movies, setMovies] = useState(0)
+  const [movie, setMovies] = useState(0)
   const [theater, setTheater] = useState(0)
   const [dates, setDates] = useState(0)
 
@@ -22,7 +23,7 @@ const Reservation = () => {
   useEffect(() => {
     var next_bnt = document.getElementsByClassName("go_seat")
     if(next===false){
-      if(movies!=0 && theater!=0 && dates!=0) next_bnt[0].disabled=false
+      if(movie!=0 && theater!=0 && dates!=0) next_bnt[0].disabled=false
       else next_bnt[0].disabled=true
     }
   })
@@ -175,11 +176,13 @@ const Reservation = () => {
         <div class="selections">
           <div class="movie_name">
             <h3>영화</h3>
-            <button onClick={()=>setMovies("전체 겨울왕국")}><span>전체</span>겨울왕국2</button>
-            <button><span>12</span>블랙머니</button>
-            <button><span>15</span>터미네이터-타크페이트</button>
-            <button><span>15</span>신의한수-귀수편</button>
-            <button><span>15</span>나를찾아줘</button>
+            {data.map(movies => (
+              <button onClick={()=>setMovies([movies.movie_info.ageRestriction, movies.movie_info.movieNm,
+                movies.movie_info.picture, movies.movie_info.showTypes])}>
+                <span>{movies.movie_info.ageRestriction}</span>
+                {movies.movie_info.movieNm}
+              </button>
+            ))}
           </div>
           <div class="theater">
             <h3>극장</h3>
@@ -243,12 +246,12 @@ const Reservation = () => {
         </div>
         <div class="summary">
           <div class="movie_select">
-            <img src="movie/blackmoney.jpg" alt="select_poster" />
+            <img src={movie[2]} alt="select_poster" />
             <div class="movie_info">
               <br />
-              <p>{movies===0 ? "" : movies.substr(3)}</p>
-              <p>{movies===0 ? "" : "2D"}</p>
-              <p>{movies===0 ? "" : movies.substr(0,2)+" 관람가"}</p>
+              <p>{movie===0 ? "" : movie[1]}</p>
+              <p>{movie===0 ? "" : movie[3].map(info => ( info.showTypeGroupNm )) + " "}</p>
+              <p>{movie===0 ? "" : movie[0]+" 관람가"}</p>
             </div>
           </div>
           <div class="another_selects">
@@ -351,12 +354,12 @@ const Reservation = () => {
             <span>영화선택</span>
           </button>
           <div class="movie_select">
-            <img src="movie/blackmoney.jpg" alt="select_poster" />
+            <img src={movie[2]} alt="select_poster" />
             <div class="movie_info">
               <br />
-              <p>{movies===0 ? "" : movies.substr(3)}</p>
-              <p>{movies===0 ? "" : "2D"}</p>
-              <p>{movies===0 ? "" : movies.substr(0,2)+" 관람가"}</p>
+              <p>{movie===0 ? "" : movie[1]}</p>
+              <p>{movie===0 ? "" : movie[3].map(info => ( info.showTypeGroupNm )) + " "}</p>
+              <p>{movie===0 ? "" : movie[0]+" 관람가"}</p>
             </div>
           </div>
           <div class="another_selects">

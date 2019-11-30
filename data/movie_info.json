@@ -17,6 +17,16 @@
     "actor": "크리스틴 벨",
     "directors": [{
       "peopleNm": "크리스 벅"
+    }],
+    "showTypes": [{
+      "showTypeGroupNm": "2D",
+      "showTypeNm": "디지털"
+    }, {
+      "showTypeGroupNm": "3D",
+      "showTypeNm": "3D 디지털"
+    }, {
+      "showTypeGroupNm": "4D",
+      "showTypeNm": "4D"
     }]
   }
 }, {
@@ -38,6 +48,10 @@
     "actor": "조진웅",
     "directors": [{
       "peopleNm": "정지영"
+    }],
+    "showTypes": [{
+      "showTypeGroupNm": "2D",
+      "showTypeNm": "디지털"
     }]
   }
 }, {
@@ -59,6 +73,10 @@
     "actor": "권상우",
     "directors": [{
       "peopleNm": "리건"
+    }],
+    "showTypes": [{
+      "showTypeGroupNm": "2D",
+      "showTypeNm": "디지털"
     }]
   }
 }, {
@@ -80,6 +98,10 @@
     "actor": "정유미",
     "directors": [{
       "peopleNm": "김도영"
+    }],
+    "showTypes": [{
+      "showTypeGroupNm": "2D",
+      "showTypeNm": "디지털"
     }]
   }
 }, {
@@ -101,6 +123,10 @@
     "actor": "천정명",
     "directors": [{
       "peopleNm": "송창용"
+    }],
+    "showTypes": [{
+      "showTypeGroupNm": "2D",
+      "showTypeNm": "디지털"
     }]
   }
 }, {
@@ -122,6 +148,13 @@
     "actor": "맥켄지 데이비스",
     "directors": [{
       "peopleNm": "팀 밀러"
+    }],
+    "showTypes": [{
+      "showTypeGroupNm": "2D",
+      "showTypeNm": "디지털"
+    }, {
+      "showTypeGroupNm": "4D",
+      "showTypeNm": "4D"
     }]
   }
 }, {
@@ -143,6 +176,10 @@
     "actor": "김희애",
     "directors": [{
       "peopleNm": "임대형"
+    }],
+    "showTypes": [{
+      "showTypeGroupNm": "2D",
+      "showTypeNm": "디지털"
     }]
   }
 }, {
@@ -164,6 +201,10 @@
     "actor": "실베스터 스탤론",
     "directors": [{
       "peopleNm": "애드리언 그런버그"
+    }],
+    "showTypes": [{
+      "showTypeGroupNm": "2D",
+      "showTypeNm": "디지털"
     }]
   }
 }, {
@@ -185,6 +226,10 @@
     "actor": "헬렌 미렌",
     "directors": [{
       "peopleNm": "빌 콘돈"
+    }],
+    "showTypes": [{
+      "showTypeGroupNm": "2D",
+      "showTypeNm": "디지털"
     }]
   }
 }, {
@@ -206,6 +251,10 @@
     "actor": "모리 나나",
     "directors": [{
       "peopleNm": "신카이 마코토"
+    }],
+    "showTypes": [{
+      "showTypeGroupNm": "2D",
+      "showTypeNm": "디지털"
     }]
   }
 }]
