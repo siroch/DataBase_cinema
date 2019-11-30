@@ -8,7 +8,7 @@ import axios from 'axios'
 
 const Header = () => {
 	const [login_status, getLoginStatus] = useState(false);
-	
+
 	useEffect(() => {
 		if(localStorage.getItem('login')) {
 			axios({
@@ -26,14 +26,17 @@ const Header = () => {
 		}
 	})
 
+	function logout() {
+		localStorage.removeItem('login');
+		alert("로그아웃 되었습니다.");
+		getLoginStatus(false);
+		router.push('/index');
+	}
 		return(
 		<header>
 			<Header_CSS />
 			<div class="small">
-				<Link href="/login_nomember">
-					{login_status ? <span title="Log-Out">로그아웃 </span> : <span title="Log-In">로그인 </span> }
-				</Link>
-				|
+				{login_status ? <span title="Log-Out" onClick={logout}>로그아웃 |</span> : <Link href="/login_nomember"><span title="Log-In">로그인 |</span></Link> }
 				<Link href="/sign_in">
 					<span title="Sign-In"> 회원가입 </span>
 				</Link>
