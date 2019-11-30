@@ -136,6 +136,9 @@ const SignIn = () => {
         } else {
           alert("오류가 발생하였습니다. 잠시후 다시 시도해주십시오.");
         }
+      })
+      .catch(function(res) {
+        alert("알 수 없는 오류가 발생했습니다.");
       });
     }
   }
