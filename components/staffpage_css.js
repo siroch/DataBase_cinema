@@ -1,14 +1,9 @@
-const Mypage_CSS = () => {
+const Staffpage_CSS = () => {
   return (
     <style global jsx>{`
       body {
         margin: 0px;
         padding: 0px;
-      }
-      img {
-        margin-top: 4%;
-        width: 30%;
-        height: 80%;
       }
       nava {
         text-align: center;
@@ -47,14 +42,28 @@ const Mypage_CSS = () => {
       }
       .user_info {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         position: absolute;
         width: 50%;
-        height: 39%;
+        height: 45%;
         border-top: 2px solid black;
         border-bottom: 2px solid black;
         margin-top: 15%;
         margin-left: 33%;
+        overflow: scroll;
+      }
+      .user_info1 {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        position: absolute;
+        width: 50%;
+        height: 45%;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        margin-top: 15%;
+        margin-left: 33%;
+        overflow: scroll;
       }
       table.type05 {
         border-collapse: separate;
@@ -80,48 +89,26 @@ const Mypage_CSS = () => {
         background: #efefef;
         border-bottom: 1px solid #ccc;
       }
-      .edit_userinfo{
+      .info_sort {
         display: flex;
-        justify-content: row;
-        position: absolute;
-        width: 105px;
-        height: 25px;
-        text-align: center;
-        margin-top: 40%;
-        margin-left: 55%;
+        justify-content: center;
       }
-      .edit_userinfo span {
-        padding: 5px;
-        background-color: black;
-        font-size: 14px;
+      .info_sort_button {
+        display: flex;
+        justify-content: space-around;
+      }
+      .info_sort_button button {
+        height: 100%;
+        width: 8%;
+        font-size: 14pt;
+        background-color: red;
         color: white;
       }
-      .edit_userinfo span:hover {
-        background-color: #333333;
-        cursor: pointer; 
-      }
-      .edit_rs_movie {
-        display: flex;
-        justify-content: row;
-        position: absolute;
-        width: 105px;
-        height: 25px;
-        text-align: center;
-        margin-top: 40%;
-        margin-left: 56%;
-      }
-      .edit_rs_movie span {
-        padding: 5px;
-        background-color: black;
-        font-size: 14px;
-        color: white;
-      }
-      .edit_rs_movie span:hover {
-        background-color: #333333;
-        cursor: pointer; 
+      .info_sort_button button:hover {
+        cursor: pointer;
       }
     `}</style>
   )
 }
 
-export default Mypage_CSS
+export default Staffpage_CSS
