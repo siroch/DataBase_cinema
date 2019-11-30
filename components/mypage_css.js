@@ -10,11 +10,6 @@ const Mypage_CSS = () => {
         width: 30%;
         height: 80%;
       }
-      .all_display {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-      }
       nava {
         text-align: center;
         background-color: black;
