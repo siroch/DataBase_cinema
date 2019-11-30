@@ -32,6 +32,16 @@ const Header = () => {
 		getLoginStatus(false);
 		router.push('/index');
 	}
+
+	function ifLogin() {
+		if(!login_status) {
+			alert("로그인이 필요한 서비스입니다.");
+			router.push('/');
+		} else {
+			router.push('/customer/mypage_userinfo');
+		}
+	}
+
 		return(
 		<header>
 			<Header_CSS />
@@ -42,9 +52,7 @@ const Header = () => {
 					<span title="Sign-In"> 회원가입 </span>
 				</Link>
 				|
-				<Link href="/customer/mypage_userinfo">
-					<span title="Mypage"> Mycinema </span>
-				</Link>
+				<span title={'Mypage'} onClick={ifLogin}> Mycinema </span>
 	    </div>
 	    <nav>
 	      <ul>
