@@ -72,12 +72,14 @@ const Mypage_CSS = () => {
         font-weight: bold;
         vertical-align: top;
         border-bottom: 1px solid #ccc;
-        background: #efefef;
+        background: black;
+        color: white;
       }
       table.type05 td {
         width: 350px;
         padding: 10px;
         vertical-align: top;
+        background: #efefef;
         border-bottom: 1px solid #ccc;
       }
       .edit_userinfo{
