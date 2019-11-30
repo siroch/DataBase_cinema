@@ -1,5 +1,5 @@
-import Header from './Header'
-import Managerpage_CSS from '../components/managerpage_css'
+import Header from '../Header'
+import Managerpage_CSS from '../../components/managerpage_css'
 import Link from 'next/link'
 
 const Managerpage = () => {

@@ -1,5 +1,5 @@
 import Mypage from './mypage'
-import Mypage_CSS from '../components/mypage_css'
+import Mypage_CSS from '../../components/mypage_css'
 
 const Mypage_level = () => {
 	return (

@@ -14,7 +14,7 @@ const Header = () => {
 					<span title="Sign-In"> 회원가입 </span>
 				</Link>
 				|
-				<Link href="/mypage_userinfo">
+				<Link href="/customer/mypage_userinfo">
 					<span title="Mypage"> Mycinema </span>
 				</Link>
 	    </div>
