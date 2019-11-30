@@ -44,7 +44,7 @@ exports.register = (req, res) => {
   const birth_day = body.birth_day;
   const birth = birth_year + birth_month + birth_day;
   const ins_sql = `insert into customer (customer_id,customer_pw,customer_name, customer_birth, customer_phone, monthly_spend, c_rank) values ('${body.id}','${body.pwd}','${body.name}', '${birth}', '${body.Pnum}', 0, 0)`;
-  connection.query(ins_sql , (err, results) =>{
+  connection.query(ins_sql , (err, results) => {
     if (err) {
       console.log("error ocurred", err);
       res.send({
@@ -112,7 +112,7 @@ exports.login = (req, res) => {
   }
   const respond=(token)=>{
     res.json({
-      message: 'logged in successfully',
+      "code" : 200,
       token
     });
   }

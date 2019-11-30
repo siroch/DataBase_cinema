@@ -3,11 +3,35 @@ import Footer from './footer'
 import Login_Nomember_CSS from '../components/login_nomember_css'
 import {useState} from 'react'
 import Link from 'next/link'
+import Axios from 'axios'
+import router from 'next/router'
 
 
 const Login_Nomember = () => {
 
-  const [bnt, setBnt] = useState(true)
+  const [bnt, setBnt] = useState(true);
+  const [id, getId] = useState('');
+  const [pwd, getPwd] = useState('');
+
+  function getid(e) { getId(e.target.value); }
+  function getpwd(e) { getPwd(e.target.value);}
+  
+  function sendinfo() {
+    Axios({
+      method : "POST",
+      url: '/api/auth/login',
+      headers: {},
+      data: {
+        customer_id: id,
+        customer_pw: pwd
+      }
+    })
+    .then(function(res) {
+      localStorage.setItem('login', JSON.stringify(res.data));
+      console.log(localStorage.getItem('login').split(":")[2].split('"')[1]);
+      router.push('/index');
+    })
+  }
 
   const Login = (
     <div class="login_nomember">
@@ -21,18 +45,18 @@ const Login_Nomember = () => {
           </li>
         </ul>
       </div>
-  		<form action="" method="post">
+  		<form method="post">
   			<div class="input" >
   				<div>
   					 <div class="id_input">
-  						ID <input type="text" name ="id" placeholder="아이디" required />
+  						ID <input type="text" name ="id" onChange={getid} placeholder="아이디" required />
   					 </div>
   					 <br/>
   					 <div class="pw_input">
-  						PW <input type="password" name ="pw" placeholder="비밀번호" required />
+  						PW <input type="password" name ="pw" onChange={getpwd} placeholder="비밀번호" required />
   					 </div>
   					 <br/>
-  					 <input type="submit" value="로그인" />
+             <input type="button" onClick={sendinfo} value="로그인" />
   				</div>
   				<hr/>
   				<p>
