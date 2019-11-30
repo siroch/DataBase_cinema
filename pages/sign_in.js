@@ -5,6 +5,7 @@ import SignIn_CSS from '../components/signin_css'
 import {useState, useEffect} from 'react'
 import Link from 'next/link'
 import Axios from 'axios'
+import router from 'next/router'
 
 const SignIn = () => {
   const [id, getId] = useState('');
@@ -106,6 +107,7 @@ const SignIn = () => {
         alert("같은 아이디가 이미 존재합니다.");
       } else {
         getIssame(false);
+        getIssameclicked(true);
         alert("사용 가능한 아이디 입니다.");
       }
     });
@@ -114,6 +116,8 @@ const SignIn = () => {
   function validSubmit() {
     if(id===null || pwd===null || pwd2===null || name===null || (birthinfo===null || birthinfo===false) || phone===null) {
       alert("필수 정보를 입력해 주십시오.");
+    } else if(issamecliked===false) {
+      alert("중복 확인을 하십시오.");
     } else {
       Axios
       .post("api/auth/register", {
@@ -128,6 +132,7 @@ const SignIn = () => {
       .then(function(response) {
         if(response.data.code===200) {
           alert("회원가입이 완료되었습니다!");
+          router.push('/login_nomember');
         } else {
           alert("오류가 발생하였습니다. 잠시후 다시 시도해주십시오.");
         }
