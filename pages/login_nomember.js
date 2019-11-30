@@ -31,6 +31,9 @@ const Login_Nomember = () => {
       console.log(localStorage.getItem('login').split(":")[2].split('"')[1]);
       router.push('/index');
     })
+    .catch(function(res) {
+      alert("아이디 또는 패스워드가 일치하지 않습니다.");
+    })
   }
 
   const Login = (
