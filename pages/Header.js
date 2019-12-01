@@ -57,9 +57,7 @@ const Header = () => {
 			<div class="small">
 				{login_status ? <span title="Log-Out" onClick={logout}>로그아웃 </span> : <Link href="/login_nomember"><span title="Log-In">로그인 </span></Link> }
 				|
-				<Link href="/sign_in">
-					<span title="Sign-In"> 회원가입 </span>
-				</Link>
+				{login_status ? <Link href="/modify"><span title="Modify"> 회원정보 수정 </span></Link> : <Link href="/sign_in"><span title="Sign-In"> 회원가입 </span></Link> }
 				|
 				<span title={'Mypage'} onClick={ifLogin}> Mycinema </span>
 	    </div>

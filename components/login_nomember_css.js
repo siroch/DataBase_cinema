@@ -54,7 +54,7 @@ const Login_Nomember_CSS = () => {
         margin-top: 8px;
         margin-left: 7px;
       }
-      input[type=submit]{
+      .login, input[type=submit]{
         background-color:black;
         color: white;
         text-align: center;

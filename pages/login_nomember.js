@@ -15,7 +15,7 @@ const Login_Nomember = () => {
 
   function getid(e) { getId(e.target.value); }
   function getpwd(e) { getPwd(e.target.value);}
-  
+
   function sendinfo() {
     Axios({
       method : "POST",
@@ -59,7 +59,7 @@ const Login_Nomember = () => {
   						PW <input type="password" name ="pw" onChange={getpwd} placeholder="비밀번호" required />
   					 </div>
   					 <br/>
-             <input type="button" onClick={sendinfo} value="로그인" />
+             <input className="login" type="button" onClick={sendinfo} value="로그인" />
   				</div>
   				<hr/>
   				<p>
