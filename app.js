@@ -29,7 +29,10 @@ app.prepare().then(() => {
 
     server.use('/api',require('./pages/api/index'));
     const json_api = require('./pages/api/data_api/jsondata')(server, fs);
-
+    server.get('/theaters/:areaNum/:theaterNum', (req, res) => {
+      console.log(req.params);
+      app.render(req, res, '/theater_list', { areaNum:req.params.areaNum,theaterNum: req.params.theaterNum});
+    });
     server.get('*', (req, res) => {
         return handle(req, res);
     });
