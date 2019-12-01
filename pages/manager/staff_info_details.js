@@ -11,7 +11,9 @@ const Staff_info_details = () => {
 			<div class="staff_info_details_header">
 				<button>수정완료</button>
 				<h2>직원 상세 정보</h2>
-				<button>뒤로가기</button>
+				<Link href="./staff_info">
+					<button>뒤로가기</button>
+				</Link>
 			</div>
 			<div class="staff_info_details">
 				<div class="staff_info_name">
