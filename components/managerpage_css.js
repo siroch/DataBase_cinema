@@ -84,6 +84,26 @@ const Managerpage_CSS = () => {
         background: #efefef;
         border-bottom: 1px solid #ccc;
       }      
+      .sales_info{
+        display: flex;
+        justify-content: row;
+        position: absolute;
+        width: 105px;
+        height: 25px;
+        text-align: center;
+        margin-top: 45%;
+        margin-left: 55%;
+      }
+      .sales_info span {
+        padding: 5px;
+        background-color: black;
+        font-size: 14px;
+        color: white;
+      }
+      .sales_info span:hover {
+        background-color: #333333;
+        cursor: pointer; 
+      }
     `}</style>
   )
 }
