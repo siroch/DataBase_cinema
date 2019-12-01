@@ -12,67 +12,92 @@ const Footer = () => {
             <h3>EGV 영화관 찾기</h3>
           </li>
           <li>
-            서울
-            {th_data.Seoul.map(info => (
-              <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`}
-                href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
-                <button>{info.split('|')[2]}</button>
-              </Link>
-            ))}
+            <div className="bigc">서울</div>
+            <div className="smallc">
+              {th_data.Seoul.map(info => (
+                <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`}
+                  href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
+                  <button>{info.split('|')[2]}</button>
+                </Link>
+              ))}
+            </div>
           </li>
           <li>
-            경기
-            {th_data.Gyeonggi.map(info => (
-              <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`} 
-                href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
-                <button>{info.split('|')[2]}</button>
-              </Link>
-            ))}
+            <div className="bigc">경기</div>
+            <div className="smallc">
+              {th_data.Gyeonggi.map(info => (
+                <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`}
+                  href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
+                  <button>{info.split('|')[2]}</button>
+                </Link>
+              ))}
+            </div>
           </li>
           <li>
-            인천
-            {th_data.Incheon.map(info => (
-              <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`} 
-                href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
-                <button>{info.split('|')[2]}</button>
-              </Link>
-            ))}
+            <div className="bigc">인천</div>
+            <div className="smallc">
+              {th_data.Incheon.map(info => (
+                <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`}
+                  href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
+                  <button>{info.split('|')[2]}</button>
+                </Link>
+              ))}
+            </div>
           </li>
           <li>
-            대전/세종/충청
-            {th_data.Daejeon_Sejong_Chungcheong.map(info => (
-              <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`} 
-                href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
-                <button>{info.split('|')[2]}</button>
-              </Link>
-            ))}
+            <div className="bigc">대전/세종/충청</div>
+            <div className="smallc">
+              {th_data.Daejeon_Sejong_Chungcheong.map(info => (
+                <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`}
+                  href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
+                  <button>{info.split('|')[2]}</button>
+                </Link>
+              ))}
+            </div>
           </li>
           <li>
-            부산/강원
-            {th_data.Busan_Gyeongsangdo.map(info => (
-              <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`} 
-                href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
-                <button>{info.split('|')[2]}</button>
-              </Link>
-            ))}
+            <div className="bigc">부산/경상</div>
+            <div className="smallc">
+              {th_data.Busan_Gyeongsangdo.map(info => (
+                <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`}
+                  href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
+                  <button>{info.split('|')[2]}</button>
+                </Link>
+              ))}
+            </div>
           </li>
           <li>
-            광주/전라
-            {th_data.Gwangju_Jeolla.map(info => (
-              <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`} 
-                href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
-                <button>{info.split('|')[2]}</button>
-              </Link>
-            ))}
+            <div className="bigc">광주/전라</div>
+            <div className="smallc">
+              {th_data.Gwangju_Jeolla.map(info => (
+                <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`}
+                  href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
+                  <button>{info.split('|')[2]}</button>
+                </Link>
+              ))}
+            </div>
           </li>
           <li>
-            제주
-            {th_data.Jeju.map(info => (
-              <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`} 
-                href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
-                <button>{info.split('|')[2]}</button>
-              </Link>
-            ))}
+            <div className="bigc">강원</div>
+            <div className="smallc">
+              {th_data.Gangwon.map(info => (
+                <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`}
+                  href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
+                  <button>{info.split('|')[2]}</button>
+                </Link>
+              ))}
+            </div>
+          </li>
+          <li>
+            <div className="bigc">제주</div>
+            <div className="smallc">
+              {th_data.Jeju.map(info => (
+                <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`}
+                  href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
+                  <button>{info.split('|')[2]}</button>
+                </Link>
+              ))}
+            </div>
           </li>
         </ul>
       </div>

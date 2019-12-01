@@ -168,7 +168,7 @@ const Reservation = () => {
         </div>
         <div class="summary">
           <div class="movie_select">
-            <img src={movie[2]} alt="select_poster" />
+            {movie===0 ? "" : <img src={movie[2]} alt="select_poster" />}
             <div class="movie_info">
               <br />
               <p>{movie===0 ? "" : movie[1]}</p>
@@ -276,7 +276,7 @@ const Reservation = () => {
             <span>영화선택</span>
           </button>
           <div class="movie_select">
-            <img src={movie[2]} alt="select_poster" />
+            {movie===0 ? "" : <img src={movie[2]} alt="select_poster" />}
             <div class="movie_info">
               <br />
               <p>{movie===0 ? "" : movie[1]}</p>

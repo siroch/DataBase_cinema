@@ -25,23 +25,25 @@ const Footer_CSS = () => {
       .top{
         padding: 5px;
         padding-left: 6%;
+        display: flex;
+        flex-flow: column;
+      }
+      .top li{
+        display: flex;
+        width: 95%;
+      }
+      .top li .bigc{
+        width: 15%;
+      }
+      .top li .smallc{
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
       }
       .bottom {
         padding: 10px;
         background-color: black;
         color: white;
-      }
-      .one{
-        margin-left:100px;
-      }
-      .dou{
-        margin-left: 68px;
-      }
-      .tri{
-        margin-left: 30px;
-      }
-      .sec{
-        margin-left: 129px;
       }
     `}</style>
   )
