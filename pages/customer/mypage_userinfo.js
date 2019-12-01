@@ -1,7 +1,7 @@
 import Mypage from './mypage'
 import Mypage_CSS from '../../components/mypage_css'
 
-const Mypage_userinfo = () => {
+const Mypage_userinfo = (props) => {
 	return (
 		<div>
 			<Mypage />
@@ -14,11 +14,11 @@ const Mypage_userinfo = () => {
 					<table class="type05">
 						<tr>
 		    			<th scope="row">ID</th>
-		    			<td>siroch</td>
+		    			<td>{props.user_id}</td>
 						</tr>
 						<tr>
 		    			<th scope="row">이름</th>
-		    			<td>강동호</td>
+		    			<td>{props.user_name}</td>
 						</tr>
 						<tr>
 		    			<th scope="row">생년월일</th>
@@ -46,6 +46,15 @@ const Mypage_userinfo = () => {
 			</div>
 		</div>
 	)
+}
+
+Mypage_userinfo.getInitialProps = async (res) => {
+	const id = res.query.user_id;
+	const name = res.query.user_name;
+	return {
+		user_id: id,
+		user_name: name
+	}
 }
 
 export default Mypage_userinfo

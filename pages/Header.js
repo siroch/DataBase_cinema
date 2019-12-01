@@ -8,6 +8,7 @@ import axios from 'axios'
 
 const Header = () => {
 	const [login_status, getLoginStatus] = useState(false);
+	var user_info = [];
 
 	useEffect(() => {
 		if(localStorage.getItem('login')) {
@@ -22,6 +23,8 @@ const Header = () => {
 			.then(function(res) {
 				getLoginStatus(true);
 				console.log(res);
+				user_info.push(res.data.info.customer_id);
+				user_info.push(res.data.info.customer_name);
 			})
 		}
 	})
@@ -30,7 +33,7 @@ const Header = () => {
 		localStorage.removeItem('login');
 		alert("로그아웃 되었습니다.");
 		getLoginStatus(false);
-		router.push('/index');
+		router.push('/');
 	}
 
 	function ifLogin() {
@@ -38,7 +41,13 @@ const Header = () => {
 			alert("로그인이 필요한 서비스입니다.");
 			router.push('/');
 		} else {
-			router.push('/customer/mypage_userinfo');
+			router.push({
+				pathname: '/customer/mypage_userinfo',
+				query: {
+					user_id: user_info[0],
+					user_name: user_info[1],
+				}
+			});
 		}
 	}
 
