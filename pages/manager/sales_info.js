@@ -16,139 +16,41 @@ const Sales_info = () => {
 						<tr>
 		    			<th scope="row">2019.11</th>
 		    			<td>332,100,300₩
-		    				<button>...더보기</button>
+		    				<Link href="./sales_info_details">
+		    					<button>...더보기</button>
+		    				</Link>
 		    			</td>
 						</tr>
 						<tr>
 		    			<th scope="row">2019.10</th>
 		    			<td>332,100,300₩
-		    				<button>...더보기</button>
+		    				<Link href="./sales_info_details">
+		    					<button>...더보기</button>
+		    				</Link>
 		    			</td>
 						</tr>
 						<tr>
 		    			<th scope="row">2019.09</th>
 		    			<td>332,100,300₩
-		    				<button>...더보기</button>
+		    				<Link href="./sales_info_details">
+		    					<button>...더보기</button>
+		    				</Link>
 		    			</td>
 						</tr>
 						<tr>
 		    			<th scope="row">2019.08</th>
 		    			<td>332,100,300₩
-		    				<button>...더보기</button>
+		    				<Link href="./sales_info_details">
+		    					<button>...더보기</button>
+		    				</Link>
 		    			</td>
 						</tr>
 						<tr>
 		    			<th scope="row">2019.07</th>
 		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2019.06</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2019.05</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2019.04</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2019.03</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2019.02</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2019.01</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2018.12</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2018.11</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2018.10</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2018.09</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2018.08</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2018.07</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2018.06</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2018.05</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2018.04</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2018.03</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2018.02</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">2018.01</th>
-		    			<td>332,100,300₩
-		    				<button>...더보기</button>
+		    				<Link href="./sales_info_details">
+		    					<button>...더보기</button>
+		    				</Link>
 		    			</td>
 						</tr>
 					</table>

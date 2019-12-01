@@ -16,121 +16,49 @@ const Staff_info = () => {
 						<tr>
 		    			<th scope="row">강동호 | 남</th>
 		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
+		    				<Link href="./staff_info_details">
+		    					<button>...더보기</button>
+		    				</Link>
 		    			</td>
 						</tr>
 						<tr>
 		    			<th scope="row">강동호 | 남</th>
 		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
+		    				<Link href="./staff_info_details">
+		    					<button>...더보기</button>
+		    				</Link>
 		    			</td>
 						</tr>
 						<tr>
 		    			<th scope="row">강동호 | 남</th>
 		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
+		    				<Link href="./staff_info_details">
+		    					<button>...더보기</button>
+		    				</Link>
 		    			</td>
 						</tr>
 						<tr>
 		    			<th scope="row">강동호 | 남</th>
 		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
+		    				<Link href="./staff_info_details">
+		    					<button>...더보기</button>
+		    				</Link>
 		    			</td>
 						</tr>
 						<tr>
 		    			<th scope="row">강동호 | 남</th>
 		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
+		    				<Link href="./staff_info_details">
+		    					<button>...더보기</button>
+		    				</Link>
 		    			</td>
 						</tr>
 						<tr>
 		    			<th scope="row">강동호 | 남</th>
 		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">강동호 | 남</th>
-		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">강동호 | 남</th>
-		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">강동호 | 남</th>
-		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">강동호 | 남</th>
-		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">강동호 | 남</th>
-		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">강동호 | 남</th>
-		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">강동호 | 남</th>
-		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">강동호 | 남</th>
-		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">강동호 | 남</th>
-		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">강동호 | 남</th>
-		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">강동호 | 남</th>
-		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">강동호 | 남</th>
-		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">강동호 | 남</th>
-		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
-		    			</td>
-						</tr>
-						<tr>
-		    			<th scope="row">강동호 | 남</th>
-		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점
-		    				<button>...더보기</button>
+		    				<Link href="./staff_info_details">
+		    					<button>...더보기</button>
+		    				</Link>
 		    			</td>
 						</tr>
 					</table>
