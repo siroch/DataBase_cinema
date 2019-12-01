@@ -1,85 +1,320 @@
-import Footer_CSS from '../components/footer_css'
-import th_data from '../data/theater'
+import Header from './Header'
+import Footer from './footer'
 import Link from 'next/link'
-const Footer = () => {
-  return (
-    <footer>
-      <Footer_CSS />
-      <div class="top">
-        <ul>
-          <li>
-            <h3>EGV 영화관 찾기</h3>
-          </li>
-          <li>
-            서울
-            {th_data.Seoul.map(info => (
-              <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`} href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
-                <button>{info.split('|')[2]}</button>
-              </Link>
-            ))}
-          </li>
-          <li>
-            경기
-            {th_data.Gyeonggi.map(info => (
-              <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`} 
-                href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
-                <button>{info.split('|')[2]}</button>
-              </Link>
-            ))}
-          </li>
-          <li>
-            인천
-            {th_data.Incheon.map(info => (
-              <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`} 
-                href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
-                <button>{info.split('|')[2]}</button>
-              </Link>
-            ))}
-          </li>
-          <li>
-            대전 | 세종 | 충청
-            {th_data.Daejeon_Sejong_Chungcheong.map(info => (
-              <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`} 
-                href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
-                <button>{info.split('|')[2]}</button>
-              </Link>
-            ))}
-          </li>
-          <li>
-            부산 | 경상
-            {th_data.Busan_Gyeongsangdo.map(info => (
-              <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`} 
-                href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
-                <button>{info.split('|')[2]}</button>
-              </Link>
-            ))}
-          </li>
-          <li>
-            광주 | 전라
-            {th_data.Gwangju_Jeolla.map(info => (
-              <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`} 
-                href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
-                <button>{info.split('|')[2]}</button>
-              </Link>
-            ))}
-          </li>
-          <li>
-            제주
-            {th_data.Jeju.map(info => (
-              <Link as={`/theaters/${info.split('|')[0]}/${info.split('|')[1]}`} 
-                href={{pathname:'/theater_list',query:{areaNum:info.split('|')[0],theaterNum:info.split('|')[1]}}}>
-                <button>{info.split('|')[2]}</button>
-              </Link>
-            ))}
-          </li>
-        </ul>
+import Theater_list_CSS from '../components/theater_list_css'
+import {useState,useEffect} from 'react'
+
+const Theater_list = ({areaNum,theaterNum}) => {
+  const [bigCity, setBigCity] = useState(areaNum)
+  const [smallCity, setSmallCity] = useState(theaterNum)
+  const change = (bc,sc)=>{
+    setBigCity(bc);
+    setSmallCity(sc);
+  }
+  useEffect(()=>{
+    change(areaNum,theaterNum);
+  },[{areaNum,theaterNum}])
+  const area=[[0,1372,"서울"],[1,4121,"경기"],[2,4041,"인천"],
+  [3,3141,"대전/세종/충청"],[4,6701,"부산/경상"],[5,5021,"광주/전라"]
+  ,[6,2001,"강원"],[7,6901,"제주"]];
+  const Su = (
+    <div class="theater_list">
+      <h2>극장</h2>
+      <div class="region">
+        {area.map((region)=>(
+          <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
+            <button>{region[2]}</button>
+          </Link>
+        ))}
       </div>
-      <div class="bottom">
-        <p>logo_name</p>
-        <p>DBDB딥 (강동호, 김한수, 박성빈, 박지호, 안한서, 최병익)</p>
+      <div class="possition1">
+        |<Link as={`/theaters/0/1372`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1372}}}><button>강남</button></Link>|
+        <Link as={`/theaters/0/1359`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1359}}}><button>강남대로(씨티)</button></Link>|
+        <Link as={`/theaters/0/1341`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1341}}}><button>강동</button></Link>|
+        <Link as={`/theaters/0/1431`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1431}}}><button>군자</button></Link>|
+        <Link as={`/theaters/0/1003`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1003}}}><button>동대문</button></Link>|
+        <Link as={`/theaters/0/1572`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1572}}}><button>마곡</button></Link>|
+        <Link as={`/theaters/0/1581`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1581}}}><button>목동</button></Link>|
+        <Link as={`/theaters/0/1311`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1311}}}><button>상봉</button></Link>|
       </div>
-    </footer>
+      <div class="possition1">
+        |<Link as={`/theaters/0/1211`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1211}}}><button>상암월드컵경기장</button></Link>|
+        <Link as={`/theaters/0/1331`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1331}}}><button>성수</button></Link>|
+        <Link as={`/theaters/0/1371`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1371}}}><button>센트럴</button></Link>|
+        <Link as={`/theaters/0/1381`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1381}}}><button>송파파크하비오</button></Link>|
+        <Link as={`/theaters/0/1202`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1202}}}><button>신촌</button></Link>|
+        <Link as={`/theaters/0/1221`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1221}}}><button>은평</button></Link>|   
+      </div>
+      <div class="possition1">
+        |<Link as={`/theaters/0/1561`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1561}}}><button>이수</button></Link>|
+        <Link as={`/theaters/0/1321`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1321}}}><button>창동</button></Link>|
+        <Link as={`/theaters/0/1351`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1351}}}><button>코엑스</button></Link>|
+        <Link as={`/theaters/0/1212`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1212}}}><button>홍대</button></Link>|
+        <Link as={`/theaters/0/1571`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1571}}}><button>화곡</button></Link>|
+        <Link as={`/theaters/0/1562`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1562}}}><button>ARTNINE</button></Link>|
+        
+      </div>
+    </div>
+  )
+  const Gg = (
+    <div class="theater_list">
+      <h2>극장</h2>
+      <div class="region">
+        {area.map((region)=>(
+          <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
+            <button>{region[2]}</button>
+          </Link>
+        ))}
+      </div>
+      <div class="possition1">
+        |<Link as={`/theaters/1/4121`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4121}}}><button>고양스타필드</button></Link>|
+        <Link as={`/theaters/1/4152`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4152}}}><button>김포한강신도시</button></Link>|
+        <Link as={`/theaters/1/4721`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4721}}}><button>남양주</button></Link>|
+        <Link as={`/theaters/1/4451`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4451}}}><button>동탄</button></Link>|
+        <Link as={`/theaters/1/4652`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4652}}}><button>미사강변</button></Link>|
+        <Link as={`/theaters/1/4113`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4113}}}><button>백석</button></Link>|
+        
+        <Link as={`/theaters/1/4722`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4722}}}><button>별내</button></Link>|
+        <Link as={`/theaters/1/4221`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4221}}}><button>부천스타필드시티</button></Link>|
+        <Link as={`/theaters/1/4631`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4631}}}><button>분당</button></Link>|
+        
+      </div>
+      <div class="possition1">
+        |<Link as={`/theaters/1/4411`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4411}}}><button>수원</button></Link>|
+        <Link as={`/theaters/1/4421`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4421}}}><button>수원남문</button></Link>|
+        <Link as={`/theaters/1/4291`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4291}}}><button>시흥배곧</button></Link>|
+        <Link as={`/theaters/1/4253`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4253}}}><button>안산중앙</button></Link>|
+        <Link as={`/theaters/1/4821`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4821}}}><button>양주</button></Link>|
+        
+        <Link as={`/theaters/1/4431`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4431}}}><button>영통</button></Link>|
+        <Link as={`/theaters/1/4471`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4471}}}><button>오산</button></Link>|
+        <Link as={`/theaters/1/4462`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4462}}}><button>용인테크노밸리</button></Link>|
+        <Link as={`/theaters/1/4804`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4804}}}><button>의정부 민락</button></Link>|
+        
+      </div>
+      <div class="possition1">
+        |<Link as={`/theaters/1/4111`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4111}}}><button>일산</button></Link>|
+        <Link as={`/theaters/1/4104`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4104}}}><button>일산벨라시타</button></Link>|
+        <Link as={`/theaters/1/4112`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4112}}}><button>킨텍스</button></Link>|
+        <Link as={`/theaters/1/4132`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4132}}}><button>파주금촌</button></Link>|
+        <Link as={`/theaters/1/4115`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4115}}}><button>파주운정</button></Link>|
+        <Link as={`/theaters/1/4131`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4131}}}><button>파주출판도시</button></Link>|
+        <Link as={`/theaters/1/4501`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4501}}}><button>평택</button></Link>|
+        <Link as={`/theaters/1/4651`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4651}}}><button>하남스타필드</button></Link>|
+      </div>
+    </div>
+  )
+  const Ic = (
+    <div class="theater_list">
+      <h2>극장</h2>
+      <div class="region">
+        {area.map((region)=>(
+          <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
+            <button>{region[2]}</button>
+          </Link>
+        ))}
+      </div>
+      <div class="possition1">
+        |<Link as={`/theaters/2/4041`}href={{pathname:'/theater_list',query:{areaNum:2,theaterNum:4041}}}><button>검단</button></Link>|
+        <Link as={`/theaters/2/4062`}href={{pathname:'/theater_list',query:{areaNum:2,theaterNum:4062}}}><button>송도</button></Link>|
+        <Link as={`/theaters/2/4001`}href={{pathname:'/theater_list',query:{areaNum:2,theaterNum:4001}}}><button>영종</button></Link>|
+        <Link as={`/theaters/2/4051`}href={{pathname:'/theater_list',query:{areaNum:2,theaterNum:4051}}}><button>인천논현</button></Link>|
+        <Link as={`/theaters/2/4042`}href={{pathname:'/theater_list',query:{areaNum:2,theaterNum:4042}}}><button>청라</button></Link>|
+        <Link as={`/theaters/2/4043`}href={{pathname:'/theater_list',query:{areaNum:2,theaterNum:4043}}}><button>청라지젤</button></Link>|
+      </div>
+    </div>
+  )
+  const Dsc = (
+    <div class="theater_list">
+      <h2>극장</h2>
+      <div class="region">
+        {area.map((region)=>(
+          <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
+            <button>{region[2]}</button>
+          </Link>
+        ))}
+      </div>
+      <div class="possition1">
+        |<Link as={`/theaters/3/3141`}href={{pathname:'/theater_list',query:{areaNum:3,theaterNum:3141}}}><button>공주</button></Link>|
+        <Link as={`/theaters/3/3021`}href={{pathname:'/theater_list',query:{areaNum:3,theaterNum:3021}}}><button>대전</button></Link>|
+        <Link as={`/theaters/3/3011`}href={{pathname:'/theater_list',query:{areaNum:3,theaterNum:3011}}}><button>대전중앙로</button></Link>|
+        <Link as={`/theaters/3/3391`}href={{pathname:'/theater_list',query:{areaNum:3,theaterNum:3391}}}><button>세종</button></Link>|
+        <Link as={`/theaters/3/3631`}href={{pathname:'/theater_list',query:{areaNum:3,theaterNum:3631}}}><button>오창</button></Link>|
+        <Link as={`/theaters/3/3901`}href={{pathname:'/theater_list',query:{areaNum:3,theaterNum:3901}}}><button>제천</button></Link>|
+        
+      </div>
+      <div class="possition1">
+        |<Link as={`/theaters/3/3651`}href={{pathname:'/theater_list',query:{areaNum:3,theaterNum:3651}}}><button>진천</button></Link>|
+        <Link as={`/theaters/3/3301`}href={{pathname:'/theater_list',query:{areaNum:3,theaterNum:3301}}}><button>천안</button></Link>|
+        <Link as={`/theaters/3/3611`}href={{pathname:'/theater_list',query:{areaNum:3,theaterNum:3611}}}><button>청주충북대</button></Link>|
+        <Link as={`/theaters/3/3801`}href={{pathname:'/theater_list',query:{areaNum:3,theaterNum:3801}}}><button>충주</button></Link>|
+        <Link as={`/theaters/3/3501`}href={{pathname:'/theater_list',query:{areaNum:3,theaterNum:3501}}}><button>홍성내포</button></Link>|
+        
+      </div>
+    </div>
+  )
+  const Bg = (
+    <div class="theater_list">
+      <h2>극장</h2>
+      <div class="region">
+        {area.map((region)=>(
+          <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
+            <button>{region[2]}</button>
+          </Link>
+        ))}
+      </div>
+      <div class="possition1">
+        |<Link as={`/theaters/4/6701`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:6701}}}><button>거창</button></Link>|
+        <Link as={`/theaters/4/7602`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:7602}}}><button>경북도청</button></Link>|
+        <Link as={`/theaters/4/7122`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:7122}}}><button>경산하양</button></Link>|
+        <Link as={`/theaters/4/7801`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:7801}}}><button>경주</button></Link>|
+        <Link as={`/theaters/4/7303`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:7303}}}><button>구미강동</button></Link>|
+        <Link as={`/theaters/4/7401`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:7401}}}><button>김천</button></Link>|
+        
+        <Link as={`/theaters/4/7901`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:7901}}}><button>남포항</button></Link>|
+        <Link as={`/theaters/4/7022`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:7022}}}><button>대구(칠성로)</button></Link>|
+        
+      </div>
+      <div class="possition1">
+        |<Link as={`/theaters/4/7011`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:7011}}}><button>대구 신세계</button></Link>|
+        <Link as={`/theaters/4/7012`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:7012}}}><button>대구 이시아</button></Link>|
+        <Link as={`/theaters/4/6161`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:6161}}}><button>덕천</button></Link>|
+        <Link as={`/theaters/4/6312`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:6312}}}><button>마산</button></Link>|
+        <Link as={`/theaters/4/7451`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:7451}}}><button>문경</button></Link>|
+        <Link as={`/theaters/4/6001`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:6001}}}><button>부산극장</button></Link>|
+        <Link as={`/theaters/4/6906`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:6906}}}><button>부산대</button></Link>|
+        <Link as={`/theaters/4/7021`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:7021}}}><button>북대구(칠곡)</button></Link>|
+      </div>
+      <div class="possition1">
+        |<Link as={`/theaters/4/6641`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:6641}}}><button>사천</button></Link>|
+        <Link as={`/theaters/4/6642`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:6642}}}><button>삼천포</button></Link>|
+        <Link as={`/theaters/4/6261`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:6261}}}><button>양산</button></Link>|
+        <Link as={`/theaters/4/6262`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:6262}}}><button>양산라피에스타</button></Link>|
+        <Link as={`/theaters/4/6811`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:6811}}}><button>울산</button></Link>|
+        <Link as={`/theaters/4/6191`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:6191}}}><button>정관</button></Link>|
+        <Link as={`/theaters/4/6421`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:6421}}}><button>창원</button></Link>|
+        <Link as={`/theaters/4/6121`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:6121}}}><button>해운대(장산)</button></Link>|
+      </div>
+    </div>
+  )
+  const Gj = (
+    <div class="theater_list">
+      <h2>극장</h2>
+      <div class="region">
+        {area.map((region)=>(
+          <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
+            <button>{region[2]}</button>
+          </Link>
+        ))}
+      </div>
+      <div class="possition1">
+        |<Link as={`/theaters/5/5021`}href={{pathname:'/theater_list',query:{areaNum:5,theaterNum:5021}}}><button>광주상무</button></Link>|
+        <Link as={`/theaters/5/5061`}href={{pathname:'/theater_list',query:{areaNum:5,theaterNum:5061}}}><button>광주하남</button></Link>|
+        <Link as={`/theaters/5/5901`}href={{pathname:'/theater_list',query:{areaNum:5,theaterNum:5901}}}><button>남원</button></Link>|
+        <Link as={`/theaters/5/5301`}href={{pathname:'/theater_list',query:{areaNum:5,theaterNum:5301}}}><button>목포</button></Link>|
+        <Link as={`/theaters/5/5302`}href={{pathname:'/theater_list',query:{areaNum:5,theaterNum:5302}}}><button>목포하당(포르모)</button></Link>|
+        <Link as={`/theaters/5/5612`}href={{pathname:'/theater_list',query:{areaNum:5,theaterNum:5612}}}><button>송천</button></Link>|
+      </div>
+      <div class="possition1">
+        |<Link as={`/theaters/5/5401`}href={{pathname:'/theater_list',query:{areaNum:5,theaterNum:5401}}}><button>순천</button></Link>|
+        <Link as={`/theaters/5/5551`}href={{pathname:'/theater_list',query:{areaNum:5,theaterNum:5551}}}><button>여수</button></Link>|
+        <Link as={`/theaters/5/5552`}href={{pathname:'/theater_list',query:{areaNum:5,theaterNum:5552}}}><button>여수용천</button></Link>|
+        <Link as={`/theaters/5/5001`}href={{pathname:'/theater_list',query:{areaNum:5,theaterNum:5001}}}><button>전대(광주)</button></Link>|
+        <Link as={`/theaters/5/5063`}href={{pathname:'/theater_list',query:{areaNum:5,theaterNum:5063}}}><button>전주(객사)</button></Link>|
+        <Link as={`/theaters/5/5064`}href={{pathname:'/theater_list',query:{areaNum:5,theaterNum:5064}}}><button>첨단(광주)</button></Link>|
+      </div>
+    </div>
+  )
+  const Gw = (
+    <div class="theater_list">
+      <h2>극장</h2>
+      <div class="region">
+        {area.map((region)=>(
+          <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
+            <button>{region[2]}</button>
+          </Link>
+        ))}
+      </div>
+      <div class="possition1">
+        |<Link as={`/theaters/6/2001`}href={{pathname:'/theater_list',query:{areaNum:6,theaterNum:2001}}}><button>남춘천</button></Link>|
+        <Link as={`/theaters/6/2171`}href={{pathname:'/theater_list',query:{areaNum:6,theaterNum:2171}}}><button>속초</button></Link>|
+        <Link as={`/theaters/6/2201`}href={{pathname:'/theater_list',query:{areaNum:6,theaterNum:2201}}}><button>원주</button></Link>|
+        <Link as={`/theaters/6/2202`}href={{pathname:'/theater_list',query:{areaNum:6,theaterNum:2202}}}><button>원주센트럴</button></Link>|
+      </div>
+    </div>
+  )
+  const Jj = (
+    <div class="theater_list">
+      <h2>극장</h2>
+      <div class="region">
+        {area.map((region)=>(
+          <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
+            <button>{region[2]}</button>
+          </Link>
+        ))}
+      </div>
+      <div class="possition1">
+        |<Link as={`/theaters/7/6901`}href={{pathname:'/theater_list',query:{areaNum:7,theaterNum:6901}}}><button>제주</button></Link>|
+      </div>
+    </div>
+  )
+  const citys_lists=[Su, Gg, Ic, Dsc, Bg, Gj, Gw, Jj]
+
+  return(
+    <div>
+      <Theater_list_CSS />
+      <Header />
+      <theater>
+      {citys_lists[bigCity]}
+
+      <div class="theater_info">
+        <h2 class="h2line">상영관</h2>
+        <div class="theater_img">지도 {smallCity}</div>
+        <div class="info">
+          <div class="left_info">
+            <ul>
+              <li>EGV {smallCity} (극장 ID)</li>
+              <li>주소 : 박지호 집</li>
+            </ul>
+          </div>
+          <div class="right_info">
+            <ul>
+              <li>{smallCity} : 극장 아이디</li>
+              <li>전체 상영관 : 8관</li>
+              <li>2D 상영관 : 4관</li>
+              <li>3D 상영관 : 3관</li>
+              <li>4D 상영관 : 1관</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="reserve">
+        <h2 class="h2line">상영 시간표</h2>
+        <div class="movie_reserve_info">
+          <p>12 블랙머니</p>
+          <div class="movie_reserve">
+            <p>2관</p>
+            <div>
+              <button>7:30</button>|
+              <button>9:30</button>
+              <button>11:30</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </theater>
+
+      <Footer />
+    </div>
   )
 }
-
-export default Footer
+Theater_list.getInitialProps= async(res)=>{
+  console.log(res.query);
+  const {areaNum,theaterNum}=res.query;
+  return {
+    "areaNum":areaNum,
+    "theaterNum":theaterNum
+  }
+}
+export default Theater_list
