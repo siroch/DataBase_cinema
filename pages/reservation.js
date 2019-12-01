@@ -33,56 +33,56 @@ const Reservation = () => {
   const Su = (
     <div class="smallcity">
       {th_data.Seoul.map(info => (
-        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+        <button onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
     </div>
   )
   const Gg = (
     <div class="smallcity">
       {th_data.Gyeonggi.map(info => (
-        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+        <button onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
     </div>
   )
   const Ic = (
     <div class="smallcity">
       {th_data.Incheon.map(info => (
-        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+        <button onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
     </div>
   )
   const Dsc = (
     <div class="smallcity">
       {th_data.Daejeon_Sejong_Chungcheong.map(info => (
-        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+        <button onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
     </div>
   )
   const Bg = (
     <div class="smallcity">
       {th_data.Busan_Gyeongsangdo.map(info => (
-        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+        <button onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
     </div>
   )
   const Gj = (
     <div class="smallcity">
       {th_data.Gwangju_Jeolla.map(info => (
-        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+        <button onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
     </div>
   )
   const Gw = (
     <div class="smallcity">
       {th_data.Gangwon.map(info => (
-        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+        <button onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
     </div>
   )
   const Jj = (
     <div class="smallcity">
       {th_data.Jeju.map(info => (
-        <button onClick={()=>setTheater(`${info.split('|')[0]}`)}>{info.split('|')[1]}</button>
+        <button onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
     </div>
   )
@@ -177,7 +177,7 @@ const Reservation = () => {
             </div>
           </div>
           <div class="another_selects">
-            <p>극장: {theater===0 ? "" : theater}</p>
+            <p>극장: {theater===0 ? "" : theater[1]}</p>
             <p>일시: {dates===0 ? "" : dates}</p>
             <p>상영관: </p>
             <p>인원: </p>
@@ -285,7 +285,7 @@ const Reservation = () => {
             </div>
           </div>
           <div class="another_selects">
-            <p>극장: {theater===0 ? "" : theater}</p>
+            <p>극장: {theater===0 ? "" : theater[1]}</p>
             <p>일시: {dates===0 ? "" : dates}</p>
             <p>상영관: </p>
             <p>인원: </p>
