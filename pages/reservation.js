@@ -13,12 +13,16 @@ const Reservation = () => {
   const [movie, setMovies] = useState(0)
   const [theater, setTheater] = useState(0)
   const [dates, setDates] = useState(0)
+  const [seat, setSeat] = useState(0)
 
   function reloadHandler(){
     if(next === false){
       setMovies(0)
       setTheater(0)
       setDates(0)
+    }
+    else{
+      setSeat(0)
     }
   }
 
@@ -27,6 +31,18 @@ const Reservation = () => {
     if(next===false){
       if(movie!=0 && theater!=0 && dates!=0) next_bnt[0].disabled=false
       else next_bnt[0].disabled=true
+    }
+    var prev_bnt = document.getElementsByClassName("go_reserve")
+    if(next===true){
+      if(seat===0) prev_bnt[0].disabled=false
+      else prev_bnt[0].disabled=true
+    }
+    var age = document.getElementsByTagName("span")
+    for(var i=0; i<age.length; i++){
+      if(age[i].textContent === "19"){ age[i].classList.add('nineteen') }
+      else if(age[i].textContent === "15"){ age[i].classList.add('fifteen') }
+      else if(age[i].textContent === "12"){ age[i].classList.add('twelve') }
+      else if(age[i].textContent === "전체"){ age[i].classList.add('allage')}
     }
   })
 
@@ -192,7 +208,7 @@ const Reservation = () => {
           </div>
           <button onClick={()=>setNext(true)} class="go_seat">
             &#8594;
-            <span>좌석선택</span>
+            <a>좌석선택</a>
           </button>
         </div>
       </div>
@@ -273,7 +289,7 @@ const Reservation = () => {
         <div class="summary">
           <button onClick={()=>setNext(false)} class="go_reserve">
             &#8592;
-            <span>영화선택</span>
+            <a>영화선택</a>
           </button>
           <div class="movie_select">
             {movie===0 ? "" : <img src={movie[2]} alt="select_poster" />}
@@ -301,7 +317,7 @@ const Reservation = () => {
           </div>
           <button class="go_pay" disabled="true">
             &#8594;
-            <span>결제</span>
+            <a>결제</a>
           </button>
         </div>
       </div>

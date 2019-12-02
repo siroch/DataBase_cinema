@@ -58,13 +58,29 @@ const Reservation_CSS = () => {
       }
       .movie_name span{
         border: thin solid;
-        border-radius: 100%;
-        background-color: green;
+        border-radius: 50%;
         color: white;
-        padding: 5px;
         font-size: 8pt;
         margin-right: 5px;
-        width: 20%;
+      }
+      .allage{
+        background-color: green;
+        padding-right: 3px;
+        padding-left: 3px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      .nineteen{
+        background-color: red;
+        padding: 5px;
+      }
+      .fifteen{
+        background-color: orange;
+        padding: 5px;
+      }
+      .twelve{
+        background-color: blue;
+        padding: 5px;
       }
       .theater{
         display: flex;
@@ -209,8 +225,9 @@ const Reservation_CSS = () => {
         margin-right: auto;
         margin-left: 20px;
       }
-      .go_seat span, .go_pay span, .go_reserve span{
+      .go_seat a, .go_pay a, .go_reserve a{
         font-size: 15pt;
+        text-decoration: none;
       }
       .box_all button:disabled{
         border: 1px solid gray;
