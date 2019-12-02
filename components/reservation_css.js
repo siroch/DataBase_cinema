@@ -1,14 +1,10 @@
 const Reservation_CSS = () => {
   return (
     <style global jsx>{`
-      body{
-        background-color: #f1f1f2;
-      }
       .bigbox{
         display: flex;
         flex-flow: column;
         margin: 7%;
-        background-color: #f1f1f2;
         margin-top: 120px;
       }
       .reload{
@@ -33,7 +29,6 @@ const Reservation_CSS = () => {
       .box_all{
         display: flex;
         flex-flow: column;
-        background-color: #f1f1f2;
       }
       .bigbox h3{
         margin: 0;
@@ -107,7 +102,6 @@ const Reservation_CSS = () => {
         font-weight: bold;
         font-size: 12pt;
         padding: 10px;
-        background-color: #f1f1f2;
       }
       .bigcity{
         display: flex;
@@ -138,7 +132,6 @@ const Reservation_CSS = () => {
         border: none;
         padding: 10px;
         margin: 5px;
-        background-color: #f1f1f2;
       }
       .bigbox h1{
         text-align: center;
@@ -166,7 +159,6 @@ const Reservation_CSS = () => {
         padding: 10px;
         margin: 5px;
         border-bottom: 1px solid;
-        background-color: #f1f1f2;
       }
       .sat{
         color: blue;
@@ -225,11 +217,19 @@ const Reservation_CSS = () => {
         margin-right: auto;
         margin-left: 20px;
       }
-      .go_seat a, .go_pay a, .go_reserve a{
+      .inner{
         font-size: 15pt;
-        text-decoration: none;
+        color: white;
+        border: none;
+        background-color: #a51b0b;
+        outline: none;
       }
-      .box_all button:disabled{
+      .inner:disabled{
+        border: none;
+        background-color: #333;
+        color: #f1f1f2;
+      }
+      .go_seat:disabled, .go_reserve:disabled, .go_pay:disabled{
         border: 1px solid gray;
         background-color: #333;
         color: #f1f1f2;
@@ -307,6 +307,10 @@ const Reservation_CSS = () => {
       .payment p, .seat_selected p{
         margin: 3px;
         margin-left: 20px;
+      }
+      .focus{
+        background-color: black;
+        color: white;
       }
     `}</style>
   )

@@ -54,13 +54,30 @@ const Movie_list_CSS = () => {
       }
       .movie_name span{
         border: thin solid;
-        border-radius: 100%;
-        background-color: green;
+        border-radius: 50%;
         color: white;
-        padding: 5px;
         font-size: 8pt;
         margin-right: 5px;
         width: 20%;
+      }
+      .allage{
+        background-color: green;
+        padding-right: 3px;
+        padding-left: 3px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      .nineteen{
+        background-color: red;
+        padding: 5px;
+      }
+      .fifteen{
+        background-color: orange;
+        padding: 5px;
+      }
+      .twelve{
+        background-color: blue;
+        padding: 5px;
       }
       .movie_name a {
         font-size: 12pt;

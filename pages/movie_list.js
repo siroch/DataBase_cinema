@@ -1,12 +1,22 @@
 import Header from './Header'
 import Footer from './footer'
 import Movie_list_CSS from '../components/movie_list_css'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import Link from 'next/link'
 
 import data from '../data/movie_info'
 
 const Movie_list = () => {
+
+  useEffect(()=>{
+    var age = document.getElementsByTagName("span")
+    for(var i=0; i<age.length; i++){
+      if(age[i].textContent === "19"){ age[i].classList.add('nineteen') }
+      else if(age[i].textContent === "15"){ age[i].classList.add('fifteen') }
+      else if(age[i].textContent === "12"){ age[i].classList.add('twelve') }
+      else if(age[i].textContent === "전체"){ age[i].classList.add('allage') }
+    }
+  })
 
   return(
     <div>
@@ -27,7 +37,7 @@ const Movie_list = () => {
 						</Link>
 						<div class={"information"}>
 							<div class={"movie_name"}>
-								<span>{movies.movie_info.ageRestriction}</span> 
+								<span>{movies.movie_info.ageRestriction}</span>
 								<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
 									<a>{movies.movie_info.movieNm}</a>
 								</Link>
