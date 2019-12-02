@@ -213,6 +213,50 @@ const Reservation = () => {
           <div class="timetable">
             <h3>시간</h3>
             <div class="table">
+              2D 4관 (총 300석)
+              <div class="times">
+                <div class="time">
+                  <button>10:00</button> 270석
+                </div>
+                <div class="time">
+                  <button>12:00</button> 250석
+                </div>
+                <div class="time">
+                  <button>14:00</button> 230석
+                </div>
+                <div class="time">
+                  <button>16:00</button> 230석
+                </div>
+                <div class="time">
+                  <button>18:00</button> 230석
+                </div>
+                <div class="time">
+                  <button>20:00</button> 230석
+                </div>
+              </div>
+            </div>
+            <div class="table">
+              3D 8관 (총 280석)
+              <div class="times">
+                <div class="time">
+                  <button>10:00</button> 270석
+                </div>
+                <div class="time">
+                  <button>12:00</button> 250석
+                </div>
+                <div class="time">
+                  <button>14:00</button> 230석
+                </div>
+                <div class="time">
+                  <button>16:00</button> 220석
+                </div>
+                <div class="time">
+                  <button>18:00</button> 230석
+                </div>
+                <div class="time">
+                  <button>20:00</button> 230석
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -127,6 +127,31 @@ const Reservation_CSS = () => {
         border: thin solid black;
         width: 40%;
       }
+      .table{
+        margin: 20px;
+        border-top: 2px solid gray;
+        padding: 10px;
+      }
+      .times{
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 9pt;
+        margin-top: 10px;
+      }
+      .time{
+        margin-right: 10px;
+        color: green;
+      }
+      .time button{
+        width: 50px;
+        height: 30px;
+        font-size: 10pt;
+        font-weight: bold;
+        padding: 5px;
+        border: 1px solid gray;
+        margin: 5px;
+        border-radius: 5px;
+      }
       .date button{
         font-size: 11pt;
         border: none;
