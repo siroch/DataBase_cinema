@@ -41,8 +41,8 @@ const Store_CSS = () => {
       }
       div.fixed {
         position: absolute;
-        top: 175px;
-        right: 120px;
+        top: 460px;
+        right: 210px;
         width: 150px;
         height: 150px;
       }

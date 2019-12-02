@@ -16,7 +16,7 @@ const Theater_list_CSS = () => {
       theater p {
         margin-right: 5%;
       }
-      button:hover {
+      theater button:hover {
         cursor: pointer;
         border-bottom: 2px solid black;
       }
