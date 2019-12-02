@@ -5,7 +5,7 @@ const Mypage_CSS = () => {
         margin: 0px;
         padding: 0px;
       }
-      img {
+      .user_info img {
         margin-top: 4%;
         width: 30%;
         height: 80%;
