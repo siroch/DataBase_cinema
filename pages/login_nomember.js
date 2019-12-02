@@ -10,6 +10,7 @@ import router from 'next/router'
 const Login_Nomember = () => {
 
   const [bnt, setBnt] = useState(true);
+  const [nonmem, setNonmem] = useState(true);
   const [id, getId] = useState('');
   const [pwd, getPwd] = useState('');
 
@@ -44,7 +45,7 @@ const Login_Nomember = () => {
             <button>로그인</button>
           </li>
           <li>
-            <button onClick={() => setBnt(!bnt)}>비회원 예매확인</button>
+            <button onClick={() => setBnt(!bnt)}>비회원</button>
           </li>
         </ul>
       </div>
@@ -84,13 +85,17 @@ const Login_Nomember = () => {
             <button onClick={() => setBnt(!bnt)}>로그인</button>
           </li>
           <li class="on">
-            <button>비회원 예매확인</button>
+            <button>비회원</button>
           </li>
         </ul>
       </div>
       <form action="" method="post">
         <div class="input" >
           <center>
+              <div class="nonmem_section">
+                <a onClick={()=>setNonmem(false)}>비회원 예매</a>|<a onClick={()=>setNonmem(true)}>비회원 예매확인</a>
+              </div>
+              <hr />
               <table>
                 <tr>
                  <td> 성명 </td>
@@ -122,7 +127,7 @@ const Login_Nomember = () => {
               </table>
           </center>
           <hr/>
-          <input type="submit" value="비회원 예매확인"/>
+          {nonmem ? <input type="submit" value="비회원 예매확인"/> : <input type="submit" value="비회원 예매"/>}
         </div>
       </form>
     </div>

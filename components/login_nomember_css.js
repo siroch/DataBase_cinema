@@ -72,6 +72,14 @@ const Login_Nomember_CSS = () => {
       center{
         border-spacing:15px;
       }
+      .nonmem_section{
+        display: flex;
+        justify-content: flex-end;
+      }
+      .nonmem_section a{
+        margin: 5px;
+        margin-top: 0;
+      }
     `}</style>
   )
 }

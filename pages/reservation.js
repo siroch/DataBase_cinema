@@ -336,7 +336,7 @@ const Reservation = () => {
           </div>
           <div class="another_selects">
             <p>극장: {theater===0 ? "" : theater[1]}</p>
-            <p>일시: {dates===0 ? "" : dates}</p>
+            <p>일시: {dates===0 ? "" : "2019/" + dates[0] + "/" + dates[1] + " " + dates[2]}</p>
             <p>상영관: </p>
             <p>인원: </p>
           </div>
