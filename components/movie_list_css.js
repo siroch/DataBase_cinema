@@ -2,12 +2,12 @@ const Movie_list_CSS = () => {
   return (
     <style global jsx>{`
       .movie_list {
-        margin-top: 100px;
+        margin-top: 10%;
         margin-bottom: 10px;
         text-align:center;
         border-bottom: 2px solid black;
-        margin-left: 20%;
-        margin-right: 20%;
+        margin-left: 10%;
+        margin-right: 10%;
       }
       .sort_movie_info {
         margin-left: 25%;
@@ -26,6 +26,7 @@ const Movie_list_CSS = () => {
         padding-right: 10px;
         margin-bottom: 10px;
         border-bottom: 1px solid black;
+        font-size: 12pt;
       }
       .info_movie h2 {
         padding: 10px;
@@ -35,8 +36,8 @@ const Movie_list_CSS = () => {
       .info_movie img {
         margin-left: 5%;
         margin-right: 5%;
-        width: 80px;
-        height: 120px;
+        width: 100px;
+        height: 150px;
       }
       .info_movie img:hover {
         cursor: pointer;
@@ -45,7 +46,7 @@ const Movie_list_CSS = () => {
         width: 400px;
       }
       .movie_name button {
-        font-size: 10pt;
+        font-size: 11pt;
         border: 0px;
         color: #4A4040;
         text-decoration: underline;
@@ -81,26 +82,9 @@ const Movie_list_CSS = () => {
         padding: 5px;
       }
       .movie_name a {
-        font-size: 12pt;
+        font-size: 14pt;
         color: black;
         text-decoration: none;
-      }
-      .reserve_button {
-        padding-top: 10%;
-        display: flex;
-        justify-content: space-around;
-      }
-      .reserve_button button {
-        border: 1px solid black;
-        background-color: red;
-        color: white;
-        opacity: .7;
-        height: 50px;
-        font-size: 10pt;
-        margin: 2px;
-      }
-      .reserve_button button:hover {
-        cursor: pointer;
       }
     `}</style>
   )

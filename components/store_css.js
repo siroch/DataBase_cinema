@@ -29,7 +29,7 @@ const Store_CSS = () => {
         text-align: right;
       }
       .category{
-        margin-top: 100px;
+        margin-top: 10%;
         text-align:center;
         margin-bottom: 10px;
       }
