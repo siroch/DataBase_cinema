@@ -6,17 +6,17 @@ const Movie_list_CSS = () => {
         margin-bottom: 10px;
         text-align:center;
         border-bottom: 2px solid black;
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-left: 15%;
+        margin-right: 15%;
       }
       .sort_movie_info {
-        margin-left: 25%;
-        margin-right: 25%;
+        margin-left: 20%;
+        margin-right: 20%;
       }
       .information {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
       }
       .info_movie {
         display: flex;
@@ -28,6 +28,9 @@ const Movie_list_CSS = () => {
         border-bottom: 1px solid black;
         font-size: 12pt;
       }
+      .info_movie:last-child{
+        border-bottom: none;
+      }
       .info_movie h2 {
         padding: 10px;
         white-space:nowrap;
@@ -36,13 +39,14 @@ const Movie_list_CSS = () => {
       .info_movie img {
         margin-left: 5%;
         margin-right: 5%;
-        width: 100px;
-        height: 150px;
+        width: 120px;
+        height: 180px;
       }
       .info_movie img:hover {
         cursor: pointer;
       }
       .movie_name {
+        padding-top: 10px;
         width: 400px;
       }
       .movie_name button {
