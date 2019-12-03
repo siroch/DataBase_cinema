@@ -16,23 +16,6 @@ const Sales_info_details = () => {
 			</div>
 			<div class="sales_info_details">
 				<div class="year">
-					<h3>연별 매출 그래프</h3>
-					<img src="/reload_arrow.png" alt="xx" />
-				</div>
-				<div class="best_sales">
-					<h3>최고 매출</h3>
-					<img src="/reload_arrow.png" alt="xx" />
-				</div>
-				<div class="worst_sales">
-					<h3>최저 매출</h3>
-					<img src="/reload_arrow.png" alt="xx" />
-				</div>
-				<div class="this_month">
-					<h3>이번달 매출</h3>
-					<img src="/reload_arrow.png" alt="xx" />
-				</div>
-				<div class="sales_table">
-					<h3>총 매출 정보</h3>
 					<img src="/reload_arrow.png" alt="xx" />
 				</div>
 			</div>

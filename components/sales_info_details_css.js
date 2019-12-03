@@ -1,13 +1,6 @@
 const Sales_info_details_CSS = () => {
   return (
     <style global jsx>{`
-        h3 {
-            margin-bottom: 10px;
-            margin-left: 10%;
-            margin-right: 10%;
-            text-align: center;
-            border-bottom: 1px solid black;
-        }
     	.sales_info_details_header {
     		margin-top: 5%;
     		margin-left: 20%;

@@ -8,21 +8,18 @@ const Managerpage_CSS = () => {
       nava {
         text-align: center;
         background-color: black;
-        width: 15%;
-        height: 100%;
+        width: 15vw;
+        height: 100vh;
         position: fixed;
       }
       nava span {
         color: white;
-        font-size: 20px;
+        font-size: 1.2rem;
         padding-left: 31.7%;
         padding-right: 31.7%;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        border-top: 1px groove white;
-        border-bottom: 1px groove white;
-        border-left: 0px;
-        border-right: 0px;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border: none;
       }
       nava span:hover {
         background-color: #333333;
@@ -30,26 +27,26 @@ const Managerpage_CSS = () => {
         text-decoration: underline;
       }
       .main_box{
-        margin-top: 113px;
+        margin-top: 15vh;
       }
       .t_box {
-        margin-top: 51px;
+        margin-top: 7vh;
       }
       .head2 { 
         position: absolute;
-        margin-top: 10%;
-        margin-left: 55%;
+        margin-top: 15vh;
+        margin-left: 55vw;
       }
       .user_info {
         display: flex;
         justify-content: center;
         position: absolute;
-        width: 50%;
-        height: 45%;
+        width: 50vw;
+        height: 39vh;
         border-top: 2px solid black;
         border-bottom: 2px solid black;
-        margin-top: 15%;
-        margin-left: 33%;
+        margin-top: 22vh;
+        margin-left: 33vw;
         overflow: scroll;
       }
       .user_info button {

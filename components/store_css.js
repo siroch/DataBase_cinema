@@ -37,6 +37,7 @@ const Store_CSS = () => {
         padding: 5px;
       }
       .category a:hover{
+        cursor: pointer;
         font-size: 15pt;
       }
       div.fixed {
