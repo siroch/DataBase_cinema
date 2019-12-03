@@ -64,6 +64,10 @@ const Store = () => {
           <button>장바구니</button>
           <span class="price">11000원</span>
         </div>
+
+        <div class="fixed">
+        	<img src="/store/basket.png" />
+        </div>
       </div>
   )
 
@@ -103,6 +107,9 @@ const Store = () => {
             <button>장바구니</button>
             <span class="price">18000원</span>
           </div>
+          <div class="fixed">
+          	<img src="/store/basket.png" />
+          </div>
       </div>
   )
 
@@ -110,9 +117,6 @@ const Store = () => {
     <div>
       <Store_CSS />
       <Header />
-      <div class="fixed">
-      	<img src="/store/basket.png" />
-      </div>
       <div class="category">
         <h2>스토어</h2>
         <a onClick={() => setGoods(true)}>팝콘/음료</a>

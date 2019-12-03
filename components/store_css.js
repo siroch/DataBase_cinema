@@ -2,6 +2,8 @@ const Store_CSS = () => {
   return (
     <style global jsx>{`
       div.all{
+        display: flex;
+        flex-wrap: wrap;
         border-top: 3px solid black;
         margin-left: 10%;
         margin-right: 10%;
@@ -19,6 +21,11 @@ const Store_CSS = () => {
       div.gallery img {
         width: 100%;
         height: 160px;
+      }
+      .gallery button{
+        background-color:black;
+        color: white;
+        border-radius: 5px;
       }
       div.desc {
         padding: 8px 15px;
@@ -41,15 +48,15 @@ const Store_CSS = () => {
         font-size: 15pt;
       }
       div.fixed {
-        position: absolute;
-        top: 460px;
-        right: 210px;
-        width: 150px;
-        height: 150px;
+        display: inline-block;
+        align-self: flex-end;
+        margin-left: auto;
+        width: 100px;
+        height: 100px;
       }
       .fixed img{
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
       }
     `}</style>
   )
