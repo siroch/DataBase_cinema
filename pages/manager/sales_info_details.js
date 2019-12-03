@@ -23,20 +23,8 @@ const Sales_info_details = () => {
 					<h3>최고 매출</h3>
 					<img src="/reload_arrow.png" alt="xx" />
 				</div>
-				<div class="best_profit">
-					<h3>최고 수익</h3>
-					<img src="/reload_arrow.png" alt="xx" />
-				</div>
 				<div class="worst_sales">
 					<h3>최저 매출</h3>
-					<img src="/reload_arrow.png" alt="xx" />
-				</div>
-				<div class="worst_profit">
-					<h3>최저 이익</h3>
-					<img src="/reload_arrow.png" alt="xx" />
-				</div>
-				<div class="last_month">
-					<h3>저번달 매출</h3>
 					<img src="/reload_arrow.png" alt="xx" />
 				</div>
 				<div class="this_month">

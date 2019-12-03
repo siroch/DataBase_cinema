@@ -1,91 +1,122 @@
 const Theater_list_CSS = () => {
   return (
     <style global jsx>{`
-      theater div {
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      navi {
+        background-color: black;
+        width: 25vw;
+        height: 100vh;
+        position: fixed;
         display: flex;
-        text-align: center;
-      }
-      theater button {
-        background-color: gray;
-        border: none;
-        color: black;
-        opacity: .7;
-        font-size: 9pt;
-        margin: 2px;
-      }
-      theater p {
-        margin-right: 5%;
-      }
-      theater button:hover {
-        cursor: pointer;
-        border-bottom: 2px solid black;
-      }
-      .theater_list {
-        background-color: gray;
-        margin-top: 100px;
-        margin-bottom: 10px;
-        margin-left: 15%;
-        margin-right: 15%;
-        padding-bottom: 10px;
-        border: 1px solid black;
-        flex-direction: column;
-      }
-      .region {
-        margin-left: 15%;
-        margin-right: 15%;
-        margin-bottom: 10px;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-        justify-content: center;
-      }
-      .possition1 {
-        justify-content: center;
-      }
-      .theater_info {
-        margin-bottom: 10px;
-        margin-left: 20%;
-        margin-right: 20%;
-        justify-content: center;
-        flex-direction: column;
-      }
-      .theater_img {
-        border: 1px solid black;
-      }
-      .info {
-        display: flex;
-        justify-content: space-between;
-        border: 1px solid black;
-        padding-right: 15px;
-      }
-      .left_info {
-        text-align: left;
-      }
-      .right_info {
-        text-align: right;
-      }
-      .h2line {
-        padding-bottom: 10px;
-        border-bottom: 2px solid black;
-      }
-      .reserve {
-        margin-bottom: 10px;
-        margin-left: 20%;
-        margin-right: 20%;
-        justify-content: center;
-        flex-direction: column;
-      }
-      .movie_reserve_info {
-        margin-bottom: 10px;
-        margin-left: 5%;
-        margin-right: 5%;
-        border-bottom: 1px solid black;
         flex-direction: row;
       }
-      .movie_reserve {
-        margin-bottom: 10px;
-        margin-left: 10%;
-        margin-right: 5%;
-        flex-direction: column;
+      theater {
+        text-align: center;
+        position: absolute;
+        margin-top: 20vh;
+        margin-left: 35vw;
+        width: 50vw;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        margin-bottom: 10vh;
+      }
+      .region {
+        margin-top: 100px;
+        width: 50vw;
+        text-align: center;
+      }
+      .region button {
+        text-align: center;
+        padding-bottom: 2vh;
+        background-color: black;
+        color: white;
+        width: 90%;
+        border: none;
+        font-size: 18px;
+      }
+      .smallcitys {
+        margin-top: 100px;
+        width: 50vw;
+        opacity: .7;
+        overflow: scroll;
+      }
+      .smallcitys button {
+        text-align: center;
+        padding-bottom: 2vh;
+        background-color: black;
+        color: white;
+        width: 90%;
+        border: none;
+        font-size: 18px;
+      }
+      .region button:hover, .smallcitys button:hover {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+      }
+      .map_img img{
+        border: 1px solid black;
+        width: 100%;
+        height: 20vw;
+      }
+      .select_day {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        border-top: 1px solid black;
+      }
+      .tmonth {
+        background-color: #6a6a6a;
+        color: white;
+        font-weight: bold;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      .tday {
+        background-color: black;
+      }
+      .tday button {
+        border: none;
+        background-color: black;
+        color: white;
+        width: 14.28%;
+        height: 3.2vw;
+        border-top: 0.5px solid black;
+        border-bottom: 1px solid black; 
+      }
+      .tday button:hover {
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        border-top: 0.5px solid white;
+        border-bottom: 1px solid white; 
+      }
+      .t_1, .t_2 {
+        width: 10vw;
+      }
+      table {
+        width: 100%;
+        border-top: 1px solid #444444;
+        border-collapse: collapse;
+      }
+      th {
+        border-bottom: 1px solid #444444;
+        padding: 10px;
+        background-color: #444444;
+        color: white;
+        font-weight: bold;
+        text-align: left;
+      }
+      td {
+        border-bottom: 1px solid #444444;
+        padding: 10px;
+        text-align: left;
+      }
+      .ttime span {
+        width: 3vw;
+        margin: 0.2vw;
       }
     `}</style>
   )
