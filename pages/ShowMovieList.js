@@ -16,7 +16,7 @@ const ShowMovieList = () => {
 			var slides = document.getElementsByClassName("slide") // 영화 사진 몇개인지 체크하기 위함
 			var acts = document.getElementsByClassName("active") // 엑티브 된 동그라미 가져옴
 		  var cirs = document.getElementsByClassName("circle") // 엑티브 안된 동그라미 가져옴
-			list_box[0].scroll(820*index,0) // 버튼 누를 때 스크롤 위치 바뀌는 부분
+			list_box[0].scroll(790*index,0) // 버튼 누를 때 스크롤 위치 바뀌는 부분
 			if(index==0){
 				acts[0].classList="circle"
 				cirs[0].classList="active"

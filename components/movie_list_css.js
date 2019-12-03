@@ -30,6 +30,7 @@ const Movie_list_CSS = () => {
       .info_movie h2 {
         padding: 10px;
         white-space:nowrap;
+        width: 45px;
       }
       .info_movie img {
         margin-left: 5%;

@@ -46,9 +46,6 @@ const Movie_list = () => {
 									<button>상세정보보기</button>
 								</Link>
 							</div>
-							<div className={"reserve_button"}>
-								<button>예매하기</button>
-							</div>
 						</div>
 					</div>
 				))}
