@@ -24,7 +24,7 @@ const Theater_list_CSS = () => {
         margin-bottom: 10vh;
       }
       .region {
-        margin-top: 100px;
+        margin-top: 110px;
         width: 50vw;
         text-align: center;
       }
@@ -38,7 +38,7 @@ const Theater_list_CSS = () => {
         font-size: 18px;
       }
       .smallcitys {
-        margin-top: 100px;
+        margin-top: 140px;
         width: 50vw;
         opacity: .7;
         overflow: scroll;
@@ -60,7 +60,7 @@ const Theater_list_CSS = () => {
       .map_img img{
         border: 1px solid black;
         width: 100%;
-        height: 20vw;
+        height: 25vw;
       }
       .select_day {
         margin-top: 2rem;
@@ -84,14 +84,14 @@ const Theater_list_CSS = () => {
         width: 14.28%;
         height: 3.2vw;
         border-top: 0.5px solid black;
-        border-bottom: 1px solid black; 
+        border-bottom: 1px solid black;
       }
       .tday button:hover {
         background-color: white;
         color: black;
         cursor: pointer;
         border-top: 0.5px solid white;
-        border-bottom: 1px solid white; 
+        border-bottom: 1px solid white;
       }
       .t_1, .t_2 {
         width: 10vw;

@@ -9,9 +9,9 @@ const Find = () => (
     <Find_CSS />
     <form action="/" method="post">
       <center>
-        <div class="leftbox">
+        <div className="leftbox">
           <h2>아이디 찾기</h2>
-          <div class="id_find">
+          <div className="id_find">
             <table>
               <tr>
                <td> 성명 </td>
@@ -37,9 +37,9 @@ const Find = () => (
           </div>
         </div>
 
-        <div class="rightbox">
+        <div className="rightbox">
           <h2>비밀번호 찾기</h2>
-          <div class="pw_find">
+          <div className="pw_find">
            <table border="0">
              <tr>
               <td> 아이디 </td>

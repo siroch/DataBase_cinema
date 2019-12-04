@@ -52,7 +52,10 @@ const Reservation = () => {
     }
     var age = document.getElementsByTagName("span")
     for(var i=0; i<age.length; i++){
-      if(age[i].textContent === "19"){ age[i].classList.add('nineteen') }
+      if(age[i].textContent === "19"){
+        age[i].classList.add('nineteen')
+        age[i].textContent = "청불"
+      }
       else if(age[i].textContent === "15"){ age[i].classList.add('fifteen') }
       else if(age[i].textContent === "12"){ age[i].classList.add('twelve') }
       else if(age[i].textContent === "전체"){ age[i].classList.add('allage')}
@@ -81,56 +84,56 @@ const Reservation = () => {
   })
 
   const Su = (
-    <div class="smallcity">
+    <div className="smallcity">
       {th_data.Seoul.map(info => (
         <button className="thea" onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
     </div>
   )
   const Gg = (
-    <div class="smallcity">
+    <div className="smallcity">
       {th_data.Gyeonggi.map(info => (
         <button className="thea" onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
     </div>
   )
   const Ic = (
-    <div class="smallcity">
+    <div className="smallcity">
       {th_data.Incheon.map(info => (
         <button className="thea" onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
     </div>
   )
   const Dsc = (
-    <div class="smallcity">
+    <div className="smallcity">
       {th_data.Daejeon_Sejong_Chungcheong.map(info => (
         <button className="thea" onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
     </div>
   )
   const Bg = (
-    <div class="smallcity">
+    <div className="smallcity">
       {th_data.Busan_Gyeongsangdo.map(info => (
         <button className="thea" onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
     </div>
   )
   const Gj = (
-    <div class="smallcity">
+    <div className="smallcity">
       {th_data.Gwangju_Jeolla.map(info => (
         <button className="thea" onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
     </div>
   )
   const Gw = (
-    <div class="smallcity">
+    <div className="smallcity">
       {th_data.Gangwon.map(info => (
         <button className="thea" onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
     </div>
   )
   const Jj = (
-    <div class="smallcity">
+    <div className="smallcity">
       {th_data.Jeju.map(info => (
         <button className="thea" onClick={()=>setTheater([info.split('|')[1], info.split('|')[2]])}>{info.split('|')[2]}</button>
       ))}
@@ -139,14 +142,14 @@ const Reservation = () => {
   const city_lists=[Su, Gg, Ic, Dsc, Bg, Gj, Gw, Jj]
 
   const Reserve = (
-    <div class="bigbox">
-      <button onClick={()=>reloadHandler()} class="reload">
+    <div className="bigbox">
+      <button onClick={()=>reloadHandler()} className="reload">
         <img src="reload_arrow.png" alt="reload_arrow" />
         <span>예매 다시하기</span>
       </button>
-      <div class="box_all">
-        <div class="selections">
-          <div class="movie_name">
+      <div className="box_all">
+        <div className="selections">
+          <div className="movie_name">
             <h3>영화</h3>
             {data.map(movies => (
               <button className="mov" onClick={()=>setMovies([movies.movie_info.ageRestriction, movies.movie_info.movieNm,
@@ -156,10 +159,10 @@ const Reservation = () => {
               </button>
             ))}
           </div>
-          <div class="theater">
+          <div className="theater">
             <h3>극장</h3>
-            <div class="city">
-              <div class="bigcity">
+            <div className="city">
+              <div className="bigcity">
                 <button onClick={()=>setCity(0)}>서울</button>
                 <button onClick={()=>setCity(1)}>경기</button>
                 <button onClick={()=>setCity(2)}>인천</button>
@@ -172,9 +175,9 @@ const Reservation = () => {
               {city_lists[city]}
             </div>
           </div>
-          <div class="date">
+          <div className="date">
             <h3>날짜</h3>
-            <div class="data_select">
+            <div className="data_select">
               <h4>2019</h4>
               <h1>12</h1>
               <button className="days" onClick={()=>setDates(["12", "01", "(일)"])}>일 <strong>01</strong></button>
@@ -210,101 +213,101 @@ const Reservation = () => {
               <button className="days" onClick={()=>setDates(["12", "31", "(화)"])}>수 <strong>31</strong></button>
             </div>
           </div>
-          <div class="timetable">
+          <div className="timetable">
             <h3>시간</h3>
-            <div class="table">
+            <div className="table">
               2D 4관 (총 300석)
-              <div class="times">
-                <div class="time">
+              <div className="times">
+                <div className="time">
                   <button>10:00</button> 270석
                 </div>
-                <div class="time">
+                <div className="time">
                   <button>12:00</button> 250석
                 </div>
-                <div class="time">
+                <div className="time">
                   <button>14:00</button> 230석
                 </div>
-                <div class="time">
+                <div className="time">
                   <button>16:00</button> 230석
                 </div>
-                <div class="time">
+                <div className="time">
                   <button>18:00</button> 230석
                 </div>
-                <div class="time">
+                <div className="time">
                   <button>20:00</button> 230석
                 </div>
               </div>
             </div>
-            <div class="table">
+            <div className="table">
               3D 8관 (총 280석)
-              <div class="times">
-                <div class="time">
+              <div className="times">
+                <div className="time">
                   <button>10:00</button> 270석
                 </div>
-                <div class="time">
+                <div className="time">
                   <button>12:00</button> 250석
                 </div>
-                <div class="time">
+                <div className="time">
                   <button>14:00</button> 230석
                 </div>
-                <div class="time">
+                <div className="time">
                   <button>16:00</button> 220석
                 </div>
-                <div class="time">
+                <div className="time">
                   <button>18:00</button> 230석
                 </div>
-                <div class="time">
+                <div className="time">
                   <button>20:00</button> 230석
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="summary">
-          <div class="movie_select">
+        <div className="summary">
+          <div className="movie_select">
             {movie===0 ? "" : <img src={movie[2]} alt="select_poster" />}
-            <div class="movie_info">
+            <div className="movie_info">
               <br />
               <p>{movie===0 ? "" : movie[1]}</p>
               <p>{movie===0 ? "" : movie[3].map(info => ( info.showTypeGroupNm )) + " "}</p>
               <p>{movie===0 ? "" : movie[0]+" 관람가"}</p>
             </div>
           </div>
-          <div class="another_selects">
+          <div className="another_selects">
             <p>극장: {theater===0 ? "" : theater[1]}</p>
             <p>일시: {dates===0 ? "" : "2019/" + dates[0] + "/" + dates[1] + " " + dates[2]}</p>
             <p>상영관: </p>
             <p>인원: </p>
           </div>
-          <div class="seat_select">
+          <div className="seat_select">
             &#x203a;
             <span>좌석선택</span>
           </div>
-          <div class="pay">
+          <div className="pay">
             &#x203a;
             <span>결제</span>
           </div>
-          <button onClick={()=>setNext(true)} class="go_seat">
+          <button onClick={()=>setNext(true)} className="go_seat">
             &#8594;
-            <button class="inner">좌석선택</button>
+            <button className="inner">좌석선택</button>
           </button>
         </div>
       </div>
     </div>
   )
   const Seat = (
-    <div class="bigbox">
+    <div className="bigbox">
       <Link href="/reservation">
-        <button class="reload">
+        <button className="reload">
           <img src="reload_arrow.png" alt="reload_arrow" />
           <span>예매 다시하기</span>
         </button>
       </Link>
-      <div class="box_all">
-        <div class="seat_and_peoples">
+      <div className="box_all">
+        <div className="seat_and_peoples">
           <h3>인원 / 좌석</h3>
-          <div class="peoples">
-            <div class="norm">
+          <div className="peoples">
+            <div className="norm">
               <strong>일반</strong>
               <select name="normal">
                 <option>0</option>
@@ -318,7 +321,7 @@ const Reservation = () => {
                 <option>8</option>
               </select>
             </div>
-            <div class="teenager">
+            <div className="teenager">
               <strong>청소년</strong>
               <select name="teen">
                 <option>0</option>
@@ -334,10 +337,10 @@ const Reservation = () => {
             </div>
             <p>인원 선택은 최대 8명까지 가능합니다.</p>
           </div>
-          <div class="seats">
-            <div class="show">
+          <div className="seats">
+            <div className="show">
               <h3>screen</h3>
-              <div class="seat_lines">
+              <div className="seat_lines">
                 <p>A</p>
                 <p>B</p>
                 <p>C</p>
@@ -354,7 +357,7 @@ const Reservation = () => {
                 <p>N</p>
               </div>
             </div>
-            <div class="information">
+            <div className="information">
               <h4>좌석 안내</h4>
               <ul>
                 <li>선택 완료</li>
@@ -364,38 +367,38 @@ const Reservation = () => {
             </div>
           </div>
         </div>
-        <div class="summary">
-          <button onClick={()=>setNext(false)} class="go_reserve">
+        <div className="summary">
+          <button onClick={()=>setNext(false)} className="go_reserve">
             &#8592;
-            <button class="inner">영화선택</button>
+            <button className="inner">영화선택</button>
           </button>
-          <div class="movie_select">
+          <div className="movie_select">
             {movie===0 ? "" : <img src={movie[2]} alt="select_poster" />}
-            <div class="movie_info">
+            <div className="movie_info">
               <br />
               <p>{movie===0 ? "" : movie[1]}</p>
               <p>{movie===0 ? "" : movie[3].map(info => ( info.showTypeGroupNm )) + " "}</p>
               <p>{movie===0 ? "" : movie[0]+" 관람가"}</p>
             </div>
           </div>
-          <div class="another_selects">
+          <div className="another_selects">
             <p>극장: {theater===0 ? "" : theater[1]}</p>
             <p>일시: {dates===0 ? "" : "2019/" + dates[0] + "/" + dates[1] + " " + dates[2]}</p>
             <p>상영관: </p>
             <p>인원: </p>
           </div>
-          <div class="seat_selected">
+          <div className="seat_selected">
             <p>좌석: </p>
           </div>
-          <div class="payment">
+          <div className="payment">
             <p>일반: </p>
             <p>청소년: </p>
             <br />
             <p>총금액  0</p>
           </div>
-          <button class="go_pay" disabled="true">
+          <button className="go_pay" disabled="true">
             &#8594;
-            <button class="inner" disabled="true">결제</button>
+            <button className="inner" disabled="true">결제</button>
           </button>
         </div>
       </div>

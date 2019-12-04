@@ -6,7 +6,7 @@ import Footer from './footer'
 
 
 const Index = () => (
-    <div class="Layout">
+    <div className="Layout">
       <Index_CSS />
       <Header />
       <ShowMovieList />

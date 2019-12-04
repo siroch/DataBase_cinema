@@ -38,10 +38,10 @@ const Login_Nomember = () => {
   }
 
   const Login = (
-    <div class="login_nomember">
-      <div class="menu">
+    <div className="login_nomember">
+      <div className="menu">
         <ul>
-          <li class="on">
+          <li className="on">
             <button>로그인</button>
           </li>
           <li>
@@ -50,13 +50,13 @@ const Login_Nomember = () => {
         </ul>
       </div>
   		<form method="post">
-  			<div class="input" >
+  			<div className="input" >
   				<div>
-  					 <div class="id_input">
+  					 <div className="id_input">
   						ID <input type="text" name ="id" onChange={getid} placeholder="아이디" required />
   					 </div>
   					 <br/>
-  					 <div class="pw_input">
+  					 <div className="pw_input">
   						PW <input type="password" name ="pw" onChange={getpwd} placeholder="비밀번호" required />
   					 </div>
   					 <br/>
@@ -78,21 +78,21 @@ const Login_Nomember = () => {
   )
 
   const Nomember = (
-    <div class="login_nomember">
-      <div class="menu">
+    <div className="login_nomember">
+      <div className="menu">
         <ul>
           <li>
             <button onClick={() => setBnt(!bnt)}>로그인</button>
           </li>
-          <li class="on">
+          <li className="on">
             <button>비회원</button>
           </li>
         </ul>
       </div>
       <form action="" method="post">
-        <div class="input" >
+        <div className="input" >
           <center>
-              <div class="nonmem_section">
+              <div className="nonmem_section">
                 <a onClick={()=>setNonmem(false)}>비회원 예매</a>|<a onClick={()=>setNonmem(true)}>비회원 예매확인</a>
               </div>
               <hr />

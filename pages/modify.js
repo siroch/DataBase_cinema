@@ -9,10 +9,10 @@ const Modify = () => {
     <div>
       <Header />
       <Modify_CSS />
-      <h2 class="modify_title"> 회원정보 수정</h2>
-      <div class="modify_box">
+      <h2 className="modify_title"> 회원정보 수정</h2>
+      <div className="modify_box">
         <form action="" method="post">
-          <div class="modify">
+          <div className="modify">
             <center>
               <table>
 

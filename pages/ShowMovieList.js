@@ -33,6 +33,16 @@ const ShowMovieList = () => {
 				cirs[2].classList="active"
 				bnts[4].disabled=true
 			}
+			var age = document.getElementsByTagName("span")
+	    for(var i=0; i<age.length; i++){
+	      if(age[i].textContent === "19"){
+					age[i].classList.add('nineteen')
+					age[i].textContent = "청불"
+				}
+	      else if(age[i].textContent === "15"){ age[i].classList.add('fifteen') }
+	      else if(age[i].textContent === "12"){ age[i].classList.add('twelve') }
+	      else if(age[i].textContent === "전체"){ age[i].classList.add('allage')}
+	    }
 		})
 
 		return(
@@ -56,7 +66,7 @@ const ShowMovieList = () => {
 								<img src={movies.movie_info.picture} alt={movies.movie_info.movieNm}/>
 							</Link>
 							<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
-								<p>({movies.movie_info.ageRestriction}) {movies.movie_info.movieNm}</p>
+								<p><span>{movies.movie_info.ageRestriction}</span> {movies.movie_info.movieNm}</p>
 							</Link>
 							<p>평점: ?? 예매율: ??%</p>
 						</div>

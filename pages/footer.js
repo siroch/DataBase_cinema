@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer>
       <Footer_CSS />
-      <div class="top">
+      <div className="top">
         <ul>
           <li>
             <h3>EGV 영화관 찾기</h3>
@@ -101,7 +101,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div class="bottom">
+      <div className="bottom">
         <p>logo_name</p>
         <p>DBDB딥 (강동호, 김한수, 박성빈, 박지호, 안한서, 최병익)</p>
       </div>

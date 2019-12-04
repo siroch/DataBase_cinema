@@ -11,7 +11,10 @@ const Movie_list = () => {
   useEffect(()=>{
     var age = document.getElementsByTagName("span")
     for(var i=0; i<age.length; i++){
-      if(age[i].textContent === "19"){ age[i].classList.add('nineteen') }
+      if(age[i].textContent === "19"){
+        age[i].classList.add('nineteen')
+        age[i].textContent = "청불"
+      }
       else if(age[i].textContent === "15"){ age[i].classList.add('fifteen') }
       else if(age[i].textContent === "12"){ age[i].classList.add('twelve') }
       else if(age[i].textContent === "전체"){ age[i].classList.add('allage') }
@@ -22,21 +25,21 @@ const Movie_list = () => {
     <div>
     	<Movie_list_CSS />
       <Header />
-      <div class="movie_list">
+      <div className="movie_list">
        	<h2>영화 목록</h2>
        	<a>예매순</a>
        	|
        	<a>평점순</a>
      	</div>
-			<div class="sort_movie_info">
+			<div className="sort_movie_info">
 				{data.map(movies => (
 					<div className={"info_movie"}>
 						<h2>{movies.movie_info.rank}</h2>
 						<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
 							<img src={movies.movie_info.picture}/>
 						</Link>
-						<div class={"information"}>
-							<div class={"movie_name"}>
+						<div className={"information"}>
+							<div className={"movie_name"}>
 								<span>{movies.movie_info.ageRestriction}</span>
 								<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
 									<a>{movies.movie_info.movieNm}</a>

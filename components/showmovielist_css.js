@@ -73,6 +73,35 @@ const Showmovielist_CSS = () => {
         background-color: white;
         border: 3px solid black;
       }
+      .slide span{
+        border: thin solid;
+        border-radius: 50%;
+        color: white;
+        font-size: 8pt;
+        margin-right: 5px;
+      }
+      .allage{
+        background-color: green;
+        padding-right: 3px;
+        padding-left: 3px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      .nineteen{
+        background-color: red;
+        padding-right: 3px;
+        padding-left: 3px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      .fifteen{
+        background-color: orange;
+        padding: 5px;
+      }
+      .twelve{
+        background-color: blue;
+        padding: 5px;
+      }
     `}</style>
   )
 }

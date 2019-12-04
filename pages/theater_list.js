@@ -19,14 +19,14 @@ const Theater_list = ({areaNum,theaterNum}) => {
   ,[6,2001,"강원"],[7,6901,"제주"]];
   const Su = (
     <navi>
-      <div class="region">
+      <div className="region">
         {area.map((region)=>(
           <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
             <button>{region[2]}</button>
           </Link>
         ))}
       </div>
-      <div class="smallcitys">
+      <div className="smallcitys">
         <Link as={`/theaters/0/1372`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1372}}}><button>강남</button></Link>
         <Link as={`/theaters/0/1359`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1359}}}><button>강남대로(씨티)</button></Link>
         <Link as={`/theaters/0/1341`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1341}}}><button>강동</button></Link>
@@ -40,7 +40,7 @@ const Theater_list = ({areaNum,theaterNum}) => {
         <Link as={`/theaters/0/1371`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1371}}}><button>센트럴</button></Link>
         <Link as={`/theaters/0/1381`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1381}}}><button>송파파크하비오</button></Link>
         <Link as={`/theaters/0/1202`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1202}}}><button>신촌</button></Link>
-        <Link as={`/theaters/0/1221`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1221}}}><button>은평</button></Link>   
+        <Link as={`/theaters/0/1221`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1221}}}><button>은평</button></Link>
         <Link as={`/theaters/0/1561`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1561}}}><button>이수</button></Link>
         <Link as={`/theaters/0/1321`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1321}}}><button>창동</button></Link>
         <Link as={`/theaters/0/1351`}href={{pathname:'/theater_list',query:{areaNum:0,theaterNum:1351}}}><button>코엑스</button></Link>
@@ -52,20 +52,20 @@ const Theater_list = ({areaNum,theaterNum}) => {
   )
   const Gg = (
     <navi>
-      <div class="region">
+      <div className="region">
         {area.map((region)=>(
           <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
             <button>{region[2]}</button>
           </Link>
         ))}
       </div>
-      <div class="smallcitys">
+      <div className="smallcitys">
         <Link as={`/theaters/1/4121`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4121}}}><button>고양스타필드</button></Link>
         <Link as={`/theaters/1/4152`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4152}}}><button>김포한강신도시</button></Link>
         <Link as={`/theaters/1/4721`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4721}}}><button>남양주</button></Link>
         <Link as={`/theaters/1/4451`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4451}}}><button>동탄</button></Link>
         <Link as={`/theaters/1/4652`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4652}}}><button>미사강변</button></Link>
-        <Link as={`/theaters/1/4113`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4113}}}><button>백석</button></Link>      
+        <Link as={`/theaters/1/4113`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4113}}}><button>백석</button></Link>
         <Link as={`/theaters/1/4722`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4722}}}><button>별내</button></Link>
         <Link as={`/theaters/1/4221`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4221}}}><button>부천스타필드시티</button></Link>
         <Link as={`/theaters/1/4631`}href={{pathname:'/theater_list',query:{areaNum:1,theaterNum:4631}}}><button>분당</button></Link>
@@ -91,14 +91,14 @@ const Theater_list = ({areaNum,theaterNum}) => {
   )
   const Ic = (
     <navi>
-      <div class="region">
+      <div className="region">
         {area.map((region)=>(
           <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
             <button>{region[2]}</button>
           </Link>
         ))}
       </div>
-      <div class="smallcitys">
+      <div className="smallcitys">
         <Link as={`/theaters/2/4041`}href={{pathname:'/theater_list',query:{areaNum:2,theaterNum:4041}}}><button>검단</button></Link>
         <Link as={`/theaters/2/4062`}href={{pathname:'/theater_list',query:{areaNum:2,theaterNum:4062}}}><button>송도</button></Link>
         <Link as={`/theaters/2/4001`}href={{pathname:'/theater_list',query:{areaNum:2,theaterNum:4001}}}><button>영종</button></Link>
@@ -110,14 +110,14 @@ const Theater_list = ({areaNum,theaterNum}) => {
   )
   const Dsc = (
     <navi>
-      <div class="region">
+      <div className="region">
         {area.map((region)=>(
           <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
             <button>{region[2]}</button>
           </Link>
         ))}
       </div>
-      <div class="smallcitys">
+      <div className="smallcitys">
         <Link as={`/theaters/3/3141`}href={{pathname:'/theater_list',query:{areaNum:3,theaterNum:3141}}}><button>공주</button></Link>
         <Link as={`/theaters/3/3021`}href={{pathname:'/theater_list',query:{areaNum:3,theaterNum:3021}}}><button>대전</button></Link>
         <Link as={`/theaters/3/3011`}href={{pathname:'/theater_list',query:{areaNum:3,theaterNum:3011}}}><button>대전중앙로</button></Link>
@@ -134,14 +134,14 @@ const Theater_list = ({areaNum,theaterNum}) => {
   )
   const Bg = (
     <navi>
-      <div class="region">
+      <div className="region">
         {area.map((region)=>(
           <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
             <button>{region[2]}</button>
           </Link>
         ))}
       </div>
-      <div class="smallcitys">
+      <div className="smallcitys">
         <Link as={`/theaters/4/6701`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:6701}}}><button>거창</button></Link>
         <Link as={`/theaters/4/7602`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:7602}}}><button>경북도청</button></Link>
         <Link as={`/theaters/4/7122`}href={{pathname:'/theater_list',query:{areaNum:4,theaterNum:7122}}}><button>경산하양</button></Link>
@@ -171,14 +171,14 @@ const Theater_list = ({areaNum,theaterNum}) => {
   )
   const Gj = (
     <navi>
-      <div class="region">
+      <div className="region">
         {area.map((region)=>(
           <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
             <button>{region[2]}</button>
           </Link>
         ))}
       </div>
-      <div class="smallcitys">
+      <div className="smallcitys">
         <Link as={`/theaters/5/5021`}href={{pathname:'/theater_list',query:{areaNum:5,theaterNum:5021}}}><button>광주상무</button></Link>
         <Link as={`/theaters/5/5061`}href={{pathname:'/theater_list',query:{areaNum:5,theaterNum:5061}}}><button>광주하남</button></Link>
         <Link as={`/theaters/5/5901`}href={{pathname:'/theater_list',query:{areaNum:5,theaterNum:5901}}}><button>남원</button></Link>
@@ -196,14 +196,14 @@ const Theater_list = ({areaNum,theaterNum}) => {
   )
   const Gw = (
     <navi>
-      <div class="region">
+      <div className="region">
         {area.map((region)=>(
           <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
             <button>{region[2]}</button>
           </Link>
         ))}
       </div>
-      <div class="smallcitys">
+      <div className="smallcitys">
         <Link as={`/theaters/6/2001`}href={{pathname:'/theater_list',query:{areaNum:6,theaterNum:2001}}}><button>남춘천</button></Link>
         <Link as={`/theaters/6/2171`}href={{pathname:'/theater_list',query:{areaNum:6,theaterNum:2171}}}><button>속초</button></Link>
         <Link as={`/theaters/6/2201`}href={{pathname:'/theater_list',query:{areaNum:6,theaterNum:2201}}}><button>원주</button></Link>
@@ -213,14 +213,14 @@ const Theater_list = ({areaNum,theaterNum}) => {
   )
   const Jj = (
     <navi>
-      <div class="region">
+      <div className="region">
         {area.map((region)=>(
           <Link as={`/theaters/${region[0]}/${region[1]}`}href={{pathname:'/theater_list',query:{areaNum:region[0],theaterNum:region[1]}}}>
             <button>{region[2]}</button>
           </Link>
         ))}
       </div>
-      <div class="smallcitys">
+      <div className="smallcitys">
         <Link as={`/theaters/7/6901`}href={{pathname:'/theater_list',query:{areaNum:7,theaterNum:6901}}}><button>제주</button></Link>
       </div>
     </navi>
@@ -237,12 +237,12 @@ const Theater_list = ({areaNum,theaterNum}) => {
         <div>
           <p>주소 : (ex)경기도 안양시 만안구 안양동 ---- xx건물 x층)</p>
         </div>
-        <div class="map_img">
+        <div className="map_img">
           <img src="/store/combo1.jpg" alt="combo1" />
         </div>
-        <div class="select_day">
-          <div class="tmonth">12월</div>
-          <div class="tday">
+        <div className="select_day">
+          <div className="tmonth">12월</div>
+          <div className="tday">
             <button>화 10</button>
             <button>수 11</button>
             <button>목 12</button>
@@ -252,17 +252,17 @@ const Theater_list = ({areaNum,theaterNum}) => {
             <button>월 16</button>
           </div>
         </div>
-        <div class="movie_true">
+        <div className="movie_true">
           <table>
             <thead>
               <tr>
-                <th class="t_1">영화제목</th><th class="t_2">상영관</th><th>상영시간</th>
+                <th className="t_1">영화제목</th><th className="t_2">상영관</th><th>상영시간</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>겨울왕국2</td><td>1관</td>
-                <td class="ttime">
+                <td className="ttime">
                   <p>
                     <span>22:88</span>
                     <span>22:88</span>
@@ -276,7 +276,7 @@ const Theater_list = ({areaNum,theaterNum}) => {
               </tr>
               <tr>
                 <td>겨울왕국2</td><td>1관</td>
-                <td class="ttime">
+                <td className="ttime">
                   <p>
                     <span>22:88</span>
                     <span>22:88</span>

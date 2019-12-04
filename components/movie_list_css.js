@@ -75,7 +75,10 @@ const Movie_list_CSS = () => {
       }
       .nineteen{
         background-color: red;
-        padding: 5px;
+        padding-right: 3px;
+        padding-left: 3px;
+        padding-top: 5px;
+        padding-bottom: 5px;
       }
       .fifteen{
         background-color: orange;

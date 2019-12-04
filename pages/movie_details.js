@@ -7,11 +7,11 @@ const Movie_details = (props) => (
     <div>
       <Movie_details_CSS />
       <Header />
-      <div class="details">
+      <div className="details">
         <h1>영화 상세</h1>
         <hr />
-        <div class="information">
-          <div class="movie_info">
+        <div className="information">
+          <div className="movie_info">
             <h2>{props.movies.movieNm}</h2>
             <p>{props.movies.movieNmEn}</p>
             <br/>
@@ -31,8 +31,8 @@ const Movie_details = (props) => (
           <img src={props.movies.picture} alt="poster"/>
         </div>
         <hr />
-        <div class="Preview">
-          <div class="plot">
+        <div className="Preview">
+          <div className="plot">
             <h2>줄거리</h2>
             <p>
               <strong>내 마법의 힘은 어디서 왔을까?</strong><br/>
@@ -48,10 +48,10 @@ const Movie_details = (props) => (
           <iframe src="https://www.youtube.com/embed/alSU8mnZCaM" allowfullscreen></iframe>
         </div>
         <hr />
-        <div class="review">
+        <div className="review">
           <form action="" method="POST">
             <fieldset>
-              <div class="score">
+              <div className="score">
                 평점
                 <br/>
                 <select name="grade">
@@ -67,13 +67,13 @@ const Movie_details = (props) => (
           				<option>10점</option>
           			</select>
               </div>
-              <div class="write">
+              <div className="write">
                 <textarea title="리뷰" placeholder=" * 영화평은 로그인후 입력가능합니다."></textarea>
                 <input type="submit" value="제출"/>
               </div>
             </fieldset>
           </form>
-          <div class="read">
+          <div className="read">
             <ul>
               <li>
                 <h3>Giannis</h3>
