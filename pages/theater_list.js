@@ -173,7 +173,7 @@ const Theater_list = ({areaNum,theaterNum}) => {
       <Header />
       {citys_lists[bigCity]}
       <theater>
-        <h2>EGV ({locations[smallCity][0]})</h2>
+        <h2>EGV {locations[smallCity][0]}</h2>
         <div>
           <p>주소 : {locations[smallCity][1]}</p>
         </div>
