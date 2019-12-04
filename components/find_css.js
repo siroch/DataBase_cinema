@@ -1,4 +1,4 @@
-const Index_CSS = () => {
+const Find_CSS = () => {
   return (
     <style global jsx>{`
       .id_find, .pw_find {
@@ -27,4 +27,4 @@ const Index_CSS = () => {
   )
 }
 
-export default Index_CSS
+export default Find_CSS

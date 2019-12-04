@@ -72,7 +72,7 @@ const Reservation = () => {
     }
     var days = document.getElementsByClassName('days')
     for(var t=0; t<days.length; t++){
-      if(days[t].textContent.substr(2)===dates[1]) days[t].classList.add('focus')
+      if(days[t].textContent.substr(2)===dates[2]) days[t].classList.add('focus')
       else days[t].classList.remove('focus')
 
       if(days[t].textContent.substr(0,1) === "일"){
@@ -180,37 +180,39 @@ const Reservation = () => {
             <div className="data_select">
               <h4>2019</h4>
               <h1>12</h1>
-              <button className="days" onClick={()=>setDates(["12", "01", "(일)"])}>일 <strong>01</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "02", "(월)"])}>월 <strong>02</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "03", "(화)"])}>화 <strong>03</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "04", "(수)"])}>수 <strong>04</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "05", "(목)"])}>목 <strong>05</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "06", "(금)"])}>금 <strong>06</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "07", "(토)"])}>토 <strong>07</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "08", "(일)"])}>일 <strong>08</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "09", "(월)"])}>월 <strong>09</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "10", "(화)"])}>화 <strong>10</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "11", "(수)"])}>수 <strong>11</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "12", "(목)"])}>목 <strong>12</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "13", "(금)"])}>금 <strong>13</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "14", "(토)"])}>토 <strong>14</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "15", "(일)"])}>일 <strong>15</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "16", "(월)"])}>월 <strong>16</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "17", "(화)"])}>화 <strong>17</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "18", "(수)"])}>수 <strong>18</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "19", "(목)"])}>목 <strong>19</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "20", "(금)"])}>금 <strong>20</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "21", "(토)"])}>토 <strong>21</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "22", "(일)"])}>일 <strong>22</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "23", "(월)"])}>월 <strong>23</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "24", "(화)"])}>화 <strong>24</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "25", "(수)"])}>수 <strong>25</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "26", "(목)"])}>목 <strong>26</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "27", "(금)"])}>금 <strong>27</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "28", "(토)"])}>토 <strong>28</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "29", "(일)"])}>일 <strong>29</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "30", "(월)"])}>월 <strong>30</strong></button>
-              <button className="days" onClick={()=>setDates(["12", "31", "(화)"])}>수 <strong>31</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "10", "(화)"])}>화 <strong>10</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "11", "(수)"])}>수 <strong>11</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "12", "(목)"])}>목 <strong>12</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "13", "(금)"])}>금 <strong>13</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "14", "(토)"])}>토 <strong>14</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "15", "(일)"])}>일 <strong>15</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "16", "(월)"])}>월 <strong>16</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "17", "(화)"])}>화 <strong>17</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "18", "(수)"])}>수 <strong>18</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "19", "(목)"])}>목 <strong>19</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "20", "(금)"])}>금 <strong>20</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "21", "(토)"])}>토 <strong>21</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "22", "(일)"])}>일 <strong>22</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "23", "(월)"])}>월 <strong>23</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "24", "(화)"])}>화 <strong>24</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "25", "(수)"])}>수 <strong>25</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "26", "(목)"])}>목 <strong>26</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "27", "(금)"])}>금 <strong>27</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "28", "(토)"])}>토 <strong>28</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "29", "(일)"])}>일 <strong>29</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "30", "(월)"])}>월 <strong>30</strong></button>
+              <button className="days" onClick={()=>setDates(["2019", "12", "31", "(화)"])}>화 <strong>31</strong></button>
+              <h4>2020</h4>
+              <h1>1</h1>
+              <button className="days" onClick={()=>setDates(["2020", "01", "01", "(수)"])}>수 <strong>01</strong></button>
+              <button className="days" onClick={()=>setDates(["2020", "01", "02", "(목)"])}>목 <strong>02</strong></button>
+              <button className="days" onClick={()=>setDates(["2020", "01", "03", "(금)"])}>금 <strong>03</strong></button>
+              <button className="days" onClick={()=>setDates(["2020", "01", "04", "(토)"])}>토 <strong>04</strong></button>
+              <button className="days" onClick={()=>setDates(["2020", "01", "05", "(일)"])}>일 <strong>05</strong></button>
+              <button className="days" onClick={()=>setDates(["2020", "01", "06", "(월)"])}>월 <strong>06</strong></button>
+              <button className="days" onClick={()=>setDates(["2020", "01", "07", "(화)"])}>화 <strong>07</strong></button>
+              <button className="days" onClick={()=>setDates(["2020", "01", "08", "(수)"])}>수 <strong>08</strong></button>
+              <button className="days" onClick={()=>setDates(["2020", "01", "09", "(목)"])}>목 <strong>09</strong></button>
             </div>
           </div>
           <div className="timetable">
@@ -275,7 +277,7 @@ const Reservation = () => {
           </div>
           <div className="another_selects">
             <p>극장: {theater===0 ? "" : theater[1]}</p>
-            <p>일시: {dates===0 ? "" : "2019/" + dates[0] + "/" + dates[1] + " " + dates[2]}</p>
+            <p>일시: {dates===0 ? "" : dates[0] + "/" + dates[1] + "/" + dates[2] + " " + dates[3]}</p>
             <p>상영관: </p>
             <p>인원: </p>
           </div>
@@ -300,7 +302,7 @@ const Reservation = () => {
       <Link href="/reservation">
         <button className="reload">
           <img src="reload_arrow.png" alt="reload_arrow" />
-          <span>예매 다시하기</span>
+          <span>다시선택</span>
         </button>
       </Link>
       <div className="box_all">
@@ -383,7 +385,7 @@ const Reservation = () => {
           </div>
           <div className="another_selects">
             <p>극장: {theater===0 ? "" : theater[1]}</p>
-            <p>일시: {dates===0 ? "" : "2019/" + dates[0] + "/" + dates[1] + " " + dates[2]}</p>
+            <p>일시: {dates===0 ? "" : dates[0] + "/" + dates[1] + "/" + dates[2] + " " + dates[3]}</p>
             <p>상영관: </p>
             <p>인원: </p>
           </div>

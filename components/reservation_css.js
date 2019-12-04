@@ -195,14 +195,14 @@ const Reservation_CSS = () => {
         color: red;
       }
       .movie_select{
-        width: 18%;
+        width: 23%;
         display: flex;
         margin: 5px;
         height: 180px;
         margin-left: 20px;
       }
       .another_selects{
-        width: 18%;
+        width: 19%;
         display: flex;
         justify-content: center;
         flex-flow: column;

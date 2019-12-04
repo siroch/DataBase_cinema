@@ -1,6 +1,7 @@
 import Header from './Header'
 import Footer from './footer'
 import Store_CSS from '../components/store_css'
+import Link from 'next/link'
 import {useState} from 'react'
 
 const Store = () => {
@@ -66,7 +67,9 @@ const Store = () => {
         </div>
 
         <div className="fixed">
-        	<img src="/store/basket.png" />
+          <Link href="/baskets">
+            <img src="/store/basket.png" />
+          </Link>
         </div>
       </div>
   )
@@ -108,7 +111,9 @@ const Store = () => {
             <span className="price">18000원</span>
           </div>
           <div className="fixed">
-          	<img src="/store/basket.png" />
+          	<Link href="/baskets">
+              <img src="/store/basket.png" />
+            </Link>
           </div>
       </div>
   )
