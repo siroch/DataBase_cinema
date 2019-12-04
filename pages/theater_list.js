@@ -235,10 +235,10 @@ const Theater_list = ({areaNum,theaterNum}) => {
       <theater>
         <h2>EGV ({smallCity})</h2>
         <div>
-          <p>주소 : (ex)경기도 안양시 만안구 안양동 ---- xx건물 x층)</p>
+          <p>주소 : (ex)경기도 안양시 만안구 안양동 ----)</p>
         </div>
         <div className="map_img">
-          <img src='/map/1372.png' alt="combo1" />
+          <img src={"/map/"+smallCity+".png"} />
         </div>
         <div className="select_day">
           <div className="tmonth">12월</div>
