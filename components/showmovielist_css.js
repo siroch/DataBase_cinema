@@ -41,6 +41,9 @@ const Showmovielist_CSS = () => {
         height:300px;
         padding:0;
       }
+      .slide img:hover, .leftbutton button:hover, .rightbutton button:hover {
+        cursor: pointer;
+      }
       .slide p{
         margin: 5px;
       }

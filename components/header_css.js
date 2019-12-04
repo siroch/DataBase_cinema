@@ -33,6 +33,9 @@ const Header_CSS = () => {
         border-bottom: 2px solid white;
         cursor: pointer;
       }
+      nav img:hover {
+        cursor: pointer;
+      }
       nav ul{
         display: flex;
         justify-content: space-between;
