@@ -2,10 +2,12 @@ import Showmovielist_CSS from '../components/showmovielist_css'
 import {useState, useEffect} from 'react'
 import Link from "next/link"
 import data from '../data/movie_info'
+import sorted from '../data/getInfo'
 
 const ShowMovieList = () => {
 
 		const [index, setIndex] = useState(0)
+		const [isSorted, setSort] = useState(0)
 
 		function leftHandler(){ if(index>0) setIndex(index-1) }
 		function rightHandler(){ if(index<2) setIndex(index+1) }
@@ -45,13 +47,53 @@ const ShowMovieList = () => {
 	    }
 		})
 
+		const rankMovie = (
+			<div className="list">
+				{data.map(movies => (
+					<div className={'slide'}>
+						<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
+							<img src={movies.movie_info.picture} alt={movies.movie_info.movieNm}/>
+						</Link>
+						<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
+							<p><span>{movies.movie_info.ageRestriction}</span> {movies.movie_info.movieNm}</p>
+						</Link>
+						<p>평점: ?? 예매율: ??%</p>
+					</div>
+				))}
+			</div>
+		)
+
+		const latestMovie = (
+			<div className={"list"}>
+				{sorted.map(movies => (
+					<div className={'slide'}>
+						<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_id } }}>
+							<img src={movies.picture} alt={movies.movie_title}/>
+						</Link>
+						<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_id } }}>
+							<p><span>{movies.age_limit}</span> {movies.movie_title}</p>
+						</Link>
+						<p>평점: ?? 예매율: ??%</p>
+					</div>
+				))}
+			</div>
+		)
+
+		const reservationMovie = (
+			<div className={"list"}>
+				<p>???</p>
+			</div>
+		)
+
+		const orderMovie = [rankMovie, latestMovie, reservationMovie]
+
 		return(
 			<div className="movielist">
 				<Showmovielist_CSS />
 		    <div className="sort">
-		      <button>예매순</button>
-		      <button>평점순</button>
-		      <button>최신순</button>
+		      <button onClick={() => setSort(0)}>인기순</button>
+		      <button onClick={() => setSort(1)}>최신순</button>
+		      <button onClick={() => setSort(2)}>예매순</button>
 		    </div>
 		    <div className="leftbutton">
 		      <button onClick={() => leftHandler()}>&lt;</button>
@@ -59,19 +101,7 @@ const ShowMovieList = () => {
 		    <div className="rightbutton">
 		      <button onClick={() => rightHandler()}>&gt;</button>
 		    </div>
-		    <div className="list">
-					{data.map(movies => (
-						<div className={'slide'}>
-							<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
-								<img src={movies.movie_info.picture} alt={movies.movie_info.movieNm}/>
-							</Link>
-							<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
-								<p><span>{movies.movie_info.ageRestriction}</span> {movies.movie_info.movieNm}</p>
-							</Link>
-							<p>평점: ?? 예매율: ??%</p>
-						</div>
-					))}
-		    </div>
+				{orderMovie[isSorted]}
 				<div className="circles">
 					<span className="active"></span>
 					<span className="circle"></span>

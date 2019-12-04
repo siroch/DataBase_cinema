@@ -8,17 +8,6 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({dev});
 const handle = app.getRequestHandler();
 
-// const mysql      = require('mysql');
-// const connection = mysql.createConnection({
-//   host     : 'localhost',
-//   user     : 'root',
-//   password : '1234',
-//   database : 'ericagallery',
-//   port : 3306
-// });
-
-// connection.connect();
-
 app.prepare().then(() => {
     const server = express();
 
@@ -29,6 +18,7 @@ app.prepare().then(() => {
 
     server.use('/api',require('./pages/api/index'));
     const json_api = require('./pages/api/data_api/jsondata')(server, fs);
+    require('./pages/api/data_api/sortData').getSortInfo();
     server.get('/theaters/:areaNum/:theaterNum', (req, res) => {
       console.log(req.params);
       app.render(req, res,`/theater_list`,{ areaNum:req.params.areaNum,theaterNum: req.params.theaterNum});

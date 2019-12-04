@@ -51,19 +51,21 @@ create table time_table(
     show_date date not null,
     foreign key (theater_id) references theater(theater_id)
 );
-create table movie_info(
-    movie_id varchar(20) not null,
-    movie_title varchar(20) not null,
-    age_limit integer,
-    genre varchar(20) not null,
-    _3d boolean not null,
-    _4d boolean not null,
-    running_time integer not null,
-    director varchar(20) not null,
-    main_actor varchar(20) not null,
-    country varchar(20) not null,
-    opening_day date not null,
-    primary key (movie_id)
+CREATE TABLE movie_info (
+  movie_id varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  movie_title varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  age_limit int(11) DEFAULT NULL,
+  genre varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  _3d tinyint(1) NOT NULL,
+  _4d tinyint(1) NOT NULL,
+  running_time int(11) NOT NULL,
+  director varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  main_actor varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  country varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  opening_day date NOT NULL,
+  picture varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  isPlayed tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`movie_id`)
 );
 create table reserve_info(
     customer_id varchar(20) not null,
