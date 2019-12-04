@@ -71,13 +71,6 @@ const Sales_info = () => {
 						</tr>
 					</table>
 				</div>
-				<div class="sales_info">
-					<Link href="./sales_info_details">
-						<span>
-							매출 상세 정보
-						</span>
-					</Link>
-				</div>
 			</div>   	
 		</div>
 	)

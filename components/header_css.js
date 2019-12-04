@@ -10,7 +10,8 @@ const Header_CSS = () => {
         text-align: right;
         position: fixed;
         top: 0;
-        width: 100%;
+        width: 100vw;
+        height: 12vh;
         z-index: 2;
       }
       .small {
@@ -20,6 +21,10 @@ const Header_CSS = () => {
         border: 3px solid black;
         background-color: black;
         font-size: 20pt;
+      }
+      nav img {
+        width: 8vw;
+        height: 4vh;
       }
       nav a{
         margin-right: 6%;
