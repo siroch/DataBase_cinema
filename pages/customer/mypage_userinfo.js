@@ -49,8 +49,8 @@ const Mypage_userinfo = (props) => {
 }
 
 Mypage_userinfo.getInitialProps = async (res) => {
-	const id = res.query.user_id;
-	const name = res.query.user_name;
+	const id = sessionStorage.getItem("userId");
+	const name = sessionStorage.getItem("userName");
 	return {
 		user_id: id,
 		user_name: name

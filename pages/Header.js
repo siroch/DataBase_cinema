@@ -42,12 +42,11 @@ const Header = () => {
 			router.push('/');
 		} else {
 			router.push({
-				pathname: '/customer/mypage_userinfo',
-				query: {
-					user_id: user_info[0],
-					user_name: user_info[1],
-				}
+				pathname: '/customer/mypage_userinfo'
 			});
+			sessionStorage.setItem('userId', user_info[0]);
+			sessionStorage.setItem('userName', user_info[1]);
+			console.log(sessionStorage.getItem("userId"));
 		}
 	}
 
