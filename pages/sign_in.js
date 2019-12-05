@@ -6,6 +6,7 @@ import {useState, useEffect} from 'react'
 import Link from 'next/link'
 import Axios from 'axios'
 import router from 'next/router'
+import calendar from 'node-calendar'
 
 const SignIn = () => {
   const [id, getId] = useState('');
@@ -78,10 +79,45 @@ const SignIn = () => {
   }
 
   function birthCheck(e) {
-    if(birth_y && birth_m && birth_d) {
-      getBirthInfo(true);
-      getBirth("");
-    } else {
+    
+    if(birth_y||birth_m||birth_d){
+      var ycheck=/[0-9]{4}/;
+      var mcheck=/[0-9]{2}/;
+      var dcheck=/[0-9]{2}/;
+      var range;
+      if(!ycheck.test(birth_y)){
+        getBirth("년도가 잘못 입력되었습니다.");
+        getBirthInfo(false);
+      }
+      else if(!mcheck.test(birth_m)){
+        getBirth("월이 한자리수라면 앞에 0을 붙여주세요.");
+        getBirthInfo(false);
+      }
+      else if(!dcheck.test(birth_d)){
+        getBirth("일이 한자리수라면 앞에 0을 붙여주세요.");
+        getBirthInfo(false);
+      }
+      else{
+        var month=(birth_m[0]=="0")?birth_m[1]:birth_m;
+        try{
+          range=calendar.monthrange(birth_y, month);
+          console.log(typeof(range[1]))
+          var day=(birth_d[0]=="0")?birth_d[1]:birth_d;
+          if(parseInt(day)<=range[1]){
+            getBirth("");
+            getBirthInfo(true);
+          }
+          else{
+            throw new Error('DateValidateError');
+          }
+        }catch(e){
+          console.log(e.message);
+          getBirth("올바른 날짜 범위가 아닙니다.");
+          getBirthInfo(false);
+        }
+      }
+    }
+    else {
       getBirth("필수 정보입니다.");
       getBirthInfo(false);
     }
