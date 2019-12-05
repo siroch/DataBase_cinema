@@ -21,7 +21,7 @@ const Find = () => (
               <tr>
                <td> 생년월일 </td>
                <td> <input type = "text" name="birth_year" size = "4" required />년
-               <input type = "text" name="birth_month" size = "1" required />월
+               <input type = "text" name="birth_month" size = "2" required />월
                <input type = "text" name="birth_day" size = "2" required />일 </td>
               </tr>
 

@@ -41,7 +41,7 @@ const SignIn = () => {
     if(!id) {
       getIdInfo("필수 정보입니다.");
     } else {
-      
+
       getIdInfo("");
     }
   }
@@ -68,8 +68,8 @@ const SignIn = () => {
       pwdCheckInfo("필수 정보 입니다.");
       pwdPossible(false);
     }
-  } 
-  
+  }
+
   function NameBlur(e) {
     if(!name) {
       nameInfo("필수 정보입니다");
@@ -79,7 +79,7 @@ const SignIn = () => {
   }
 
   function birthCheck(e) {
-    
+
     if(birth_y||birth_m||birth_d){
       var ycheck=/[0-9]{4}/;
       var mcheck=/[0-9]{2}/;
@@ -198,9 +198,9 @@ const SignIn = () => {
 
            <tr>
             <td> 비밀번호 </td>
-            <td> 
+            <td>
               <input type = "password" onChange={getpwd1} onBlur={PasswordBlur} name="pw1" required />
-              <div className="alert">{pwdinfo}</div> 
+              <div className="alert">{pwdinfo}</div>
               </td>
            </tr>
 
@@ -213,18 +213,18 @@ const SignIn = () => {
 
            <tr>
             <td> 성명 </td>
-            <td> 
-              <input type = "text" onChange={getname} onBlur={NameBlur} name="name" required /> 
+            <td>
+              <input type = "text" onChange={getname} onBlur={NameBlur} name="name" required />
               <div className="alert">{nameinfo}</div>
             </td>
            </tr>
 
             <tr>
             <td> 생년월일 </td>
-            <td> 
+            <td>
               <input type = "text" name="birth_year" onChange={getbirthy} onBlur={birthCheck} size = "4" required />년
-              <input type = "text" name="birth_month" onChange={getbirthm} onBlur={birthCheck} size = "1" required />월
-              <input type = "text" name="birth_day" onChange={getbirthd} onBlur={birthCheck} size = "2" required />일 
+              <input type = "text" name="birth_month" onChange={getbirthm} onBlur={birthCheck} size = "2" required />월
+              <input type = "text" name="birth_day" onChange={getbirthd} onBlur={birthCheck} size = "2" required />일
               { birthinfo ? (<div className="possible">{birth}</div>) : (<div className="alert">{birth}</div>) }
             </td>
            </tr>

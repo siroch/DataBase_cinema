@@ -18,27 +18,23 @@ const Mypage_level = () => {
 						</tr>
 						<tr>
 		    			<th scope="row">브론즈</th>
-		    			<td>XXXX</td>
+		    			<td>3% 할인 적용</td>
 						</tr>
 						<tr>
 		    			<th scope="row">실버</th>
-		    			<td>XXXX</td>
+		    			<td>6% 할인 적용</td>
 						</tr>
 						<tr>
 		    			<th scope="row">골드</th>
-		    			<td>XXXX</td>
+		    			<td>10% 할인 적용</td>
 						</tr>
 						<tr>
 		    			<th scope="row">플레티넘</th>
-		    			<td>XXXX</td>
-						</tr>
-						<tr>
-		    			<th scope="row">다이아몬드</th>
-		    			<td>XXXX</td>
+		    			<td>15% 할인 적용</td>
 						</tr>
 					</table>
 				</div>
-		</div>		
+		</div>
 		</div>
 	)
 }
