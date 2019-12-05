@@ -36,14 +36,21 @@ const ShowMovieList = () => {
 				bnts[4].disabled=true
 			}
 			var age = document.getElementsByTagName("span")
-	    for(var i=0; i<age.length; i++){
-	      if(age[i].textContent === "19"){
+	    for(var i=0; i<age.length-3; i++){
+				age[i].classList.remove('fifteen')
+				age[i].classList.remove('twelve')
+				age[i].classList.remove('allage')
+				age[i].classList.remove('nineteen')
+	      if(age[i].textContent === "19" || age[i].textContent === "청불"){
 					age[i].classList.add('nineteen')
 					age[i].textContent = "청불"
 				}
 	      else if(age[i].textContent === "15"){ age[i].classList.add('fifteen') }
 	      else if(age[i].textContent === "12"){ age[i].classList.add('twelve') }
-	      else if(age[i].textContent === "전체"){ age[i].classList.add('allage')}
+	      else if(age[i].textContent === "전체" || age[i].textContent === ""){
+					age[i].classList.add('allage')
+					age[i].textContent = "전체"
+				}
 	    }
 		})
 
@@ -96,10 +103,10 @@ const ShowMovieList = () => {
 		      <button onClick={() => setSort(2)}>예매순</button>
 		    </div>
 		    <div className="leftbutton">
-		      <button onClick={() => leftHandler()}>&lt;</button>
+		      <button onClick={() => leftHandler()}>&lsaquo;</button>
 		    </div>
 		    <div className="rightbutton">
-		      <button onClick={() => rightHandler()}>&gt;</button>
+		      <button onClick={() => rightHandler()}>&rsaquo;</button>
 		    </div>
 				{orderMovie[isSorted]}
 				<div className="circles">

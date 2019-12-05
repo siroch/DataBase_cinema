@@ -49,13 +49,13 @@ const Showmovielist_CSS = () => {
       }
       .rightbutton button{
         float: right;
-        font-size: 50pt;
+        font-size: 80pt;
         border: none;
         margin-top: 150px;
       }
       .leftbutton button{
         float: left;
-        font-size: 50pt;
+        font-size: 80pt;
         border: none;
         margin-top: 150px;
       }
@@ -104,6 +104,11 @@ const Showmovielist_CSS = () => {
       .twelve{
         background-color: blue;
         padding: 5px;
+      }
+      .sort button{
+        background-color: black;
+        color: white;
+        border-radius: 10px;
       }
     `}</style>
   )

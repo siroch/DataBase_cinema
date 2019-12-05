@@ -27,9 +27,6 @@ const Movie_list = () => {
       <Header />
       <div className="movie_list">
        	<h2>영화 목록</h2>
-       	<a>예매순</a>
-       	|
-       	<a>평점순</a>
      	</div>
 			<div className="sort_movie_info">
 				{data.map(movies => (
