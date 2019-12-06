@@ -15,6 +15,7 @@
 <h2> Install Modules </h2>
 <pre><code>npm install
 </code></pre>
+<pre><code>npm install -g json-server</code></pre>
 
 <h2>Run Server</h2>
 <pre><code>json-server --watch db.json --port 3001</pre></code>
