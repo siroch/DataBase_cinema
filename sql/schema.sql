@@ -35,20 +35,20 @@ create table customer (
     c_rank integer,
     primary key(customer_id)
 );
-create table theater (
-    theater_id varchar(20) not null,
-    region varchar(20) not null,
-    _2d integer,
-    _3d integer,
-    _4d integer,
-    primary key(theater_id)
+CREATE TABLE theater (
+  theater_id varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  region varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  _2d int(11) DEFAULT NULL,
+  _3d int(11) DEFAULT NULL,
+  _4d int(11) DEFAULT NULL,
+  PRIMARY KEY (theater_id)
 );
 create table time_table(
     theater_id varchar(20) not null, 
     screen_num integer not null,
     show_time time not null,
     movie_id varchar(20) not null,
-    show_date date not null,
+    show_date datetime not null,
     foreign key (theater_id) references theater(theater_id)
 );
 CREATE TABLE movie_info (
