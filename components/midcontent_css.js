@@ -24,6 +24,8 @@ const Midcontent_CSS = () => {
         margin: 10px;
       }
       .rank_info{
+        margin-left: 3%;
+        margin-right: 3%;
         margin-bottom: 5%;
         border: 3px solid;
         border-radius: 5px;
@@ -57,16 +59,16 @@ const Midcontent_CSS = () => {
         list-style: none;
       }
       .rank_b li{
-        font-size: 10pt;
+        font-size: 9pt;
       }
       .rank_s li{
-        font-size: 11pt;
+        font-size: 10pt;
       }
       .rank_g li{
-        font-size: 12pt;
+        font-size: 11pt;
       }
       .rank_p li{
-        font-size: 13pt;
+        font-size: 12pt;
       }
       .rank_info p{
         margin: 0;
@@ -76,20 +78,20 @@ const Midcontent_CSS = () => {
         color: gray;
       }
       .rank_b img{
+        width: 80px;
+        height: 80px;
+      }
+      .rank_s img{
         width: 100px;
         height: 100px;
       }
-      .rank_s img{
+      .rank_g img{
         width: 120px;
         height: 120px;
       }
-      .rank_g img{
+      .rank_p img{
         width: 150px;
         height: 150px;
-      }
-      .rank_p img{
-        width: 200px;
-        height: 200px;
       }
     `}</style>
   )

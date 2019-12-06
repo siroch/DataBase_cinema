@@ -51,13 +51,13 @@ const Showmovielist_CSS = () => {
         float: right;
         font-size: 80pt;
         border: none;
-        margin-top: 150px;
+        margin-top: 130px;
       }
       .leftbutton button{
         float: left;
         font-size: 80pt;
         border: none;
-        margin-top: 150px;
+        margin-top: 130px;
       }
       .circle{
         height: 10px;
