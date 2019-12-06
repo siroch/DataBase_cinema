@@ -1,7 +1,28 @@
 import Mypage from './mypage'
 import Mypage_CSS from '../../components/mypage_css'
+import Axios from 'axios'
+import {useEffect, useState} from 'react'
 
-const Mypage_userinfo = (props) => {
+const Mypage_userinfo = () => {
+	const [user_id, getUserid] = useState('');
+	const [user_name, getUsername] = useState('');
+	const [user_birth, getUserBirth] = useState('');
+	const [user_phone, getUserPhone] = useState('');
+	const [user_spend, getUserSpend] = useState('');
+	const [user_rank, getUserRank] = useState('');
+
+	useEffect(() => {
+		Axios
+		.get("http://localhost:3001/memo")
+		.then(function(response) {
+			getUserid(response.data[0].id);
+			getUsername(response.data[0].name);
+			getUserBirth(response.data[0].birth);
+			getUserPhone(response.data[0].phone);
+			getUserSpend(response.data[0].spend);
+			getUserRank(response.data[0].rank);
+		})
+	})
 	return (
 		<div>
 			<Mypage />
@@ -14,27 +35,27 @@ const Mypage_userinfo = (props) => {
 					<table class="type05">
 						<tr>
 		    			<th scope="row">ID</th>
-		    			<td>{props.user_id}</td>
+		    			<td>{user_id}</td>
 						</tr>
 						<tr>
 		    			<th scope="row">이름</th>
-		    			<td>{props.user_name}</td>
+		    			<td>{user_name}</td>
 						</tr>
 						<tr>
 		    			<th scope="row">생년월일</th>
-		    			<td>1999.09.22</td>
+		    			<td>{user_birth}</td>
 						</tr>
 						<tr>
 		    			<th scope="row">전화번호</th>
-		    			<td>010-5031-9590</td>
+		    			<td>{user_phone}</td>
 						</tr>
 						<tr>
 		    			<th scope="row">회원등급</th>
-		    			<td>골드</td>
+		    			<td>{user_rank}</td>
 						</tr>
 						<tr>
 		    			<th scope="row">이번 달 지출</th>
-		    			<td>113,700₩</td>
+		    			<td>{user_spend}₩</td>
 						</tr>
 					</table>
 				</div>
@@ -46,15 +67,6 @@ const Mypage_userinfo = (props) => {
 			</div>
 		</div>
 	)
-}
-
-Mypage_userinfo.getInitialProps = async (res) => {
-	const id = sessionStorage.getItem("userId");
-	const name = sessionStorage.getItem("userName");
-	return {
-		user_id: id,
-		user_name: name
-	}
 }
 
 export default Mypage_userinfo

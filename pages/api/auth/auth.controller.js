@@ -86,6 +86,22 @@ exports.login = (req, res) => {
           reject(new Error('Password is wrong'));
         }
         else {
+          console.log(results[0]);
+          axios.
+          post('http://localhost:3001/memo', {
+            "id" : curr_id,
+            "name" : results[0].customer_name,
+            "birth" : results[0].customer_birth,
+            "phone" : results[0].customer_phone,
+            "spend" : results[0].monthly_spend,
+            "rank" : results[0].c_rank
+          })
+          .then(function(res) {
+            res.send(200);
+          })
+          .catch(function(res) {
+            reject(new Error(400));
+          });
           resolve(results[0]);
         }
       });

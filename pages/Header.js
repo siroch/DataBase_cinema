@@ -30,10 +30,17 @@ const Header = () => {
 	})
 
 	function logout() {
-		localStorage.removeItem('login');
-		alert("로그아웃 되었습니다.");
-		getLoginStatus(false);
-		router.push('/');
+		axios.
+		delete('http://localhost:3001/memo/' + user_info[0])
+		.then(function(res) {
+			localStorage.removeItem('login');
+			alert("로그아웃 되었습니다.");
+			getLoginStatus(false);
+			router.push('/');
+		})
+		.catch(function(res){
+			console.log(res);
+		})
 	}
 
 	function ifLogin() {
