@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon app.js --verbose",
     "build": "next build",
-    "start": "next start"
+    "start": "json-server --watch db.json ---port 3001"
   },
   "keywords": [],
   "author": "",
@@ -37,7 +37,9 @@
   },
   "homepage": "https://github.com/siroch/DataBase_cinema#readme",
   "description": "",
-  "nodemonConfig" :{
-    "ignore" : ["/db.json"]
+  "nodemonConfig": {
+    "ignore": [
+      "/db.json"
+    ]
   }
 }

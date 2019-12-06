@@ -18,12 +18,12 @@ create table store (
     foreign key(st_name) references merch(st_name),
     constraint di_merch primary key(theater_id, st_name)
 );
-create table review (
-    movie_id varchar(20),
-    rate integer not null,
-    wr_review varchar(20) not null,
-    wr_date TIMESTAMP,
-    primary key(movie_id)
+CREATE TABLE review (
+  movie_id varchar(20) NOT NULL,
+  rate` int(11) NOT NULL,
+  wr_review varchar(200) NOT NULL,
+  wr_date timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (movie_id)
 );
 create table customer (
     customer_id varchar(20) not null,
