@@ -15,12 +15,32 @@ const Mypage_userinfo = () => {
 		Axios
 		.get("http://localhost:3001/memo")
 		.then(function(response) {
+			var birth = String(response.data[0].birth);
+			var phone = String(response.data[0].phone);
+			if(birth[4] === '0') {
+				birth = birth.substring(0,4) + '년 ' + birth.substring(5, 6) + '월 ' + birth.substring(6, 8) + '일';
+			} else {
+				birth = birth.substring(0,4) + '년 ' + birth.substring(4, 6) + '월 ' + birth.substring(6, 8) + '일';
+			}
+			phone = '0' + phone.substring(0,2) + '-' + phone.substring(2, 6) + '-' + phone.substring(6, 10);
+			var rank;
+			if(response.data[0].rank===0) {
+				rank = '일반';
+			} else if(response.data[0].rank === 1) {
+				rank = 'Bronze';
+			} else if(response.data[0].rank === 2) {
+				rank = 'Silver';
+			} else if(response.data[0].rank === 3) {
+				rank = 'Gold';
+			} else {
+				rank = 'Plantinum';
+			}
 			getUserid(response.data[0].id);
 			getUsername(response.data[0].name);
-			getUserBirth(response.data[0].birth);
-			getUserPhone(response.data[0].phone);
+			getUserBirth(birth);
+			getUserPhone(phone);
 			getUserSpend(response.data[0].spend);
-			getUserRank(response.data[0].rank);
+			getUserRank(rank);
 		})
 	})
 	return (
@@ -55,7 +75,7 @@ const Mypage_userinfo = () => {
 						</tr>
 						<tr>
 		    			<th scope="row">이번 달 지출</th>
-		    			<td>{user_spend}₩</td>
+		    			<td>{user_spend} ₩</td>
 						</tr>
 					</table>
 				</div>

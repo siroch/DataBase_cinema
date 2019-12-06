@@ -74,7 +74,7 @@ exports.login = (req, res) => {
   const secret = req.app.get('jwt-secret');
   const chk = (curr_id,curr_pw)=>{
     return new Promise((resolve,reject)=>{
-      const login_sql=`select * from customer where customer_id='${curr_id}'`;
+      const login_sql=`select customer_id, customer_pw, customer_name, customer_id, customer_phone, customer_birth + 0 as customer_birth, monthly_spend, c_rank from customer where customer_id='${curr_id}'`;
       connection.query(login_sql , (err, results) =>{
         if (err) {
           reject(new Error('login failed'));
@@ -86,7 +86,7 @@ exports.login = (req, res) => {
           reject(new Error('Password is wrong'));
         }
         else {
-          console.log(results[0]);
+          console.log("this", results[0]);
           axios.
           post('http://localhost:3001/memo', {
             "id" : curr_id,
