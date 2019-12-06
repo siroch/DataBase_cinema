@@ -8,11 +8,11 @@ const Staffpage_info = () => {
 			<Staffpage />
     	<Staffpage_CSS />
 			<div>
-				<div class="head2">
+				<div className="head2">
 					<h2>직원 정보</h2>
 				</div>
-				<div class="user_info">
-					<table class="type05">
+				<div className="user_info">
+					<table className="type05">
 						<tr>
 		    			<th scope="row">이름/성별</th>
 		    			<td>강동호/남</td>

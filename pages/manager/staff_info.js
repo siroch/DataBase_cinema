@@ -8,11 +8,11 @@ const Staff_info = () => {
 			<Managerpage />
 			<Managerpage_CSS />
 			<div>
-				<div class="head2">
+				<div className="head2">
 					<h2>직원 정보</h2>
 				</div>
-				<div class="user_info">
-					<table class="type05">
+				<div className="user_info">
+					<table className="type05">
 						<tr>
 		    			<th scope="row">강동호 | 남</th>
 		    			<td>매점 관리 및 상품 판매 | 직원 점수 : 132점

@@ -8,11 +8,11 @@ const Store_info = () => {
 			<Managerpage />
 			<Managerpage_CSS />
 			<div>
-				<div class="head2">
+				<div className="head2">
 					<h2>매장 정보</h2>
 				</div>
-				<div class="user_info">
-					<table class="type05">
+				<div className="user_info">
+					<table className="type05">
 						<tr>
 		    			<th scope="row">상영관 갯수</th>
 		    			<td>8관 | 2D 6관 | 3D 1관 | 4D 1관</td>

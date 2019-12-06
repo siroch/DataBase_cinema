@@ -7,11 +7,11 @@ const Mypage_level = () => {
 			<Mypage />
 			<Mypage_CSS />
 			<div>
-				<div class="head2">
+				<div className="head2">
 					<h2>등급 정보</h2>
 				</div>
-				<div class="user_info">
-					<table class="type05">
+				<div className="user_info">
+					<table className="type05">
 						<tr>
 		    			<th scope="row">현재 고객님의 등급</th>
 		    			<td>골드</td>

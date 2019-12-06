@@ -8,19 +8,19 @@ const Staff_info_details = () => {
 	return (
 		<div>
 			<Staff_info_details_CSS />
-			<div class="staff_info_details_header">
+			<div className="staff_info_details_header">
 				<button>수정완료</button>
 				<h2>직원 상세 정보</h2>
 				<Link href="./staff_info">
 					<button>뒤로가기</button>
 				</Link>
 			</div>
-			<div class="staff_info_details">
-				<div class="staff_info_name">
-					<div class="details">
+			<div className="staff_info_details">
+				<div className="staff_info_name">
+					<div className="details">
 						<img src="/reload_arrow.png" alt="xx" />
 						<div>
-							<table class="type05">
+							<table className="type05">
 								<tr>
 				    			<th scope="row">이름 | 나이 | 성별</th>
 				    			<td>강동호 | 21세 | 남자</td>
@@ -49,8 +49,8 @@ const Staff_info_details = () => {
 					</div>
 					<h3>근태 정보</h3>
 				</div>
-				<div class="work_info">
-					<table class="type05">
+				<div className="work_info">
+					<table className="type05">
 						<tr>
 		    			<th scope="row">2018.01</th>
 		    			<td>전체 18일 | 출근 17일 | 지각 3일 | 결근 1일</td>

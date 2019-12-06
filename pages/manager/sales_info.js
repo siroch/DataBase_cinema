@@ -8,11 +8,11 @@ const Sales_info = () => {
 			<Managerpage />
 			<Managerpage_CSS />
 			<div>
-				<div class="head2">
+				<div className="head2">
 					<h2>매출 정보</h2>
 				</div>
-				<div class="user_info">
-					<table class="type05">
+				<div className="user_info">
+					<table className="type05">
 						<tr>
 		    			<th scope="row">2019.11</th>
 		    			<td>

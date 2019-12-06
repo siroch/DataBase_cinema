@@ -8,11 +8,11 @@ const Staffpage_work = () => {
 			<Staffpage />
     	<Staffpage_CSS />
 			<div>
-				<div class="head2">
+				<div className="head2">
 					<h2>근태 기록</h2>
 				</div>
-				<div class="user_info">
-					<table class="type05">
+				<div className="user_info">
+					<table className="type05">
 						<tr>
 		    			<th scope="row">2018.01</th>
 		    			<td>전체 18일 | 출근 17일 | 지각 3일 | 결근 1일</td>

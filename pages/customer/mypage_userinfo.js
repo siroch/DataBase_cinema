@@ -28,11 +28,11 @@ const Mypage_userinfo = () => {
 			<Mypage />
 			<Mypage_CSS />
 			<div>
-				<div class="head2">
+				<div className="head2">
 					<h2>회원 정보</h2>
 				</div>
-				<div class="user_info">
-					<table class="type05">
+				<div className="user_info">
+					<table className="type05">
 						<tr>
 		    			<th scope="row">ID</th>
 		    			<td>{user_id}</td>
@@ -59,7 +59,7 @@ const Mypage_userinfo = () => {
 						</tr>
 					</table>
 				</div>
-				<div class="edit_userinfo">
+				<div className="edit_userinfo">
 					<span>
 						회원 정보 수정
 					</span>

@@ -7,11 +7,11 @@ const Mypage_item = () => {
 			<Mypage />
 			<Mypage_CSS />
 			<div>
-				<div class="head2">
+				<div className="head2">
 					<h2>구매 정보</h2>
 				</div>
-				<div class="user_info">
-					<table class="type05">
+				<div className="user_info">
+					<table className="type05">
 						<tr>
 		    			<th scope="row">구매 품목 1</th>
 		    			<td>EGV A set | 17,000₩</td>
@@ -22,7 +22,7 @@ const Mypage_item = () => {
 						</tr>
 					</table>
 				</div>
-				<div class="edit_rs_movie">
+				<div className="edit_rs_movie">
 					<span>
 						구매 취소
 					</span>

@@ -8,12 +8,12 @@ const Staffpage_today = () => {
 			<Staffpage />
     	<Staffpage_CSS />
 			<div>
-				<div class="head2">
+				<div className="head2">
 					<h2>근무 기록</h2>
 				</div>
-				<div class="user_info1">
-					<div class="info_sort">
-						<table class="type05">
+				<div className="user_info1">
+					<div className="info_sort">
+						<table className="type05">
 							<tr>
 			    			<th scope="row">2019.11.30 출근</th>
 			    			<td>10:13:48 | 지각</td>
@@ -28,7 +28,7 @@ const Staffpage_today = () => {
 							</tr>
 						</table>
 					</div>
-					<div class="info_sort_button">
+					<div className="info_sort_button">
 						<button>출근</button>
 						<button>퇴근</button>
 					</div>
