@@ -18,7 +18,7 @@
 <pre><code>npm install -g json-server</code></pre>
 
 <h2>Run Server</h2>
-<pre><code>json-server --watch db.json --port 3001</pre></code>
+<pre><code>npm start</pre></code>
 <pre><code>npm run dev</code></pre>
 
 
