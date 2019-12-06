@@ -398,10 +398,12 @@ const Reservation = () => {
             <br />
             <p>총금액  0</p>
           </div>
-          <button className="go_pay" disabled="true">
-            &#8594;
-            <button className="inner" disabled="true">결제</button>
-          </button>
+          <Link href="/movie_pay">
+            <button className="go_pay">
+              &#8594;
+              <button className="inner">결제</button>
+            </button>
+          </Link>
         </div>
       </div>
     </div>

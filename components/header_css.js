@@ -23,8 +23,8 @@ const Header_CSS = () => {
         font-size: 20pt;
       }
       nav img {
-        width: 8vw;
-        height: 4vh;
+        width: 180px;
+        height: 40px;
       }
       nav a{
         margin-right: 6%;
