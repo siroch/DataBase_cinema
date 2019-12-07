@@ -105,7 +105,7 @@ const Movie_details = (props) => (
 
 Movie_details.getInitialProps = async (res) => {
   const {movieCd} = res.query;
-  const response = await axios.get(`http://localhost:3000/data/${movieCd}`);
+  const response = await axios.get(`http://localhost:3000/api/data/movies/${movieCd}`);
   return {
     movies: response.data
   };

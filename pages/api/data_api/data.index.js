@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const time_t = require('./timetable');
+const controller = require('./data.controller');
 
-router.get('/timetable',time_t.timetable);
-
+router.get('/timetable',controller.timetable);
+router.get('/movies/:movieCd',controller.moviedata);
+router.get('/sortData',controller.getSortInfo);
 module.exports = router;
