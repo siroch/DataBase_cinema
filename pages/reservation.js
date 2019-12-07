@@ -1,7 +1,7 @@
 import Header from './Header'
 import Footer from './footer'
 import Reservation_CSS from '../components/reservation_css'
-import {useState, useEffect} from 'react'
+import {useState, useEffect,Fragment} from 'react'
 import Link from 'next/link'
 import data from '../data/movie_info'
 
@@ -15,6 +15,7 @@ const Reservation = () => {
   const [theater, setTheater] = useState(0)
   const [dates, setDates] = useState(0)
   const [seat, setSeat] = useState(0)
+  const [table,setTable] = useState([])
   const [showtime,settime] = useState(0)
 
   function reloadHandler(){
@@ -38,7 +39,18 @@ const Reservation = () => {
           inner_bnt[0].disabled=false
         }
         else{
-          //Axios.get("http://localhost:3000/data/table")
+          const response = Axios.get("http://localhost:3000/api/data/timetable",{
+            params:{
+              theater_id:theater[0],
+              movie_id:movie[4],
+              date_str:dates[0]+","+dates[1]+","+dates[2]
+            }
+          }).then((res)=>{
+            setTable(res.data);
+            console.log(table);
+          }).catch((err)=>{
+            console.log(err.message);
+          });
         }
       }
       else{
@@ -88,7 +100,7 @@ const Reservation = () => {
         days[t].classList.add('sat')
       }
     }
-  })
+  },[movie,theater,dates,showtime])
 
   const Su = (
     <div className="smallcity">
@@ -224,52 +236,16 @@ const Reservation = () => {
           </div>
           <div className="timetable">
             <h3>시간</h3>
-            <div className="table">
-              2D 4관 (총 300석)
-              <div className="times">
-                <div className="time">
-                  <button>10:00</button> 270석
+            {table.map((t)=>(
+              <div className="table">
+                <div classname="times">
+                  {t.screen_num}관(2D)
                 </div>
                 <div className="time">
-                  <button>12:00</button> 250석
-                </div>
-                <div className="time">
-                  <button>14:00</button> 230석
-                </div>
-                <div className="time">
-                  <button>16:00</button> 230석
-                </div>
-                <div className="time">
-                  <button>18:00</button> 230석
-                </div>
-                <div className="time">
-                  <button>20:00</button> 230석
+                  <button>{t.show_date[0]}:{t.show_date[1]}</button> 
                 </div>
               </div>
-            </div>
-            <div className="table">
-              3D 8관 (총 280석)
-              <div className="times">
-                <div className="time">
-                  <button>10:00</button> 270석
-                </div>
-                <div className="time">
-                  <button>12:00</button> 250석
-                </div>
-                <div className="time">
-                  <button>14:00</button> 230석
-                </div>
-                <div className="time">
-                  <button>16:00</button> 220석
-                </div>
-                <div className="time">
-                  <button>18:00</button> 230석
-                </div>
-                <div className="time">
-                  <button>20:00</button> 230석
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         <div className="summary">
