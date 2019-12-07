@@ -15,6 +15,7 @@ const Mypage_userinfo = () => {
 		Axios
 		.get("http://localhost:3001/memo")
 		.then(function(response) {
+      console.log(response.data[0].birth);
 			var birth = String(response.data[0].birth);
 			var phone = String(response.data[0].phone);
 			if(birth[4] === '0') {

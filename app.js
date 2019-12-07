@@ -15,10 +15,11 @@ app.prepare().then(() => {
     server.use(bodyParser.json());
     server.use(morgan('dev'));
     server.set('jwt-secret','SeCrEtKeYfOrHaShInG');
-
-    server.use('/api',require('./pages/api/index'));
     const json_api = require('./pages/api/data_api/jsondata')(server, fs);
     require('./pages/api/data_api/sortData').getSortInfo();
+    server.use('/api',require('./pages/api/index'));
+    //const time_table = require('./pages/api/data_api/timetable')(server);
+    
     server.get('/theaters/:areaNum/:theaterNum', (req, res) => {
       console.log(req.params);
       app.render(req, res,`/theater_list`,{ areaNum:req.params.areaNum,theaterNum: req.params.theaterNum});

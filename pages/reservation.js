@@ -6,6 +6,7 @@ import Link from 'next/link'
 import data from '../data/movie_info'
 
 import th_data from '../data/theater'
+import Axios from 'axios'
 
 const Reservation = () => {
   const [city, setCity] = useState(0)
@@ -14,6 +15,7 @@ const Reservation = () => {
   const [theater, setTheater] = useState(0)
   const [dates, setDates] = useState(0)
   const [seat, setSeat] = useState(0)
+  const [showtime,settime] = useState(0)
 
   function reloadHandler(){
     if(next === false){
@@ -31,8 +33,13 @@ const Reservation = () => {
     var inner_bnt = document.getElementsByClassName("inner")
     if(next===false){
       if(movie!=0 && theater!=0 && dates!=0){
-        next_bnt[0].disabled=false
-        inner_bnt[0].disabled=false
+        if(showtime!=0){
+          next_bnt[0].disabled=false
+          inner_bnt[0].disabled=false
+        }
+        else{
+          //Axios.get("http://localhost:3000/data/table")
+        }
       }
       else{
         next_bnt[0].disabled=true
@@ -153,7 +160,7 @@ const Reservation = () => {
             <h3>영화</h3>
             {data.map(movies => (
               <button className="mov" onClick={()=>setMovies([movies.movie_info.ageRestriction, movies.movie_info.movieNm,
-                movies.movie_info.picture, movies.movie_info.showTypes])}>
+                movies.movie_info.picture, movies.movie_info.showTypes,movies.movie_info.movieCd])}>
                 <span>{movies.movie_info.ageRestriction}</span>
                 {movies.movie_info.movieNm}
               </button>
