@@ -87,21 +87,6 @@ exports.login = (req, res) => {
         }
         else {
           console.log("this", results[0]);
-          axios.
-          post('http://localhost:3001/memo', {
-            "id" : curr_id,
-            "name" : results[0].customer_name,
-            "birth" : results[0].customer_birth,
-            "phone" : results[0].customer_phone,
-            "spend" : results[0].monthly_spend,
-            "rank" : results[0].c_rank
-          })
-          .then(function(res) {
-            res.send(200);
-          })
-          .catch(function(res) {
-            reject(new Error(400));
-          });
           resolve(results[0]);
         }
       });
@@ -155,7 +140,7 @@ exports.check = (req, res) => {
 }
 
 exports.samecheck = (req, res) => {
-  const sel_sql = `select customer_id from customer where customer_id = '${req.params.id}'`;
+  const sel_sql = `select customer_id, customer_name, customer_birth, customer_phone, customer_birth + 0 as customer_birth, monthly_spend, c_rank from customer where customer_id = '${req.params.id}'`;
   connection.query(sel_sql , (err, results) => {
     if (err) {
       console.log(err);
@@ -167,8 +152,27 @@ exports.samecheck = (req, res) => {
     } 
     else {
       res.send({
-        "exist" : true
+        "exist" : true,
+        "name" : results[0].customer_name,
+        "id" : results[0].customer_id,
+        "birth" : results[0].customer_birth,
+        "phone" : results[0].customer_phone,
+        "spend": results[0].monthly_spend,
+        "rank" : results[0].c_rank
       });
     }
   });
+}
+
+exports.updateUserInfo = (req, res) => {
+  console.log(req);
+  const sql = `update customer set customer_pw = ${req.body.pwd}, customer_name = '${req.body.name}', customer_birth = ${req.body.birth}, customer_phone = ${req.body.phone} where customer_id = '${req.body.id}'`
+  connection.query(sql, (err, results) => {
+    if(err) {
+      console.log(err);
+    } else {
+      res.send(200);
+      console.log(results);
+    }
+  })
 }

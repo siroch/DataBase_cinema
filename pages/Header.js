@@ -25,22 +25,28 @@ const Header = () => {
 				console.log(res);
 				user_info.push(res.data.info.customer_id);
 				user_info.push(res.data.info.customer_name);
+				sessionStorage.setItem('userId', user_info[0]);
+				sessionStorage.setItem('userName', user_info[1]);
 			})
 		}
 	})
 
 	function logout() {
-		axios.
-		delete('http://localhost:3001/memo/' + user_info[0])
-		.then(function(res) {
-			localStorage.removeItem('login');
-			alert("로그아웃 되었습니다.");
-			getLoginStatus(false);
-			router.push('/');
-		})
-		.catch(function(res){
-			console.log(res);
-		})
+		// axios.
+		// delete('http://localhost:3001/memo/' + user_info[0])
+		// .then(function(res) {
+		// 	localStorage.removeItem('login');
+		// 	alert("로그아웃 되었습니다.");
+		// 	getLoginStatus(false);
+		// 	router.push('/');
+		// })
+		// .catch(function(res){
+		// 	console.log(res);
+		// })
+		localStorage.removeItem('login');
+		alert("로그아웃 되었습니다.");
+		getLoginStatus(false);
+		router.push('/');
 	}
 
 	function ifLogin() {
@@ -51,8 +57,6 @@ const Header = () => {
 			router.push({
 				pathname: '/customer/mypage_userinfo'
 			});
-			sessionStorage.setItem('userId', user_info[0]);
-			sessionStorage.setItem('userName', user_info[1]);
 			console.log(sessionStorage.getItem("userId"));
 		}
 	}

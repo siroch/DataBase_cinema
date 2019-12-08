@@ -7,5 +7,5 @@ router.post('/login',controller.login);
 router.use('/check',authMiddleware);
 router.get('/check',controller.check);
 router.get('/samecheck/:id', controller.samecheck);
-
+router.post('/update', controller.updateUserInfo);
 module.exports = router;

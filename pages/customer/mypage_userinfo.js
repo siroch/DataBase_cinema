@@ -12,12 +12,13 @@ const Mypage_userinfo = () => {
 	const [user_rank, getUserRank] = useState('');
 
 	useEffect(() => {
+		var url = "/api/auth/samecheck/" + sessionStorage.getItem('userId');
 		Axios
-		.get("http://localhost:3001/memo")
+		.get(url)
 		.then(function(response) {
-      console.log(response.data[0].birth);
-			var birth = String(response.data[0].birth);
-			var phone = String(response.data[0].phone);
+      		console.log(response.data.birth);
+			var birth = String(response.data.birth);
+			var phone = String(response.data.phone);
 			if(birth[4] === '0') {
 				birth = birth.substring(0,4) + '년 ' + birth.substring(5, 6) + '월 ' + birth.substring(6, 8) + '일';
 			} else {
@@ -25,25 +26,25 @@ const Mypage_userinfo = () => {
 			}
 			phone = '0' + phone.substring(0,2) + '-' + phone.substring(2, 6) + '-' + phone.substring(6, 10);
 			var rank;
-			if(response.data[0].rank===0) {
+			if(response.data.rank===0) {
 				rank = '일반';
-			} else if(response.data[0].rank === 1) {
+			} else if(response.data.rank === 1) {
 				rank = 'Bronze';
-			} else if(response.data[0].rank === 2) {
+			} else if(response.data.rank === 2) {
 				rank = 'Silver';
-			} else if(response.data[0].rank === 3) {
+			} else if(response.data.rank === 3) {
 				rank = 'Gold';
 			} else {
 				rank = 'Plantinum';
 			}
-			getUserid(response.data[0].id);
-			getUsername(response.data[0].name);
+			getUserid(response.data.id);
+			getUsername(response.data.name);
 			getUserBirth(birth);
 			getUserPhone(phone);
-			getUserSpend(response.data[0].spend);
+			getUserSpend(response.data.spend);
 			getUserRank(rank);
 		})
-	})
+	}, [])
 	return (
 		<div>
 			<Mypage />

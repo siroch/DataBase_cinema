@@ -27,7 +27,7 @@ const Login_Nomember_CSS = () => {
         border: 0px solid;
       }
 
-      .modify input[type=submit] {
+      .modify input[type=button] {
         background-color: black;
         color: white;
         text-align: center;
