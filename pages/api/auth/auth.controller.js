@@ -75,7 +75,7 @@ exports.login = (req, res) => {
   const chk = (curr_id,curr_pw)=>{
     return new Promise((resolve,reject)=>{
       const login_sql=`select customer_id, customer_pw, customer_name, customer_id, customer_phone, customer_birth + 0 as customer_birth, monthly_spend, c_rank from customer where customer_id='${curr_id}'`;
-      connection.query(login_sql , (err, results) =>{
+      connection.query(login_sql ,(err, results) =>{
         if (err) {
           reject(new Error('login failed'));
         }
