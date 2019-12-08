@@ -27,15 +27,12 @@ const Reservation = () => {
       setDates(0)
       settime(0)
     }
-    else{
-      setSeat(0)
-      setTeenPerson(0)
-      setNormPerson(0)
+    if(next===true){
+      setSeat([])
     }
   }
 
   useEffect(() => {
-    console.log(next)
     var next_bnt = document.getElementsByClassName("go_seat")
     var back_bnt = document.getElementsByClassName("go_reserve")
     var payment_bnt = document.getElementsByClassName("go_pay")
@@ -65,8 +62,7 @@ const Reservation = () => {
       }
     }
     if(next===true){
-      console.log(seats)
-      if(seats!=0){
+      if(seats!=[]){
         back_bnt[0].disabled=true;
         inner_bnt[0].disabled=true;
         payment_bnt[0].disabled=false;
@@ -116,7 +112,6 @@ const Reservation = () => {
       if(ts[k].textContent === (showtime[0]+":"+showtime[1]) && screen_nums[k].textContent.substr(0,2) === (showtime[2]+"관")) ts[k].classList.add('focus')
       else ts[k].classList.remove('focus')
     }
-    console.log(showtime);
   },[movie,theater,dates,showtime,next,seats])
 
   const Su = (
@@ -253,16 +248,18 @@ const Reservation = () => {
           </div>
           <div className="timetable">
             <h3>시간</h3>
-            {dates===0 ? "" : table.map((t)=>(
-              <div className="table">
-                {t.screen_num}관(2D)
-                <div className="times">
+            <div className="time_list">
+              {dates===0 ? "" : table.map((t)=>(
+                <div className="table">
+                  <div className="screen_info">
+                    {t.screen_num}관(2D)
+                  </div>
                   <div className="time">
                     <button className="movie_time" onClick={()=>settime([t.show_date[0],t.show_date[1], t.screen_num])}>{t.show_date[0]}:{t.show_date[1]}</button>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
         <div className="summary">
@@ -352,19 +349,14 @@ const Reservation = () => {
                 <p>G</p>
                 <p>H</p>
                 <p>I</p>
-                <p>J</p>
-                <p>K</p>
-                <p>L</p>
-                <p>M</p>
-                <p>N</p>
               </div>
             </div>
             <div className="information">
               <h4>좌석 안내</h4>
               <ul>
-                <li>선택 완료</li>
-                <li>예약 완료</li>
-                <li>선택 불가</li>
+                <li><span className="seat_box_select"></span> 선택 완료</li>
+                <li><span className="seat_box_done"></span> 예약 완료</li>
+                <li><span className="seat_box_okay"></span> 일반석</li>
               </ul>
             </div>
           </div>
@@ -387,7 +379,7 @@ const Reservation = () => {
             <p>극장: {theater===0 ? "" : theater[1]}</p>
             <p>일시: {dates===0 ? "" : dates[0] + "/" + dates[1] + "/" + dates[2] + " " + dates[3]} {showtime===0 ? "" : showtime[0]+":"+showtime[1]}</p>
             <p>상영관: {showtime===0 ? "" : showtime[2]+"관"} </p>
-            <p>인원: {normPerson*1+teenPerson*1}</p>
+            <p>인원: {normPerson*1+teenPerson*1}명</p>
           </div>
           <div className="seat_selected">
             <p>좌석: </p>
@@ -396,7 +388,7 @@ const Reservation = () => {
             <p>일반: {normPerson}</p>
             <p>청소년: {teenPerson}</p>
             <br />
-            <p>총금액  {normPerson*12000 + teenPerson*8000}원</p>
+            <p>총금액  {normPerson*12000 + teenPerson*10000}원</p>
           </div>
           <Link href="/movie_pay">
             <button className="go_pay">
