@@ -13,15 +13,15 @@
   },
   {
     "row":"A",
-    "col": 0,
-    "invisible":1,
-    "seatType": 0
-  },
-  {
-    "row":"A",
     "col":3,
     "invisible":0,
     "seatType":0
+  },
+  {
+    "row":"A",
+    "col": 0,
+    "invisible":1,
+    "seatType": 0
   },
   {
     "row":"A",
@@ -73,6 +73,12 @@
   },
   {
     "row":"A",
+    "col": 0,
+    "invisible":1,
+    "seatType": 0
+  },
+  {
+    "row":"A",
     "col":12,
     "invisible":0,
     "seatType":0
@@ -103,15 +109,15 @@
   },
   {
     "row":"B",
-    "col": 0,
-    "invisible":1,
-    "seatType": 0
-  },
-  {
-    "row":"B",
     "col":3,
     "invisible":0,
     "seatType":0
+  },
+  {
+    "row":"B",
+    "col": 0,
+    "invisible":1,
+    "seatType": 0
   },
   {
     "row":"B",
@@ -163,6 +169,12 @@
   },
   {
     "row":"B",
+    "col": 0,
+    "invisible":1,
+    "seatType": 0
+  },
+  {
+    "row":"B",
     "col":12,
     "invisible":0,
     "seatType":0
@@ -188,6 +200,12 @@
   {
     "row":"C",
     "col":2,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"C",
+    "col":3,
     "invisible":0,
     "seatType":0
   },
@@ -199,12 +217,6 @@
   },
   {
     "row":"C",
-    "col":3,
-    "invisible":0,
-    "seatType":0
-  },
-  {
-    "row":"C",
     "col":4,
     "invisible":0,
     "seatType":0
@@ -238,6 +250,42 @@
     "col":9,
     "invisible":0,
     "seatType":0
+  },
+  {
+    "row":"C",
+    "col":10,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"C",
+    "col":11,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row": "C",
+    "col": 0,
+    "invisible":1,
+    "seatType": 0
+  },
+  {
+    "row":"C",
+    "col":12,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"C",
+    "col":13,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"C",
+    "col":14,
+    "invisible":0,
+    "seatType":0
   }],
   [{
     "row":"D",
@@ -248,6 +296,12 @@
   {
     "row":"D",
     "col":2,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"D",
+    "col":3,
     "invisible":0,
     "seatType":0
   },
@@ -259,12 +313,6 @@
   },
   {
     "row":"D",
-    "col":3,
-    "invisible":0,
-    "seatType":0
-  },
-  {
-    "row":"D",
     "col":4,
     "invisible":0,
     "seatType":0
@@ -298,6 +346,42 @@
     "col":9,
     "invisible":0,
     "seatType":0
+  },
+  {
+    "row":"D",
+    "col":10,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"D",
+    "col":11,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row": "D",
+    "col": 0,
+    "invisible":1,
+    "seatType": 0
+  },
+  {
+    "row":"D",
+    "col":12,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"D",
+    "col":13,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"D",
+    "col":14,
+    "invisible":0,
+    "seatType":0
   }],
   [{
     "row":"E",
@@ -308,6 +392,12 @@
   {
     "row":"E",
     "col":2,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"E",
+    "col":3,
     "invisible":0,
     "seatType":0
   },
@@ -319,12 +409,6 @@
   },
   {
     "row":"E",
-    "col":3,
-    "invisible":0,
-    "seatType":0
-  },
-  {
-    "row":"E",
     "col":4,
     "invisible":0,
     "seatType":0
@@ -358,6 +442,42 @@
     "col":9,
     "invisible":0,
     "seatType":0
+  },
+  {
+    "row":"E",
+    "col":10,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"E",
+    "col":11,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row": "E",
+    "col": 0,
+    "invisible":1,
+    "seatType": 0
+  },
+  {
+    "row":"E",
+    "col":12,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"E",
+    "col":13,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"E",
+    "col":14,
+    "invisible":0,
+    "seatType":0
   }],
   [{
     "row":"F",
@@ -368,6 +488,12 @@
   {
     "row":"F",
     "col":2,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"F",
+    "col":3,
     "invisible":0,
     "seatType":0
   },
@@ -379,12 +505,6 @@
   },
   {
     "row":"F",
-    "col":3,
-    "invisible":0,
-    "seatType":0
-  },
-  {
-    "row":"F",
     "col":4,
     "invisible":0,
     "seatType":0
@@ -418,6 +538,42 @@
     "col":9,
     "invisible":0,
     "seatType":0
+  },
+  {
+    "row":"F",
+    "col":10,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"F",
+    "col":11,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row": "F",
+    "col": 0,
+    "invisible":1,
+    "seatType": 0
+  },
+  {
+    "row":"F",
+    "col":12,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"F",
+    "col":13,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"F",
+    "col":14,
+    "invisible":0,
+    "seatType":0
   }],
   [{
     "row":"G",
@@ -428,6 +584,12 @@
   {
     "row":"G",
     "col":2,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"G",
+    "col":3,
     "invisible":0,
     "seatType":0
   },
@@ -439,12 +601,6 @@
   },
   {
     "row":"G",
-    "col":3,
-    "invisible":0,
-    "seatType":0
-  },
-  {
-    "row":"G",
     "col":4,
     "invisible":0,
     "seatType":0
@@ -478,6 +634,42 @@
     "col":9,
     "invisible":0,
     "seatType":0
+  },
+  {
+    "row":"G",
+    "col":10,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"G",
+    "col":11,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row": "G",
+    "col": 0,
+    "invisible":1,
+    "seatType": 0
+  },
+  {
+    "row":"G",
+    "col":12,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"G",
+    "col":13,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"G",
+    "col":14,
+    "invisible":0,
+    "seatType":0
   }],
   [{
     "row":"H",
@@ -488,6 +680,12 @@
   {
     "row":"H",
     "col":2,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"H",
+    "col":3,
     "invisible":0,
     "seatType":0
   },
@@ -499,12 +697,6 @@
   },
   {
     "row":"H",
-    "col":3,
-    "invisible":0,
-    "seatType":0
-  },
-  {
-    "row":"H",
     "col":4,
     "invisible":0,
     "seatType":0
@@ -538,6 +730,42 @@
     "col":9,
     "invisible":0,
     "seatType":0
+  },
+  {
+    "row":"H",
+    "col":10,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"H",
+    "col":11,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row": "H",
+    "col": 0,
+    "invisible":1,
+    "seatType": 0
+  },
+  {
+    "row":"H",
+    "col":12,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"H",
+    "col":13,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"H",
+    "col":14,
+    "invisible":0,
+    "seatType":0
   }],
   [{
     "row":"I",
@@ -548,6 +776,12 @@
   {
     "row":"I",
     "col":2,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"I",
+    "col":3,
     "invisible":0,
     "seatType":0
   },
@@ -559,12 +793,6 @@
   },
   {
     "row":"I",
-    "col":3,
-    "invisible":0,
-    "seatType":0
-  },
-  {
-    "row":"I",
     "col":4,
     "invisible":0,
     "seatType":0
@@ -598,6 +826,42 @@
     "col":9,
     "invisible":0,
     "seatType":0
+  },
+  {
+    "row":"I",
+    "col":10,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"I",
+    "col":11,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row": "I",
+    "col": 0,
+    "invisible":1,
+    "seatType": 0
+  },
+  {
+    "row":"I",
+    "col":12,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"I",
+    "col":13,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"I",
+    "col":14,
+    "invisible":0,
+    "seatType":0
   }],
   [{
     "row":"J",
@@ -608,6 +872,12 @@
   {
     "row":"J",
     "col":2,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"J",
+    "col":3,
     "invisible":0,
     "seatType":0
   },
@@ -619,12 +889,6 @@
   },
   {
     "row":"J",
-    "col":3,
-    "invisible":0,
-    "seatType":0
-  },
-  {
-    "row":"J",
     "col":4,
     "invisible":0,
     "seatType":0
@@ -656,6 +920,42 @@
   {
     "row":"J",
     "col":9,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"J",
+    "col":10,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"J",
+    "col":11,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row": "J",
+    "col": 0,
+    "invisible":1,
+    "seatType": 0
+  },
+  {
+    "row":"J",
+    "col":12,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"J",
+    "col":13,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"J",
+    "col":14,
     "invisible":0,
     "seatType":0
   }],
@@ -672,16 +972,16 @@
     "seatType":0
   },
   {
-    "row": "K",
-    "col": 0,
-    "invisible":1,
-    "seatType": 0
-  },
-  {
     "row":"K",
     "col":3,
     "invisible":0,
     "seatType":0
+  },
+  {
+    "row": "K",
+    "col": 0,
+    "invisible":1,
+    "seatType": 0
   },
   {
     "row":"K",
@@ -716,6 +1016,42 @@
   {
     "row":"K",
     "col":9,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"K",
+    "col":10,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"K",
+    "col":11,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row": "K",
+    "col": 0,
+    "invisible":1,
+    "seatType": 0
+  },
+  {
+    "row":"K",
+    "col":12,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"K",
+    "col":13,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"K",
+    "col":14,
     "invisible":0,
     "seatType":0
   }]

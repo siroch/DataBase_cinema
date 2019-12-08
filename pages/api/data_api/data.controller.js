@@ -76,14 +76,15 @@ exports.seats = (req,res) => {
       connection.query(sql,[theater_id,movie_id,dates,screen_num], (err, results, fields) => {
         if(err)reject(new Error("에러가 발생했습니다."));
         results.map((reserve) => {
-          const seat = reserve.seat_info.split('|');
+          const seat = reserve.seat_info.split('|'); //seat_info format => A1|A2|A3
           seat.map((loc) => {
             const start="A"
             const row=loc.charCodeAt(0)-start.charCodeAt(0);
             const col=parseInt(loc.substring(1));
-            console.log(row,col,typeof(row),typeof(col-1));
-            console.log(seats[row][col>2?col:col-1]);
-            seats[row][col>2?col:col-1].seatType=1;
+            console.log(col);
+            if(1<=col&&col<=3)seats[row][col-1].seatType=1;
+            else if(3<col&&col<12)seats[row][col].seatType=1;
+            else seats[row][col+1].seatType=1;
           })
         })
         resolve(seats);
