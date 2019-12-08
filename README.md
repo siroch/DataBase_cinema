@@ -15,10 +15,8 @@
 <h2> Install Modules </h2>
 <pre><code>npm install
 </code></pre>
-<pre><code>npm install -g json-server</code></pre>
 
 <h2>Run Server</h2>
-<pre><code>npm start</pre></code>
 <pre><code>npm run dev</code></pre>
 
 
