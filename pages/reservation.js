@@ -39,7 +39,7 @@ const Reservation = () => {
     var inner_bnt = document.getElementsByClassName("inner")
     if(next===false){
       if(movie!=0 && theater!=0 && dates!=0){
-        const response = Axios.get("http://localhost:3000/api/data/timetable",{
+        const response = Axios.get("/api/data/timetable",{
           params:{
             theater_id:theater[0],
             movie_id:movie[4],

@@ -45,7 +45,7 @@ const Reservation_CSS = () => {
         display: flex;
         flex-flow: column;
         border: thin solid black;
-        overflow: scroll;
+        overflow-y: scroll;
         height: 600px;
       }
       .movie_name button{
@@ -94,7 +94,7 @@ const Reservation_CSS = () => {
       .smallcity{
         display: flex;
         flex-flow: column;
-        overflow: scroll;
+        overflow-y: scroll;
         height: 470px;
         margin-top: 20px;
         width: 50%;

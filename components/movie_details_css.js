@@ -39,6 +39,9 @@ const Movie_details_CSS = () => {
           text-align: justify;
           font-size: 13pt;
         }
+        .plot h2{
+          margin: 5px;
+        }
         textarea{
           font-size: 12pt;
           width: 85%;

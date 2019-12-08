@@ -4,6 +4,9 @@ const Header_CSS = () => {
       body{
         margin: 0;
       }
+      body button{
+        background-color: white;
+      }
       header {
         background-color: black;
         color: white;
@@ -23,7 +26,7 @@ const Header_CSS = () => {
         font-size: 20pt;
       }
       nav img {
-        width: 180px;
+        width: 130px;
         height: 40px;
       }
       nav a{
