@@ -45,7 +45,7 @@ const Reservation_CSS = () => {
         display: flex;
         flex-flow: column;
         border: thin solid black;
-        overflow: scroll;
+        overflow-y: scroll;
         height: 600px;
       }
       .movie_name button{
@@ -94,7 +94,7 @@ const Reservation_CSS = () => {
       .smallcity{
         display: flex;
         flex-flow: column;
-        overflow: scroll;
+        overflow-y: scroll;
         height: 470px;
         margin-top: 20px;
         width: 50%;
@@ -129,22 +129,26 @@ const Reservation_CSS = () => {
       .timetable{
         border: thin solid black;
         width: 40%;
-        height: 600px;
+      }
+      .time_list{
+        margin_top: 30px;
+        height: 550px;
         overflow-y: scroll;
       }
       .table{
-        margin: 20px;
+        display: inline-flex;
+        margin: 10px;
         border-top: 2px solid gray;
         padding: 10px;
       }
-      .times{
+      .screen_info{
         display: flex;
-        flex-wrap: wrap;
-        font-size: 9pt;
-        margin-top: 10px;
+        flex-flow: column;
+        justify-content: center;
+        font-size: 11pt;
       }
       .time{
-        margin-right: 10px;
+        margin-left: 10px;
         color: green;
       }
       .time button{
@@ -321,6 +325,9 @@ const Reservation_CSS = () => {
         list-style: none;
         padding-left: 10px;
       }
+      .information li{
+        margin-top: 20px;
+      }
       .seat_selected{
         width: 15%;
         display: flex;
@@ -341,6 +348,28 @@ const Reservation_CSS = () => {
       .focus{
         background-color: black;
         color: white;
+      }
+      .seat_box_select{
+        border: 1px solid black;
+        background-color: purple;
+        text-decoration: underline;
+        padding-left:7px;
+        padding-right: 7px;
+        margin-right: 10px;
+      }
+      .seat_box_done{
+        border: 1px solid black;
+        background-color: lightgray;
+        padding-left:7px;
+        padding-right: 7px;
+        margin-right: 10px;
+      }
+      .seat_box_okay{
+        border: 1px solid black;
+        background-color: #333;
+        padding-left:7px;
+        padding-right: 7px;
+        margin-right: 10px;
       }
     `}</style>
   )

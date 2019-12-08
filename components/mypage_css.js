@@ -47,11 +47,23 @@ const Mypage_CSS = () => {
         justify-content: space-around;
         position: absolute;
         width: 50vw;
+        // height: 39vh;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        margin-top: 22vh;
+        margin-left: 33vw;
+      }
+      .user_info {
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        width: 50vw;
         height: 39vh;
         border-top: 2px solid black;
         border-bottom: 2px solid black;
         margin-top: 22vh;
         margin-left: 33vw;
+        overflow: scroll;
       }
       table.type05 {
         border-collapse: separate;
