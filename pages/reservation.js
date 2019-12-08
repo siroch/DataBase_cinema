@@ -14,23 +14,31 @@ const Reservation = () => {
   const [movie, setMovies] = useState(0)
   const [theater, setTheater] = useState(0)
   const [dates, setDates] = useState(0)
-  const [seat, setSeat] = useState(0)
+  const [seats, setSeats] = useState(0)
   const [table,setTable] = useState([])
   const [showtime,settime] = useState(0)
+  const [normPerson, setNormPerson] = useState(0)
+  const [teenPerson, setTeenPerson] = useState(0)
 
   function reloadHandler(){
     if(next === false){
       setMovies(0)
       setTheater(0)
       setDates(0)
+      settime(0)
     }
     else{
       setSeat(0)
+      setTeenPerson(0)
+      setNormPerson(0)
     }
   }
 
   useEffect(() => {
+    console.log(next)
     var next_bnt = document.getElementsByClassName("go_seat")
+    var back_bnt = document.getElementsByClassName("go_reserve")
+    var payment_bnt = document.getElementsByClassName("go_pay")
     var inner_bnt = document.getElementsByClassName("inner")
     if(next===false){
       if(movie!=0 && theater!=0 && dates!=0){
@@ -58,15 +66,19 @@ const Reservation = () => {
         inner_bnt[0].disabled=true
       }
     }
-    var prev_bnt = document.getElementsByClassName("go_reserve")
     if(next===true){
-      if(seat===0){
-        prev_bnt[0].disabled=false
-        inner_bnt[0].disabled=false
+      console.log(seats)
+      if(seats!=0){
+        back_bnt[0].disabled=true;
+        inner_bnt[0].disabled=true;
+        payment_bnt[0].disabled=false;
+        inner_bnt[1].disabled=false;
       }
       else{
-        prev_bnt[0].disabled=true
-        inner_bnt[0].disabled=true
+        back_bnt[0].disabled=false;
+        inner_bnt[0].disabled=false;
+        payment_bnt[0].disabled=true;
+        inner_bnt[1].disabled=true;
       }
     }
     var age = document.getElementsByTagName("span")
@@ -100,7 +112,14 @@ const Reservation = () => {
         days[t].classList.add('sat')
       }
     }
-  },[movie,theater,dates,showtime])
+    var screen_nums = document.getElementsByClassName('table')
+    var ts = document.getElementsByClassName('movie_time')
+    for(var k=0; k<ts.length; k++){
+      if(ts[k].textContent === (showtime[0]+":"+showtime[1]) && screen_nums[k].textContent.substr(0,2) === (showtime[2]+"관")) ts[k].classList.add('focus')
+      else ts[k].classList.remove('focus')
+    }
+    console.log(showtime);
+  },[movie,theater,dates,showtime,next,seats])
 
   const Su = (
     <div className="smallcity">
@@ -236,13 +255,13 @@ const Reservation = () => {
           </div>
           <div className="timetable">
             <h3>시간</h3>
-            {table.map((t)=>(
+            {dates===0 ? "" : table.map((t)=>(
               <div className="table">
-                <div classname="times">
-                  {t.screen_num}관(2D)
-                </div>
-                <div className="time">
-                  <button>{t.show_date[0]}:{t.show_date[1]}</button> 
+                {t.screen_num}관(2D)
+                <div className="times">
+                  <div className="time">
+                    <button className="movie_time" onClick={()=>settime([t.show_date[0],t.show_date[1], t.screen_num])}>{t.show_date[0]}:{t.show_date[1]}</button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -260,8 +279,8 @@ const Reservation = () => {
           </div>
           <div className="another_selects">
             <p>극장: {theater===0 ? "" : theater[1]}</p>
-            <p>일시: {dates===0 ? "" : dates[0] + "/" + dates[1] + "/" + dates[2] + " " + dates[3]}</p>
-            <p>상영관: </p>
+            <p>일시: {dates===0 ? "" : dates[0] + "/" + dates[1] + "/" + dates[2] + " " + dates[3]} {showtime===0 ? "" : showtime[0]+":"+showtime[1]}</p>
+            <p>상영관: {showtime===0 ? "" : showtime[2]+"관"} </p>
             <p>인원: </p>
           </div>
           <div className="seat_select">
@@ -294,30 +313,30 @@ const Reservation = () => {
           <div className="peoples">
             <div className="norm">
               <strong>일반</strong>
-              <select name="normal">
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
+              <select name="notmal" onChange={(e)=>setNormPerson(e.target.value)}>
+                <option value={0}>0</option>
+                <option onClick={()=>setNormPerson(1)} value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+                <option value={5}>5</option>
+                <option value={6}>6</option>
+                <option value={7}>7</option>
+                <option value={8}>8</option>
               </select>
             </div>
             <div className="teenager">
               <strong>청소년</strong>
-              <select name="teen">
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
+              <select name="teen" onChange={(e)=>setTeenPerson(e.target.value)}>
+                <option value={0}>0</option>
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+                <option value={5}>5</option>
+                <option value={6}>6</option>
+                <option value={7}>7</option>
+                <option value={8}>8</option>
               </select>
             </div>
             <p>인원 선택은 최대 8명까지 가능합니다.</p>
@@ -368,18 +387,18 @@ const Reservation = () => {
           </div>
           <div className="another_selects">
             <p>극장: {theater===0 ? "" : theater[1]}</p>
-            <p>일시: {dates===0 ? "" : dates[0] + "/" + dates[1] + "/" + dates[2] + " " + dates[3]}</p>
-            <p>상영관: </p>
-            <p>인원: </p>
+            <p>일시: {dates===0 ? "" : dates[0] + "/" + dates[1] + "/" + dates[2] + " " + dates[3]} {showtime===0 ? "" : showtime[0]+":"+showtime[1]}</p>
+            <p>상영관: {showtime===0 ? "" : showtime[2]+"관"} </p>
+            <p>인원: {normPerson*1+teenPerson*1}</p>
           </div>
           <div className="seat_selected">
             <p>좌석: </p>
           </div>
           <div className="payment">
-            <p>일반: </p>
-            <p>청소년: </p>
+            <p>일반: {normPerson}</p>
+            <p>청소년: {teenPerson}</p>
             <br />
-            <p>총금액  0</p>
+            <p>총금액  {normPerson*12000 + teenPerson*8000}원</p>
           </div>
           <Link href="/movie_pay">
             <button className="go_pay">

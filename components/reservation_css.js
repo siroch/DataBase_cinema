@@ -129,6 +129,8 @@ const Reservation_CSS = () => {
       .timetable{
         border: thin solid black;
         width: 40%;
+        height: 600px;
+        overflow-y: scroll;
       }
       .table{
         margin: 20px;
