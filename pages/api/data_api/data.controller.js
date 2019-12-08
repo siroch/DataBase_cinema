@@ -69,17 +69,21 @@ GET /api/data/seats
 
 exports.seats = (req,res) => {
   fs.readFile(__dirname + '/../../../data/api/' + 'seats.json', 'utf8', (err, data) => {
-    const seats = JSON.parse(data);
     return new Promise((resolve,reject) => {
       const {movie_id,theater_id,screen_num,dates} = req.query;
       const sql=`select seat_info from reserve_info where theater_id=? and movie_id=? and show_date=? and screen_num=?`
+      var seats = JSON.parse(data);
       connection.query(sql,[theater_id,movie_id,dates,screen_num], (err, results, fields) => {
         if(err)reject(new Error("에러가 발생했습니다."));
         results.map((reserve) => {
-          const seats = reserve.seat_info.split('|');
-          seats.map((loc) => {
-            const row=loc[0],col=loc.substring(1);
-            seats[row-'A'][col-1].seatType=1;
+          const seat = reserve.seat_info.split('|');
+          seat.map((loc) => {
+            const start="A"
+            const row=loc.charCodeAt(0)-start.charCodeAt(0);
+            const col=parseInt(loc.substring(1));
+            console.log(row,col,typeof(row),typeof(col-1));
+            console.log(seats[row][col>2?col:col-1]);
+            seats[row][col>2?col:col-1].seatType=1;
           })
         })
         resolve(seats);

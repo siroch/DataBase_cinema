@@ -58,6 +58,36 @@
     "col":9,
     "invisible":0,
     "seatType":0
+  },
+  {
+    "row":"A",
+    "col":10,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"A",
+    "col":11,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"A",
+    "col":12,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"A",
+    "col":13,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"A",
+    "col":14,
+    "invisible":0,
+    "seatType":0
   }],
   [{
     "row":"B",
@@ -116,6 +146,36 @@
   {
     "row":"B",
     "col":9,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"B",
+    "col":10,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"B",
+    "col":11,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"B",
+    "col":12,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"B",
+    "col":13,
+    "invisible":0,
+    "seatType":0
+  },
+  {
+    "row":"B",
+    "col":14,
     "invisible":0,
     "seatType":0
   }],
