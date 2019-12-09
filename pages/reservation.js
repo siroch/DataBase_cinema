@@ -17,9 +17,9 @@ const Reservation = () => {
   const [seats, setSeats] = useState(0)
   const [table,setTable] = useState([])
   const [showtime,settime] = useState(0)
+  const [initSeats,setInitSeats] =useState([])
   const [normPerson, setNormPerson] = useState(0)
   const [teenPerson, setTeenPerson] = useState(0)
-
   function reloadHandler(){
     if(next === false){
       setMovies(0)
@@ -39,7 +39,7 @@ const Reservation = () => {
     var inner_bnt = document.getElementsByClassName("inner")
     if(next===false){
       if(movie!=0 && theater!=0 && dates!=0){
-        const response = Axios.get("/api/data/timetable",{
+        Axios.get("/api/data/timetable",{
           params:{
             theater_id:theater[0],
             movie_id:movie[4],
@@ -47,7 +47,6 @@ const Reservation = () => {
           }
         }).then((res)=>{
           setTable(res.data);
-          console.log(table);
         }).catch((err)=>{
           console.log(err.message);
         });
@@ -62,6 +61,20 @@ const Reservation = () => {
       }
     }
     if(next===true){
+      if(initSeats.length===0){
+        Axios.get('/api/data/seats',{
+          params:{
+            theater_id:theater[0],
+            movie_id:movie[4],
+            screen_num:showtime[2],
+            dates:dates[0]+"-"+dates[1]+"-"+dates[2]+" "+showtime[0]+":"+showtime[1]+":00"
+          }
+        }).then((res)=>{
+          setInitSeats(res.data);
+        }).catch((err)=>{
+          console.log(err.message);
+        })
+      }
       if(seats!=[]){
         back_bnt[0].disabled=true;
         inner_bnt[0].disabled=true;
@@ -112,7 +125,7 @@ const Reservation = () => {
       if(ts[k].textContent === (showtime[0]+":"+showtime[1]) && screen_nums[k].textContent.substr(0,2) === (showtime[2]+"관")) ts[k].classList.add('focus')
       else ts[k].classList.remove('focus')
     }
-  },[movie,theater,dates,showtime,next,seats])
+  })
 
   const Su = (
     <div className="smallcity">
@@ -340,15 +353,13 @@ const Reservation = () => {
             <div className="show">
               <h3>screen</h3>
               <div className="seat_lines">
-                <p>A</p>
-                <p>B</p>
-                <p>C</p>
-                <p>D</p>
-                <p>E</p>
-                <p>F</p>
-                <p>G</p>
-                <p>H</p>
-                <p>I</p>
+                {
+                  initSeats.map(x=>(
+                    x.map(i=>(
+                      <p>{i.invisible==1?" ":i.row+""+i.col}</p>
+                    ))
+                  ))
+                }
               </div>
             </div>
             <div className="information">

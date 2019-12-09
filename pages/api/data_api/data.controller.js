@@ -51,8 +51,8 @@ exports.timetable = (req, res) => {
       results.map((row) => data.push({
         "screen_num":row.screen_num,
         "show_time":row.show_time,
-        "show_date":[row.show_date.getHours()<9?"0"+(row.show_date.getHours()+1):row.show_date.getHours()+1,
-        row.show_date.getMinutes()<10?"0"+row.show_date.getMinutes():row.show_date.getMinutes()]
+        "show_date":[row.show_date.getHours()<9?"0"+(row.show_date.getHours()+1):String(row.show_date.getHours()+1),
+        row.show_date.getMinutes()<10?"0"+row.show_date.getMinutes():String(row.show_date.getMinutes())]
       }));  
       resolve(data);   
     })
@@ -71,6 +71,7 @@ exports.seats = (req,res) => {
   fs.readFile(__dirname + '/../../../data/api/' + 'seats.json', 'utf8', (err, data) => {
     return new Promise((resolve,reject) => {
       const {movie_id,theater_id,screen_num,dates} = req.query;
+      console.log(movie_id,theater_id,screen_num,dates);
       const sql=`select seat_info from reserve_info where theater_id=? and movie_id=? and show_date=? and screen_num=?`
       var seats = JSON.parse(data);
       connection.query(sql,[theater_id,movie_id,dates,screen_num], (err, results, fields) => {
@@ -81,15 +82,22 @@ exports.seats = (req,res) => {
             const start="A"
             const row=loc.charCodeAt(0)-start.charCodeAt(0);
             const col=parseInt(loc.substring(1));
-            console.log(col);
-            if(1<=col&&col<=3)seats[row][col-1].seatType=1;
-            else if(3<col&&col<12)seats[row][col].seatType=1;
-            else seats[row][col+1].seatType=1;
+            console.log(row,col);
+            if(1<=col&&col<=3){
+              seats[row][col-1].seatType=1;
+            }
+            else if(3<col&&col<12){
+              seats[row][col].seatType=1;
+            }
+            else {
+              seats[row][col+1].seatType=1;
+            }
           })
         })
         resolve(seats);
       })
     }).then((data) => {
+      console.log(data);
       res.json(data)
     }).catch((err) => {
       console.log(err.message)
