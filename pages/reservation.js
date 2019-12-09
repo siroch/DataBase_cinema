@@ -14,7 +14,7 @@ const Reservation = () => {
   const [movie, setMovies] = useState(0)
   const [theater, setTheater] = useState(0)
   const [dates, setDates] = useState(0)
-  const [seats, setSeats] = useState(0)
+  const [seats, setSeats] = useState("")
   const [table,setTable] = useState([])
   const [showtime,settime] = useState(0)
   const [initSeats,setInitSeats] =useState([])
@@ -27,9 +27,17 @@ const Reservation = () => {
       setDates(0)
       settime(0)
     }
-    if(next===true){
-      setSeat([])
+    if(next === true){
+      setSeats("")
+      setNormPerson(0)
+      setTeenPerson(0)
     }
+  }
+  function backHandler(){
+    setMovies(0)
+    setTheater(0)
+    setDates(0)
+    settime(0)
   }
 
   useEffect(() => {
@@ -75,7 +83,7 @@ const Reservation = () => {
           console.log(err.message);
         })
       }
-      if(seats!=[]){
+      if(seats.length != 0){
         back_bnt[0].disabled=true;
         inner_bnt[0].disabled=true;
         payment_bnt[0].disabled=false;
@@ -125,6 +133,39 @@ const Reservation = () => {
       if(ts[k].textContent === (showtime[0]+":"+showtime[1]) && screen_nums[k].textContent.substr(0,2) === (showtime[2]+"관")) ts[k].classList.add('focus')
       else ts[k].classList.remove('focus')
     }
+    var colss = document.getElementsByClassName('cols')
+    for(var c=0; c<colss.length; c++){
+      if(colss[c].textContent.substr(1)==="04"){
+        colss[c].classList.add('line4')
+      }else if(colss[c].textContent.substr(1)==="11"){
+        colss[c].classList.add('line11')
+      }else if(colss[c].textContent===" "){
+        colss[c].classList.add('invisibles')
+      }
+      if(colss[c].name === "1"){
+        colss[c].classList.add('reservated_seat')
+        colss[c].disabled=true
+      }
+    }
+    if(seats.length===0){
+      for(var c=0; c<colss.length; c++){
+        colss[c].classList.remove('choose_seat')
+        colss[c].disabled = false
+      }
+    }
+    for(var c=0; c<colss.length; c++){
+      if(colss[c].textContent == seats.substr(seats.length-4, seats.length-1) || (colss[c].textContent+" ") == seats.substr(seats.length-4, seats.length-1)){
+        colss[c].classList.add('choose_seat')
+        colss[c].disabled = true
+      }
+    }
+    if(seats.length/4 === (normPerson*1+teenPerson*1)){
+      for(var c=0; c<colss.length; c++){
+        colss[c].disabled = true
+      }
+    }
+    console.log(seats.substr(seats.length-5, seats.length-2))
+    console.log(seats.length)
   })
 
   const Su = (
@@ -310,7 +351,7 @@ const Reservation = () => {
   const Seat = (
     <div className="bigbox">
       <Link href="/reservation">
-        <button className="reload">
+        <button onClick={()=>reloadHandler()} className="reload">
           <img src="reload_arrow.png" alt="reload_arrow" />
           <span>다시선택</span>
         </button>
@@ -321,9 +362,9 @@ const Reservation = () => {
           <div className="peoples">
             <div className="norm">
               <strong>일반</strong>
-              <select name="notmal" onChange={(e)=>setNormPerson(e.target.value)}>
+              <select name="normal" value={normPerson} onChange={(e)=>setNormPerson(e.target.value)}>
                 <option value={0}>0</option>
-                <option onClick={()=>setNormPerson(1)} value={1}>1</option>
+                <option value={1}>1</option>
                 <option value={2}>2</option>
                 <option value={3}>3</option>
                 <option value={4}>4</option>
@@ -335,7 +376,7 @@ const Reservation = () => {
             </div>
             <div className="teenager">
               <strong>청소년</strong>
-              <select name="teen" onChange={(e)=>setTeenPerson(e.target.value)}>
+              <select name="teen" value={teenPerson} onChange={(e)=>setTeenPerson(e.target.value)}>
                 <option value={0}>0</option>
                 <option value={1}>1</option>
                 <option value={2}>2</option>
@@ -355,9 +396,13 @@ const Reservation = () => {
               <div className="seat_lines">
                 {
                   initSeats.map(x=>(
+                    <p className="rows">
+                    {
                     x.map(i=>(
-                      <p>{i.invisible==1?" ":i.row+""+i.col}</p>
+                      <button name={i.seatType}onClick={(e)=>setSeats(seats+(e.target.textContent.substr(0))+" ")} className="cols">{i.invisible==1?" ": i.col<10 ? i.row+"0"+i.col:i.row+""+i.col}</button>
                     ))
+                    }
+                    </p>
                   ))
                 }
               </div>
@@ -375,7 +420,7 @@ const Reservation = () => {
         <div className="summary">
           <button onClick={()=>setNext(false)} className="go_reserve">
             &#8592;
-            <button className="inner">영화선택</button>
+            <button onClick={()=>backHandler()} className="inner">영화선택</button>
           </button>
           <div className="movie_select">
             {movie===0 ? "" : <img src={movie[2]} alt="select_poster" />}
@@ -393,7 +438,10 @@ const Reservation = () => {
             <p>인원: {normPerson*1+teenPerson*1}명</p>
           </div>
           <div className="seat_selected">
-            <p>좌석: </p>
+            <p>
+              좌석:
+              <span>{seats}</span>
+            </p>
           </div>
           <div className="payment">
             <p>일반: {normPerson}</p>

@@ -312,7 +312,12 @@ const Reservation_CSS = () => {
         margin-bottom: 40px;
       }
       .seat_lines{
+        display: flex;
         padding: 10px;
+        flex-wrap: wrap;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
       }
       .information{
         width: 10%;
@@ -333,6 +338,9 @@ const Reservation_CSS = () => {
         display: flex;
         justify-content: center;
         flex-flow: column;
+      }
+      .seat_selected p div{
+        font-size: 10pt;
       }
       .payment{
         width: 15%;
@@ -370,6 +378,38 @@ const Reservation_CSS = () => {
         padding-left:7px;
         padding-right: 7px;
         margin-right: 10px;
+      }
+      .rows{
+        display: flex;
+        margin: 5px;
+      }
+      .cols{
+        display: flex:
+        border: 1px solid;
+        background-color: #333;
+        padding: 5px;
+        color: white;
+        width: 45px;
+        height: 45px;
+        text-align: center;
+        font-size: 13pt;
+      }
+      .choose_seat{
+        background-color: purple;
+        text-decoration: underline;
+      }
+      .reservated_seat{
+        background-color: lightgray;
+      }
+      .line4{
+        margin-left: 50px;
+      }
+      .line11{
+        margin-right: 50px;
+      }
+      .invisibles{
+        background-color: white;
+        border: 1px solid white;
       }
     `}</style>
   )
