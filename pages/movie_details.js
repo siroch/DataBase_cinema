@@ -16,6 +16,13 @@ const Movie_details = (props) => {
       date: curTime
     });
     alert(`평점이 등록되었습니다!\n평점: ${rate}`);
+    getRating();
+  }
+
+  const getRating = () => {
+    axios.post("/api/data/getReview", {
+      movieCd: props.movies.movieCd
+    });
   }
 
   return (

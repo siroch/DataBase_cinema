@@ -39,12 +39,15 @@ exports.getRating = (req, res) => {
   const body = req.body;
   const counting = `select count(*) from review where movie_id = ?`;
   const get = `select rate from review where movie_id = ?`;
-  var flag = 0;
+  var cnt = 0, sum = 0, avg;
   connection.query(counting, [body.movieCd], (err, row, fields) => {
-    flag = row[0]['count(*)'];
-    console.log(flag);
+    cnt = row[0]['count(*)'];
     connection.query(get, [body.movieCd], (err1, rows, fields) => {
-      console.log(rows);
+      for(var i=0; i<rows.length; i++) {
+        sum += rows[i].rate;
+      }
+      avg = sum / cnt;
+      console.log(avg);
     })
   })
 }
