@@ -11,5 +11,6 @@ router.get('/reserveNum',controller.reserveNum);
 router.use('/reserveMovie',authMiddleware);
 router.post('/reserveMovie',controller.reserveMovie);
 router.post('/postReview', rvController.postRating);
+router.get('/getReivew', rvController.getRating);
 
 module.exports = router;

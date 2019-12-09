@@ -13,7 +13,6 @@ exports.postRating = (req, res) => {
   const update = `update review set rate = ?, wr_date = ? where customer_id = ? and movie_id = ?`;
   const find_user = `select count(*) from review where customer_id = ? and movie_id = ?`;
   var flag = 0;
-  console.log(body.rate);
   connection.query(find_user, [body.user, body.movieCd], (err1, rows, fields) => { // find duplicate user_id
     flag = rows[0]['count(*)'];
     if(flag === 1) {
@@ -34,4 +33,18 @@ exports.postRating = (req, res) => {
       });
     }
   });
+}
+
+exports.getRating = (req, res) => {
+  const body = req.body;
+  const counting = `select count(*) from review where movie_id = ?`;
+  const get = `select rate from review where movie_id = ?`;
+  var flag = 0;
+  connection.query(counting, [body.movieCd], (err, row, fields) => {
+    flag = row[0]['count(*)'];
+    console.log(flag);
+    connection.query(get, [body.movieCd], (err1, rows, fields) => {
+      console.log(rows);
+    })
+  })
 }
