@@ -155,7 +155,9 @@ exports.samecheck = (req, res) => {
         "exist" : true,
         "name" : results[0].customer_name,
         "id" : results[0].customer_id,
-        "birth" : results[0].customer_birth,
+        "birthy" : String(results[0].customer_birth).substring(0, 4),
+        "birthm" : String(results[0].customer_birth).substring(4, 6),
+        "birthd" : String(results[0].customer_birth).substring(6, 8),
         "phone" : results[0].customer_phone,
         "spend": results[0].monthly_spend,
         "rank" : results[0].c_rank

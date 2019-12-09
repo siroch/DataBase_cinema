@@ -9,7 +9,6 @@ import router from 'next/router'
 const Modify = () => {
   const [user_id, getUserid] = useState('');
 	const [user_name, getUsername] = useState('');
-	const [user_birth, getUserBirth] = useState('');
   const [user_phone, getUserPhone] = useState('');
   const [user_pw1, getUserpw1] = useState('');
   const [user_pw2, getUserpw2] = useState('');
@@ -24,7 +23,9 @@ const Modify = () => {
     .then(function(res) {
       getUserid(res.data.id);
       getUsername(res.data.name);
-      getUserBirth(res.data.birth);
+      getBirthy(res.data.birthy);
+      getBirthm(res.data.birthm);
+      getBirthd(res.data.birthd);
       getUserPhone('0' + res.data.phone);
     })
     .catch(function(res) {
@@ -72,9 +73,9 @@ const Modify = () => {
 
                 <tr>
                   <td> 생년월일 </td>
-                  <td><input maxlength="4" defaultValue={String(user_birth).substring(0, 4)} onChange={(e) => getBirthy(e.target.value)} type="text" name="birth_year" size="4" placeholder="년" required/>
-                    년<input maxlength="2" defaultValue={String(user_birth).substring(4, 6)} onChange={(e) => getBirthm(e.target.value)} type="text" name="birth_month" size="2" placeholder="월" required/>
-                    월<input maxlength="2" defaultValue={String(user_birth).substring(6, 8)} onChange={(e) => getBirthd(e.target.value)} type="text" name="birth_day" size="2" placeholder="일" required/>
+                  <td><input maxlength="4" defaultValue={birthy} onChange={(e) => getBirthy(e.target.value)} type="text" name="birth_year" size="4" placeholder="년" required/>
+                    년<input maxlength="2" defaultValue={birthm} onChange={(e) => getBirthm(e.target.value)} type="text" name="birth_month" size="2" placeholder="월" required/>
+                    월<input maxlength="2" defaultValue={birthd} onChange={(e) => getBirthd(e.target.value)} type="text" name="birth_day" size="2" placeholder="일" required/>
                     일</td>
                 </tr>
 
