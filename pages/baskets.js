@@ -1,8 +1,23 @@
 import Header from './Header'
 import Baskets_CSS from '../components/baskets_css'
 import Footer from './footer'
+import { useState } from 'react'
 
 const Baskets = () => {
+  const [doublecombo, getDoublecombo] = useState(false);
+  const [friedcombo, getFriedcombo] = useState(false);
+  const [friedsquidcombo, getFriedsquidcombo] = useState(false);
+  const [halfadecombo, getHalfadecombo] = useState(false);
+  const [hotdogcombo, getHotdogcombo] = useState(false);
+  const [instantfriedcombo, getInstantfriedcombo] = useState(false);
+  const [nachocombo, getNachocombo] = useState(false);
+  const [springfredzlecombo, getSpringfredzlecombo] = useState(false);
+  const [maplestorycomboa, getMaplestorycomboa] = useState(false);
+  const [maplestorycombob, getMaplestorycombob] = useState(false);
+  const [frozencomboa, getFrozencomboa] = useState(false);
+  const [frozencombob, getFrozencombob] = useState(false);
+  const [frozen2original, getFrozen2original] = useState(false);
+
     return(
       <div>
         <Baskets_CSS />
@@ -10,7 +25,7 @@ const Baskets = () => {
         <h2 className="basket_title">장바구니</h2>
       	<div className="pay_basket">
       		<div className="paybox">
-      			<div className="product_list">
+            <div className="product_list">
       				<input type="checkbox" name="product" value="1"/>
       				<img src="store/combo1.jpg" alt="product"/>
       				<ul type="none">
@@ -20,6 +35,7 @@ const Baskets = () => {
       				</ul>
       				<input type="button" value="취소" />
       			</div>
+
       			<div className="product_list">
       				<input type="checkbox" name="product" value="1"/>
       				<img src="store/combo1.jpg" alt="product"/>

@@ -18,12 +18,12 @@ const Mypage_userinfo = () => {
 		.get(url)
 		.then(function(response) {
       		console.log(response.data.birth);
-			var birth = String(response.data.birth);
+			var birth = '';
 			var phone = String(response.data.phone);
-			if(birth[4] === '0') {
-				birth = birth.substring(0,4) + '년 ' + birth.substring(5, 6) + '월 ' + birth.substring(6, 8) + '일';
+			if(response.data.birthm < 10) {
+				birth = response.data.birthy + '년 ' + response.data.birthm.substring(1, 2) + '월 ' + response.data.birthd + '일';
 			} else {
-				birth = birth.substring(0,4) + '년 ' + birth.substring(4, 6) + '월 ' + birth.substring(6, 8) + '일';
+				birth = response.data.birthy + '년 ' + response.data.birthm + '월 ' + response.data.birthd + '일';
 			}
 			phone = '0' + phone.substring(0,2) + '-' + phone.substring(2, 6) + '-' + phone.substring(6, 10);
 			var rank;
