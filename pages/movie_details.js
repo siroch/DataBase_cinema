@@ -3,13 +3,28 @@ import Footer from './footer'
 import Movie_details_CSS from '../components/movie_details_css'
 import axios from 'axios'
 
-const Movie_details = (props) => (
+const Movie_details = (props) => {
+  const postRating = () => {
+    const d = new Date();
+    const rate = document.getElementById("rating").value;
+    const curTime = String(d.getFullYear()) + "-" + String((d.getMonth() + 1)) + "-" + String(d.getDate()) + " "
+      + String(d.getHours()) + ":" + String(d.getMinutes()) + ":" + String(d.getSeconds());
+    axios.post("/api/data/postReview", {
+      movieCd: props.movies.movieCd,
+      user: sessionStorage.getItem('userId'),
+      rate: rate,
+      date: curTime
+    });
+    alert(`평점이 등록되었습니다!\n평점: ${rate}`);
+  }
+
+  return (
     <div>
-      <Movie_details_CSS />
-      <Header />
+      <Movie_details_CSS/>
+      <Header/>
       <div className="details">
         <h1>영화 상세 정보</h1>
-        <hr />
+        <hr/>
         <div className="information">
           <div className="movie_info">
             <h2>{props.movies.movieNm}</h2>
@@ -26,14 +41,14 @@ const Movie_details = (props) => (
             <strong> 개봉</strong>: {props.movies.openDt}
             <br/>
             <br/>
-            <strong>타입</strong>: {props.movies.showTypes.map(info => ( info.showTypeGroupNm )) + " "}
+            <strong>타입</strong>: {props.movies.showTypes.map(info => (info.showTypeGroupNm)) + " "}
             <br/>
             <br/>
-            <strong>평점 입력</strong>: <input type="number" min="0" max="10" step="0.1"/> <input type="submit" value="제출"/>
+            <strong>평점 입력</strong>: <input id={"rating"} type="number" min="0" max="10" step="0.1"/> <input onClick={postRating} type="submit" value="제출"/>
           </div>
           <img src={props.movies.picture} alt="poster"/>
         </div>
-        <hr />
+        <hr/>
         <div className="Preview">
           <div className="plot">
             <h2>줄거리</h2>
@@ -43,13 +58,14 @@ const Movie_details = (props) => (
               ))}
             </p>
           </div>
-          <iframe src={props.movies.trailer} allowfullscreen></iframe>
+          <iframe src={props.movies.trailer} allowFullScreen></iframe>
         </div>
-        <hr />
+        <hr/>
       </div>
-      <Footer />
+      <Footer/>
     </div>
-)
+  )
+}
 
 Movie_details.getInitialProps = async (res) => {
   const {movieCd} = res.query;
