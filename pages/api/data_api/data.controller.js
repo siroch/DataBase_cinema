@@ -79,18 +79,20 @@ exports.seats = (req,res) => {
         results.map((reserve) => {
           const seat = reserve.seat_info.split('|'); //seat_info format => A1|A2|A3
           seat.map((loc) => {
-            const start="A"
-            const row=loc.charCodeAt(0)-start.charCodeAt(0);
-            const col=parseInt(loc.substring(1));
-            console.log(row,col);
-            if(1<=col&&col<=3){
-              seats[row][col-1].seatType=1;
-            }
-            else if(3<col&&col<12){
-              seats[row][col].seatType=1;
-            }
-            else {
-              seats[row][col+1].seatType=1;
+            if(loc!=''){
+              const start="A"
+              const row=loc.charCodeAt(0)-start.charCodeAt(0);
+              const col=parseInt(loc.substring(1));
+              console.log(row,col);
+              if(1<=col&&col<=3){
+                seats[row][col-1].seatType=1;
+              }
+              else if(3<col&&col<12){
+                seats[row][col].seatType=1;
+              }
+              else {
+                seats[row][col+1].seatType=1;
+              }
             }
           })
         })
@@ -103,4 +105,45 @@ exports.seats = (req,res) => {
       console.log(err.message)
     });
   })
+}
+
+/*
+GET /api/data/reserveNum
+*/
+
+exports.reserveNum = (req, res) => {
+  return new Promise((resolve)=>{
+    const sql=`select reserve_id from reserve_info order by reserve_id desc`
+    connection.query(sql,(err, results, fields) => {
+      if(err)reject(new Error("에러가 발생했습니다."));
+      resolve(results[0].reserve_id);
+    })
+  }).then((data) => {
+    res.json(data)
+  }).catch((err) => {
+    console.log(err.message)
+  });
+};
+
+/*
+POST /api/data/reserveMovie
+*/
+
+exports.reserveMovie = (req,res) => {
+  const {customer_id,people_num,seat_info,screen_num,pay,theater_id,movie_id,show_date}=req.body
+  console.log(customer_id,people_num,seat_info,screen_num,pay,theater_id,movie_id,show_date);
+  const ins_sql = `insert reserve_info(customer_id,people_num,seat_info,screen_num,pay,theater_id,movie_id,show_date) values(?,?,?,?,?,?,?,?)`;
+  connection.query(ins_sql ,[customer_id,people_num,seat_info,screen_num,pay,theater_id,movie_id,show_date] ,(err, results) => {
+    if (err) {
+      console.log("error ocurred", err);
+      res.send({
+        "code" : 400
+      });
+    }
+    else {
+      res.send({
+        "code" : 200
+      })
+    }
+  });
 }

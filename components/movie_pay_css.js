@@ -16,7 +16,7 @@ const Movie_pay_CSS = () => {
         justify-content: center;
       }
       div.info_box {
-        width: 65%;
+        width: 60%;
         display: flex;
       }
       .movie_img {

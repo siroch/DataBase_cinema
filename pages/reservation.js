@@ -1,7 +1,7 @@
 import Header from './Header'
 import Footer from './footer'
 import Reservation_CSS from '../components/reservation_css'
-import {useState, useEffect,Fragment} from 'react'
+import {useState, useEffect} from 'react'
 import Link from 'next/link'
 import data from '../data/movie_info'
 
@@ -449,7 +449,9 @@ const Reservation = () => {
             <br />
             <p>총금액  {normPerson*12000 + teenPerson*10000}원</p>
           </div>
-          <Link href="/movie_pay">
+          <Link href={{pathname:'/movie_pay',query:{movie_id:movie[4],pay:normPerson*12000+teenPerson*10000,theater_id:theater[0],
+            people_num:normPerson*1+teenPerson*1,show_date:[dates[0],dates[1],dates[2],showtime[0],showtime[1]],screen_num:showtime[2],
+            seat_info:seats.split(' ')}}}>
             <button className="go_pay">
               &#8594;
               <button className="inner">결제</button>
