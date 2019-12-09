@@ -102,8 +102,8 @@ const Footer = () => {
         </ul>
       </div>
       <div className="bottom">
-        <p>logo_name</p>
-        <p>DBDB딥 (강동호, 김한수, 박성빈, 박지호, 안한서, 최병익)</p>
+        <p><span>E</span><span>G</span><span>V</span></p>
+        <p>Copyright 2019 by DBDB딥 (강동호, 김한수, 박성빈, 박지호, 안한서, 최병익)</p>
       </div>
     </footer>
   )

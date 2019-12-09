@@ -1,6 +1,7 @@
 import Mypage from './mypage'
 import Mypage_CSS from '../../components/mypage_css'
 import Axios from 'axios'
+import Link from 'next/link'
 import {useEffect, useState} from 'react'
 
 const Mypage_userinfo = () => {
@@ -82,9 +83,11 @@ const Mypage_userinfo = () => {
 					</table>
 				</div>
 				<div className="edit_userinfo">
-					<span>
-						회원 정보 수정
-					</span>
+					<Link href="/modify">
+						<span>
+							회원 정보 수정
+						</span>
+					</Link>
 				</div>
 			</div>
 		</div>

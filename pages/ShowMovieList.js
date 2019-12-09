@@ -35,8 +35,8 @@ const ShowMovieList = () => {
 				cirs[2].classList="active"
 				bnts[4].disabled=true
 			}
-			var age = document.getElementsByTagName("span")
-	    for(var i=0; i<age.length-3; i++){
+			var age = document.getElementsByClassName("ages")
+	    for(var i=0; i<age.length; i++){
 				age[i].classList.remove('fifteen')
 				age[i].classList.remove('twelve')
 				age[i].classList.remove('allage')
@@ -62,7 +62,7 @@ const ShowMovieList = () => {
 							<img src={movies.movie_info.picture} alt={movies.movie_info.movieNm}/>
 						</Link>
 						<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
-							<p><span>{movies.movie_info.ageRestriction}</span> {movies.movie_info.movieNm}</p>
+							<p><span className="ages">{movies.movie_info.ageRestriction}</span> {movies.movie_info.movieNm}</p>
 						</Link>
 						<p>평점: ?? 예매율: ??%</p>
 					</div>
@@ -78,7 +78,7 @@ const ShowMovieList = () => {
 							<img src={movies.picture} alt={movies.movie_title}/>
 						</Link>
 						<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_id } }}>
-							<p><span>{movies.age_limit}</span> {movies.movie_title}</p>
+							<p><span className="ages">{movies.age_limit}</span> {movies.movie_title}</p>
 						</Link>
 						<p>평점: ?? 예매율: ??%</p>
 					</div>

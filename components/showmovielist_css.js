@@ -76,7 +76,7 @@ const Showmovielist_CSS = () => {
         background-color: white;
         border: 3px solid black;
       }
-      .slide span{
+      .ages{
         border: thin solid;
         border-radius: 50%;
         color: white;

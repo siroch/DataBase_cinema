@@ -41,9 +41,34 @@ const Footer_CSS = () => {
         width: 80%;
       }
       .bottom {
-        padding: 10px;
+        padding: 5px;
         background-color: black;
         color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: gray;
+      }
+      .bottom p{
+        margin: 0px;
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+      .bottom p:first-child{
+        color: black;
+        font-weight: bold;
+        font-size: 15pt;
+      }
+      .bottom p:first-child span{
+        background-color:#545454;
+        margin-left:5px;
+        margin-right: 3px;
+        padding: 3px;
+        padding-top: 0;
+        padding-bottom:0;
+      }
+      .bottom p:nth-child(2){
+        font-size: 10pt;
       }
     `}</style>
   )

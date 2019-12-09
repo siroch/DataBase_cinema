@@ -42,58 +42,18 @@ const Movie_details_CSS = () => {
         .plot h2{
           margin: 5px;
         }
-        textarea{
+        .plot p{
+          margin: 5px;
+        }
+        input[type=number]{
           font-size: 12pt;
-          width: 85%;
-          font-size: 10pt;
-          height: 70px;
-          vertical-align: middle;
-          resize: none;
-          border-radius: 5px;
         }
-        .write input[type=submit]{
-          border: thin solid white;
+        .movie_info input[type=submit]{
           background-color: black;
-          color: white;
+          vertical-align: top;
           border-radius: 10px;
-          width: 70px;
-          height: 70px;
-          margin-left: 10px;
-          vertical-align: baseline;
-        }
-        .score{
-          display: inline-block;
-          text-align: center;
-          margin-top: 5px;
-          width: 13%;
-          border: 1px solid white;
-          border-radius: 10px;
-          padding-top: 10px;
-          padding-bottom: 10px;
-          color: white;
-        }
-        .write{
-          float: right;
-          width: 86%;
-        }
-        .review fieldset{
-          padding: 10px;
-          border: 1px solid black;
-          border-radius: 10px;
-          background-color: black;
-          margin-bottom: 10px;
-        }
-        .read{
-          text-align: center;
-        }
-        .read li{
-          display: inline-block;
-          width: 40%;
-          border: 3px outset gray;
-          border-radius: 10px;
-          padding: 5px;
-          margin: 10px;
-          margin-right: 30px;
+          color white;
+          height: 24px;
         }
     `}</style>
   )

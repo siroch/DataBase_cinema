@@ -8,7 +8,7 @@ const Movie_details = (props) => (
       <Movie_details_CSS />
       <Header />
       <div className="details">
-        <h1>영화 상세</h1>
+        <h1>영화 상세 정보</h1>
         <hr />
         <div className="information">
           <div className="movie_info">
@@ -27,6 +27,9 @@ const Movie_details = (props) => (
             <br/>
             <br/>
             <strong>타입</strong>: {props.movies.showTypes.map(info => ( info.showTypeGroupNm )) + " "}
+            <br/>
+            <br/>
+            <strong>평점 입력</strong>: <input type="number" min="0" max="10" step="0.1"/> <input type="submit" value="제출"/>
           </div>
           <img src={props.movies.picture} alt="poster"/>
         </div>
@@ -43,56 +46,6 @@ const Movie_details = (props) => (
           <iframe src={props.movies.trailer} allowfullscreen></iframe>
         </div>
         <hr />
-        <div className="review">
-          <form action="" method="POST">
-            <fieldset>
-              <div className="score">
-                평점
-                <br/>
-                <select name="grade">
-          				<option>1점</option>
-          				<option>2점</option>
-          				<option>3점</option>
-          				<option>4점</option>
-          				<option>5점</option>
-                  <option>6점</option>
-          				<option>7점</option>
-          				<option>8점</option>
-          				<option>9점</option>
-          				<option>10점</option>
-          			</select>
-              </div>
-              <div className="write">
-                <textarea title="리뷰" placeholder=" * 영화평은 로그인후 입력가능합니다."></textarea>
-                <input type="submit" value="제출"/>
-              </div>
-            </fieldset>
-          </form>
-          <div className="read">
-            <ul>
-              <li>
-                <h3>Giannis</h3>
-                (9 점) 19.11.26
-                <p>이 영화 몰입감이 장난이 아니네여!!!</p>
-              </li>
-              <li>
-                <h3>감스트</h3>
-                (7 점) 19.11.16
-                <p>짜쓰~~!!!</p>
-              </li>
-              <li>
-                <h3>Tonali</h3>
-                (8 점) 19.11.14
-                <p>귣귣귣!!!</p>
-              </li>
-              <li>
-                <h3>williams</h3>
-                (5 점) 19.11.13
-                <p>This movie is very boring....</p>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
       <Footer />
     </div>
