@@ -29,7 +29,7 @@ const Header = () => {
 				sessionStorage.setItem('userName', user_info[1]);
 			})
 		}
-	})
+	},[login_status])
 
 	function logout() {
 		// axios.
@@ -61,6 +61,17 @@ const Header = () => {
 		}
 	}
 
+	function iflogintores() {
+		if(!login_status) {
+			alert("로그인이 필요한 서비스입니다.");
+			router.push('/login_nomember');
+		} else {
+			router.push({
+				pathname: '/reservation'
+			});
+		}
+	}
+
 		return(
 		<header>
 			<Header_CSS />
@@ -82,9 +93,7 @@ const Header = () => {
 						<Link href="/movie_list">
 							<span title="Movie_list">영화</span>
 						</Link>
-						<Link href="/reservation">
-							<span title="Reservation and Seat">예매</span>
-						</Link>
+							<span onClick={iflogintores}title="Reservation and Seat">예매</span>
 						<Link href="/theater_list">
 							<span title="Theater_list">극장</span>
 						</Link>

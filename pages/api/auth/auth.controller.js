@@ -178,3 +178,21 @@ exports.updateUserInfo = (req, res) => {
     }
   })
 }
+
+exports.updateUserPurchase = (req, res) => {
+  const sql = `insert into purchase (? ? ?) values ('${req.body.id}', '${req.body.list}', '${req.body.bill}','${req.body.time}')`;
+  const sql1 = `update customer set monthly_spend = (monthly_spend + ${req.body.bill}) where customer_id = '${req.body.id}'`
+  connection.query(sql, (err, results) => {
+    if(err) {
+      console.log(err);
+    } else {
+      connection.query(sql1, (err1, results1) => {
+        if(err1) {
+          console.log(err1);
+        } else {
+          res.send(200);
+        }
+      })
+    }
+  })
+}

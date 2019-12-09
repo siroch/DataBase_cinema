@@ -8,4 +8,5 @@ router.use('/check',authMiddleware);
 router.get('/check',controller.check);
 router.get('/samecheck/:id', controller.samecheck);
 router.post('/update', controller.updateUserInfo);
+router.post('/updatepurchase', controller.updateUserPurchase);
 module.exports = router;
