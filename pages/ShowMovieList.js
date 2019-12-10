@@ -64,7 +64,6 @@ const ShowMovieList = () => {
 						<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_info.movieCd } }}>
 							<p><span className="ages">{movies.movie_info.ageRestriction}</span> {movies.movie_info.movieNm}</p>
 						</Link>
-						<p>평점: ?? 예매율: ??%</p>
 					</div>
 				))}
 			</div>
@@ -80,7 +79,6 @@ const ShowMovieList = () => {
 						<Link href={{ pathname: "/movie_details", query: { movieCd: movies.movie_id } }}>
 							<p><span className="ages">{movies.age_limit}</span> {movies.movie_title}</p>
 						</Link>
-						<p>평점: ?? 예매율: ??%</p>
 					</div>
 				))}
 			</div>
