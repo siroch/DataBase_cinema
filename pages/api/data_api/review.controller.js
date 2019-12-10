@@ -39,25 +39,18 @@ exports.postRating = (req, res) => {
 
 exports.getRating = (req, res) => {
   const body = req.body;
-  const counting = `select count(*) from review where movie_id = ?`;
-  const get = `select rate from review where movie_id = ?`;
-  var cnt = 0, avg = 0;
-  connection.query(counting, [body.movieCd], (err, row, fields) => {
-    cnt = row[0]['count(*)'];
-    connection.query(get, [body.movieCd], (err1, rows, fields) => {
-      for(var i=0; i<rows.length; i++) {
-        avg += (rows[i].rate)/cnt;
-      }
-      fs.readFile('./data/api/_1121.json', 'utf8', (err, data) => {
-        const movies = JSON.parse(data);
-        const content = movies[body.movieCd];
-        content.rate = avg;
-        const result = JSON.stringify(movies);
-        fs.writeFile('./data/api/_1121.json', result, 'utf8', (err2) => {
-          if(err2) console.log(err2);
-          else console.log('wr_done');
-        });
+  const get = `select avg(rate) from review where movie_id = ?`;
+
+  connection.query(get, [body.movieCd], (err1, avg, fields) => {
+    fs.readFile('./data/api/_1121.json', 'utf8', (err, data) => {
+      const movies = JSON.parse(data);
+      const content = movies[body.movieCd];
+      content.rate = avg[0]['avg(rate)'];
+      const result = JSON.stringify(movies);
+      fs.writeFile('./data/api/_1121.json', result, 'utf8', (err2) => {
+        if(err2) console.log(err2);
+        else console.log('wr_done');
       });
-    })
+    });
   })
 }
