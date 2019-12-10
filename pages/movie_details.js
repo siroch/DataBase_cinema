@@ -37,7 +37,7 @@ const Movie_details = (props) => {
             <h2>{props.movies.movieNm}</h2>
             <p>{props.movies.movieNmEn}</p>
             <br/>
-            <strong>예매율</strong> 5.8% | <strong>평점</strong> 7.25
+            <strong>평점</strong> {props.movies.rate}
             <hr/>
             <br/>
             <strong>감독</strong>: {props.movies.directors[0].peopleNm} /<strong>배우</strong>: {props.movies.actor}

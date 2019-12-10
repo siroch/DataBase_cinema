@@ -6,7 +6,7 @@ import Movie_pay_CSS from '../components/movie_pay_css'
 import th_data from '../data/api/_1121.json'
 import location from '../data/location.json'
 import Axios from 'axios'
-const Movie_pay = ({people_num,seat_info,screen_num,pay,theater_id,movie_id,show_date}) => {
+const Movie_pay = ({people_num,seat_info,screen_num,pay,theater_id,movie_id,show_date, movie_data}) => {
   const [reserveNumber,setReserveNum]=useState(0);
   const reserveMovie = ()=>{
     let seats="";
@@ -51,8 +51,7 @@ const Movie_pay = ({people_num,seat_info,screen_num,pay,theater_id,movie_id,show
           </div>
           <div class="reserve_movie_info">
             <h3>{th_data[movie_id].movieNm}</h3>
-            <span>예매율: 5% |</span>
-            <span>평점: 5.0 |</span>
+            <span>평점: {movie_data.rate} |</span>
             <span>개봉일: {th_data[movie_id].openDt}</span>
             <hr />
             <ul class="movie_content">
@@ -114,8 +113,9 @@ const Movie_pay = ({people_num,seat_info,screen_num,pay,theater_id,movie_id,show
 
   )
 }
-Movie_pay.getInitialProps=(res)=>{
+Movie_pay.getInitialProps = async (res)=>{
   const {people_num,seat_info,screen_num,pay,theater_id,movie_id,show_date}=res.query;
+  const response = await Axios.get(`/api/data/movies/${movie_id}`);
   return{
     people_num:people_num,
     seat_info:seat_info,
@@ -123,7 +123,8 @@ Movie_pay.getInitialProps=(res)=>{
     pay:pay,
     theater_id:theater_id,
     movie_id:movie_id,
-    show_date:show_date
+    show_date:show_date,
+    movie_data: response.data
   }
 }
 export default Movie_pay

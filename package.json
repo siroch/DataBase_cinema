@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app.js --verbose",
+    "dev": "nodemon app.js --verbose --ignore '/data/api/_1121.json'",
     "build": "next build",
     "start": "json-server --watch db.json ---port 3001"
   },
@@ -39,7 +39,7 @@
   "description": "",
   "nodemonConfig": {
     "ignore": [
-      "/db.json"
+      "./data/api/_1121.json"
     ]
   }
 }

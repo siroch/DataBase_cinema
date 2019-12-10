@@ -1,3 +1,5 @@
+const fs = require('fs');
+const writeJson = require('write-json');
 const mysql = require('mysql');
 const connection = mysql.createConnection({
   host     : 'ericagallery.cpi3i6d3shqc.us-east-2.rds.amazonaws.com',
@@ -39,15 +41,23 @@ exports.getRating = (req, res) => {
   const body = req.body;
   const counting = `select count(*) from review where movie_id = ?`;
   const get = `select rate from review where movie_id = ?`;
-  var cnt = 0, sum = 0, avg;
+  var cnt = 0, avg = 0;
   connection.query(counting, [body.movieCd], (err, row, fields) => {
     cnt = row[0]['count(*)'];
     connection.query(get, [body.movieCd], (err1, rows, fields) => {
       for(var i=0; i<rows.length; i++) {
-        sum += rows[i].rate;
+        avg += (rows[i].rate)/cnt;
       }
-      avg = sum / cnt;
-      console.log(avg);
+      fs.readFile('./data/api/_1121.json', 'utf8', (err, data) => {
+        const movies = JSON.parse(data);
+        const content = movies[body.movieCd];
+        content.rate = avg;
+        const result = JSON.stringify(movies);
+        fs.writeFile('./data/api/_1121.json', result, 'utf8', (err2) => {
+          if(err2) console.log(err2);
+          else console.log('wr_done');
+        });
+      });
     })
   })
 }
