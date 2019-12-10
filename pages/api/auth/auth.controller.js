@@ -212,3 +212,24 @@ exports.getUserPurchase = (req, res) => {
     }
   })
 }
+
+exports.getUserMovie = (req, res) => {
+  const sql = `select reserve_id, people_num, seat_info, theater_id, movie_id, screen_num, show_date + 0 as show_date from reserve_info where customer_id='${req.params.id}' order by reserve_id DESC limit 1`;
+  connection.query(sql, (err, results) => {
+    if(err) {
+      console.log(err);
+      res.send(400);
+    } else {
+      console.log(results[0]);
+      res.send({
+        "reserve_id" : results[0].reserve_id,
+        "people_num" : results[0].people_num,
+        "seat_info" : results[0].seat_info,
+        "theater_id" : results[0].theater_id,
+        "movie_id" : results[0].movie_id,
+        "screen_num" : results[0].screen_num,
+        "show_date" : results[0].show_date
+      })
+    }
+  })
+}

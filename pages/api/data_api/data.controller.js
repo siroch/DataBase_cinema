@@ -133,6 +133,7 @@ exports.reserveMovie = (req,res) => {
   const {customer_id,people_num,seat_info,screen_num,pay,theater_id,movie_id,show_date}=req.body
   console.log(customer_id,people_num,seat_info,screen_num,pay,theater_id,movie_id,show_date);
   const ins_sql = `insert reserve_info(customer_id,people_num,seat_info,screen_num,pay,theater_id,movie_id,show_date) values(?,?,?,?,?,?,?,?)`;
+  const sql1 = `update customer set monthly_spend = (monthly_spend + ${req.body.pay}) where customer_id = '${req.body.customer_id}'`
   connection.query(ins_sql ,[customer_id,people_num,seat_info,screen_num,pay,theater_id,movie_id,show_date] ,(err, results) => {
     if (err) {
       console.log("error ocurred", err);
@@ -141,8 +142,14 @@ exports.reserveMovie = (req,res) => {
       });
     }
     else {
-      res.send({
-        "code" : 200
+      connection.query(sql1, (error, results1) => {
+        if(error) {
+          console.log(error);
+        } else {
+          res.send({
+            "code" : 200
+          })
+        }
       })
     }
   });
