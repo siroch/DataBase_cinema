@@ -2,6 +2,7 @@ import Header from './Header'
 import Footer from './footer'
 import Movie_details_CSS from '../components/movie_details_css'
 import axios from 'axios'
+import Router from 'next/router'
 
 const Movie_details = (props) => {
   const postRating = () => {
@@ -15,7 +16,7 @@ const Movie_details = (props) => {
       rate: rate,
       date: curTime
     });
-    alert(`평점이 등록되었습니다!\n평점: ${rate}`);
+    alert(`평점이 등록되었습니다!\n평점: ${rate}\n\n메인페이지로 이동합니다...`);
     getRating();
   }
 
@@ -23,6 +24,7 @@ const Movie_details = (props) => {
     axios.post("/api/data/getReview", {
       movieCd: props.movies.movieCd
     });
+    Router.push('/')
   }
 
   return (
