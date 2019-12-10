@@ -72,6 +72,17 @@ const Header = () => {
 		}
 	}
 
+	function iflogintores1() {
+		if(!login_status) {
+			alert("로그인이 필요한 서비스입니다.");
+			router.push('/login_nomember');
+		} else {
+			router.push({
+				pathname: '/store'
+			});
+		}
+	}
+
 		return(
 		<header>
 			<Header_CSS />
@@ -97,8 +108,8 @@ const Header = () => {
 						<Link href="/theater_list">
 							<span title="Theater_list">극장</span>
 						</Link>
-						<Link href="/store">
-							<span title="Store">스토어</span>
+						<Link >
+							<span onClick={iflogintores1} title="Store">스토어</span>
 						</Link>
 					</li>
 				</ul>
