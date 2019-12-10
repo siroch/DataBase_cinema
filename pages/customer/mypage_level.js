@@ -1,7 +1,30 @@
 import Mypage from './mypage'
 import Mypage_CSS from '../../components/mypage_css'
+import axios from 'axios'
+import {useState, useEffect} from 'react'
 
 const Mypage_level = () => {
+	const [ranking, getrank] = useState('');
+
+	useEffect(() => {
+		axios
+		.get('/api/auth/samecheck/' + sessionStorage.getItem('userId'))
+		.then(function(response) {
+			var rank;
+			if(response.data.rank===0) {
+				rank = '일반';
+			} else if(response.data.rank === 1) {
+				rank = 'Bronze';
+			} else if(response.data.rank === 2) {
+				rank = 'Silver';
+			} else if(response.data.rank === 3) {
+				rank = 'Gold';
+			} else {
+				rank = 'Plantinum';
+			}
+			getrank(rank);
+		})
+	}, [])
 	return (
 		<div>
 			<Mypage />
@@ -14,7 +37,7 @@ const Mypage_level = () => {
 					<table className="type05">
 						<tr>
 		    			<th scope="row">현재 고객님의 등급</th>
-		    			<td>골드</td>
+						<td>{ranking}</td>
 						</tr>
 						<tr>
 		    			<th scope="row">브론즈</th>

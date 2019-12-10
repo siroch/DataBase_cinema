@@ -139,7 +139,7 @@ const Store = () => {
 
           <div className="gallery">
             <img src="/store/frozen_ticket.png" alt="frozen ticket"/>
-            <div className="desc">Forzen2 오리지널 티켓</div>
+            <div className="desc">Frozen2 오리지널 티켓</div>
             <button onClick={(e) => {alert("추가 되었습니다."); getFrozen2original(true);}}>장바구니</button>
             <span className="price">18000원</span>
           </div>

@@ -70,11 +70,10 @@ const Baskets = () => {
     if(frozen2original) {sendinfo = sendinfo + '13'}
     console.log(sessionStorage.getItem("userId"), sendinfo, totalspend, new Date());
     axios.
-    post("/api/auth/updatepurchase/" + {
+    post("/api/auth/updatepurchase/", {
       "id" : sessionStorage.getItem("userId"),
       "list" : sendinfo,
-      "bill" : totalspend,
-      "time" : String(new Date())
+      "bill" : totalspend
     })
     .then(function(res) {
       alert("구매가 완료되었습니다.");

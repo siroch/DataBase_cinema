@@ -9,4 +9,5 @@ router.get('/check',controller.check);
 router.get('/samecheck/:id', controller.samecheck);
 router.post('/update', controller.updateUserInfo);
 router.post('/updatepurchase', controller.updateUserPurchase);
+router.get('/getpurchase/:id', controller.getUserPurchase);
 module.exports = router;

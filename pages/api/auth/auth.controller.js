@@ -180,7 +180,7 @@ exports.updateUserInfo = (req, res) => {
 }
 
 exports.updateUserPurchase = (req, res) => {
-  const sql = `insert into purchase (? ? ?) values ('${req.body.id}', '${req.body.list}', '${req.body.bill}','${req.body.time}')`;
+  const sql = `insert into purchase values ('${req.body.id}', '${req.body.list}', '${req.body.bill}', now())`;
   const sql1 = `update customer set monthly_spend = (monthly_spend + ${req.body.bill}) where customer_id = '${req.body.id}'`
   connection.query(sql, (err, results) => {
     if(err) {
@@ -192,6 +192,22 @@ exports.updateUserPurchase = (req, res) => {
         } else {
           res.send(200);
         }
+      })
+    }
+  })
+}
+
+exports.getUserPurchase = (req, res) => {
+  const sql = `select pur_list, bill, ts + 0 as ts from purchase where user_id='${req.params.id}' order by ts DESC limit 1`;
+  connection.query(sql, (err, results) => {
+    if(err) {
+      console.log(err);
+    } else {
+      console.log(results);
+      res.send({
+        "list" : results[0].pur_list,
+        "bill" : results[0].bill,
+        "ts" : results[0].ts
       })
     }
   })

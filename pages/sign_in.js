@@ -134,7 +134,7 @@ const SignIn = () => {
   function getcurid() {
     getIssameclicked(true);
     Axios
-    .get("/api/auth/samecheck" + id)
+    .get("/api/auth/samecheck/" + id)
     .then(function(response) {
       console.log(response);
       getIssame(response.data.exist);
