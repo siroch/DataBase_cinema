@@ -150,7 +150,9 @@ const Reservation = () => {
     if(seats.length===0){
       for(var c=0; c<colss.length; c++){
         colss[c].classList.remove('choose_seat')
-        colss[c].disabled = false
+        if(colss[c].name != "1"){
+          colss[c].disabled = false;
+        }
       }
     }
     for(var c=0; c<colss.length; c++){
