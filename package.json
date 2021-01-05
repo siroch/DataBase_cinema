@@ -13,7 +13,7 @@
   "dependencies": {
     "alert-node": "^2.0.3",
     "async": "^3.1.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
